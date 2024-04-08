@@ -1,12 +1,17 @@
 ﻿using FireSharp.Config;
+using FireSharp.Extensions;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
+using Google.Protobuf.WellKnownTypes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -83,7 +88,7 @@ namespace WindowsFormsApp2
             {
                 userName = data.userName,
                 type = data.type,
-            };
+            };            
 
             DocumentReference docSet = database.Collection("Account").Document("Doctor").Collection(data.userName).Document(data.userName);
             docSet.SetAsync(data);
@@ -154,6 +159,14 @@ namespace WindowsFormsApp2
                 userName = data.userName,
                 type = data.type,
             };
+
+            var date = new ThoiGian
+            {
+                timestamp = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow),
+            };
+
+            DocumentReference patTimeSet = database.Collection("Account").Document("Patient").Collection(data.userName).Document("DateTime");
+            patTimeSet.SetAsync(date);
 
             DocumentReference patSet = database.Collection("Account").Document("Patient").Collection(data.userName).Document(data.userName);
             patSet.SetAsync(data);

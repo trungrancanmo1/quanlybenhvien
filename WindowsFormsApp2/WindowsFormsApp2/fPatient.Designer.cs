@@ -33,6 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dtpRegDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtDia = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,12 +113,22 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Controls.Add(this.dtpRegDate);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(3, 54);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(863, 44);
             this.panel6.TabIndex = 5;
+            // 
+            // dtpRegDate
+            // 
+            this.dtpRegDate.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dtpRegDate.Enabled = false;
+            this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRegDate.Location = new System.Drawing.Point(179, 8);
+            this.dtpRegDate.Name = "dtpRegDate";
+            this.dtpRegDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpRegDate.TabIndex = 1;
             // 
             // label2
             // 
@@ -312,15 +322,6 @@
             this.dgv.Size = new System.Drawing.Size(759, 389);
             this.dgv.TabIndex = 0;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(179, 8);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
             // fPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -379,6 +380,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnChangePass;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpRegDate;
     }
 }

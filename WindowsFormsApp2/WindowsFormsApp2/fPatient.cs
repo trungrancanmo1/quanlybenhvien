@@ -2,6 +2,8 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Google.Cloud.Firestore;
+using Google.Protobuf.WellKnownTypes;
+using Google.Type;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,10 +40,17 @@ namespace WindowsFormsApp2
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             pat = accSnap.ConvertTo<Patient>();
 
+            DocumentReference patTimeGet = database.Collection("Account").Document("Patient").Collection(pat.userName).Document("DateTime");
+            DocumentSnapshot patTimeSnap = await patTimeGet.GetSnapshotAsync();
+            ThoiGian dateTime = patTimeSnap.ConvertTo<ThoiGian>();
+            System.DateTime date = dateTime.timestamp.ToDateTime();
+            date = date.AddHours(7);
+
             txtName.Text = pat.displayName;
             txtMedHis.Text = pat.medicalHistory;
             txtTesRes.Text = pat.testingResult;
             txtDia.Text = pat.diagnosis;
+            dtpRegDate.Value = date;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)

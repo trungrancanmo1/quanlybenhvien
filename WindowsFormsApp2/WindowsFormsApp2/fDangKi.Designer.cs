@@ -65,8 +65,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPatAcc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -364,8 +362,6 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.dateTimePicker1);
-            this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.txtPatName);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Location = new System.Drawing.Point(3, 80);
@@ -375,9 +371,9 @@
             // 
             // txtPatName
             // 
-            this.txtPatName.Location = new System.Drawing.Point(99, 9);
+            this.txtPatName.Location = new System.Drawing.Point(263, 9);
             this.txtPatName.Name = "txtPatName";
-            this.txtPatName.Size = new System.Drawing.Size(259, 22);
+            this.txtPatName.Size = new System.Drawing.Size(471, 22);
             this.txtPatName.TabIndex = 1;
             // 
             // label6
@@ -426,25 +422,6 @@
             this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tài khoản:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(364, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(159, 25);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Ngày vào viện:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(529, 11);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 3;
             // 
             // fDangKi
             // 
@@ -523,7 +500,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPatAcc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label12;
     }
 }
