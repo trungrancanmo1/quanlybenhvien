@@ -32,13 +32,13 @@
             this.textAcc = new System.Windows.Forms.TextBox();
             this.lblAcc = new System.Windows.Forms.Label();
             this.panelPass = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.textPass = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnForgotpass = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panelAcc.SuspendLayout();
             this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,6 +79,16 @@
             this.panelPass.Name = "panelPass";
             this.panelPass.Size = new System.Drawing.Size(525, 90);
             this.panelPass.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(22, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(357, 22);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Mật khẩu mặc định trùng với tên tài khoản";
             // 
             // textPass
             // 
@@ -138,18 +148,9 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(357, 22);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Mật khẩu mặc định trùng với tên tài khoản";
-            // 
             // fLogin
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);

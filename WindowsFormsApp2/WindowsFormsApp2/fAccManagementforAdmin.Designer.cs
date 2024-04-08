@@ -57,6 +57,7 @@
             this.textName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.Location = new System.Drawing.Point(191, 12);
             this.textName.Name = "textName";
+            this.textName.ReadOnly = true;
             this.textName.Size = new System.Drawing.Size(263, 34);
             this.textName.TabIndex = 1;
             // 
@@ -94,6 +95,7 @@
             this.textAcc.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAcc.Location = new System.Drawing.Point(191, 12);
             this.textAcc.Name = "textAcc";
+            this.textAcc.ReadOnly = true;
             this.textAcc.Size = new System.Drawing.Size(263, 34);
             this.textAcc.TabIndex = 1;
             // 

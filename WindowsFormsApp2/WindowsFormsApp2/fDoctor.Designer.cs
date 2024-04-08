@@ -33,9 +33,6 @@
             this.btnChangePass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lichtrinh = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtSpe = new System.Windows.Forms.TextBox();
@@ -53,6 +50,8 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnset = new System.Windows.Forms.Button();
             this.tabinformation.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,7 +97,7 @@
             this.btnChangePass.Location = new System.Drawing.Point(57, 297);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Size = new System.Drawing.Size(128, 68);
-            this.btnChangePass.TabIndex = 1;
+            this.btnChangePass.TabIndex = 2;
             this.btnChangePass.Text = "Đổi mật khẩu";
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.UseWaitCursor = true;
@@ -119,47 +118,15 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.checkBox2);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Controls.Add(this.checkBox1);
+            this.panel10.Controls.Add(this.btnset);
+            this.panel10.Controls.Add(this.comboBox1);
             this.panel10.Controls.Add(this.lichtrinh);
             this.panel10.Location = new System.Drawing.Point(3, 199);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(792, 57);
-            this.panel10.TabIndex = 15;
+            this.panel10.TabIndex = 1;
             this.panel10.UseWaitCursor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(679, 27);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(601, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sẵn có:";
-            this.label2.UseWaitCursor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(158, 27);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.UseWaitCursor = true;
             // 
             // lichtrinh
             // 
@@ -167,9 +134,9 @@
             this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lichtrinh.Location = new System.Drawing.Point(3, 21);
             this.lichtrinh.Name = "lichtrinh";
-            this.lichtrinh.Size = new System.Drawing.Size(149, 23);
+            this.lichtrinh.Size = new System.Drawing.Size(106, 23);
             this.lichtrinh.TabIndex = 0;
-            this.lichtrinh.Text = "Có lịch làm việc:";
+            this.lichtrinh.Text = "Tình trạng:";
             this.lichtrinh.UseWaitCursor = true;
             // 
             // panel9
@@ -180,7 +147,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(792, 57);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 0;
             this.panel9.UseWaitCursor = true;
             // 
             // txtSpe
@@ -188,6 +155,7 @@
             this.txtSpe.Location = new System.Drawing.Point(138, 18);
             this.txtSpe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSpe.Name = "txtSpe";
+            this.txtSpe.ReadOnly = true;
             this.txtSpe.Size = new System.Drawing.Size(649, 22);
             this.txtSpe.TabIndex = 2;
             this.txtSpe.UseWaitCursor = true;
@@ -211,7 +179,7 @@
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(792, 57);
-            this.panel7.TabIndex = 12;
+            this.panel7.TabIndex = 0;
             this.panel7.UseWaitCursor = true;
             // 
             // txtName
@@ -219,6 +187,7 @@
             this.txtName.Location = new System.Drawing.Point(138, 20);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(651, 22);
             this.txtName.TabIndex = 1;
             this.txtName.UseWaitCursor = true;
@@ -242,7 +211,7 @@
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(792, 57);
-            this.panel6.TabIndex = 11;
+            this.panel6.TabIndex = 0;
             this.panel6.UseWaitCursor = true;
             // 
             // txtPos
@@ -250,6 +219,7 @@
             this.txtPos.Location = new System.Drawing.Point(140, 20);
             this.txtPos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPos.Name = "txtPos";
+            this.txtPos.ReadOnly = true;
             this.txtPos.Size = new System.Drawing.Size(649, 22);
             this.txtPos.TabIndex = 1;
             this.txtPos.UseWaitCursor = true;
@@ -342,6 +312,26 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UseWaitCursor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Rảnh",
+            "Bận"});
+            this.comboBox1.Location = new System.Drawing.Point(138, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(133, 24);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // btnset
+            // 
+            this.btnset.Location = new System.Drawing.Point(312, 17);
+            this.btnset.Name = "btnset";
+            this.btnset.Size = new System.Drawing.Size(142, 35);
+            this.btnset.TabIndex = 2;
+            this.btnset.Text = "Thiết lập";
+            this.btnset.UseVisualStyleBackColor = true;
+            // 
             // fDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,9 +367,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label lichtrinh;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label specialize;
@@ -398,5 +385,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSpe;
         private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.Button btnset;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

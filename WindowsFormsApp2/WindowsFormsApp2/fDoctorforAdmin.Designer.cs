@@ -43,11 +43,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.lichtrinh = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,13 +77,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.lichtrinh = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -104,6 +101,7 @@
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -231,7 +229,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(359, 57);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 2;
             this.panel9.UseWaitCursor = true;
             // 
             // textBox4
@@ -267,61 +265,6 @@
             this.panel3.TabIndex = 0;
             this.panel3.UseWaitCursor = true;
             // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.checkBox2);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Controls.Add(this.checkBox1);
-            this.panel10.Controls.Add(this.lichtrinh);
-            this.panel10.Location = new System.Drawing.Point(3, 199);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(359, 57);
-            this.panel10.TabIndex = 15;
-            this.panel10.UseWaitCursor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(309, 27);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(231, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sẵn có:";
-            this.label2.UseWaitCursor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(158, 27);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.UseWaitCursor = true;
-            // 
-            // lichtrinh
-            // 
-            this.lichtrinh.AutoSize = true;
-            this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lichtrinh.Location = new System.Drawing.Point(3, 21);
-            this.lichtrinh.Name = "lichtrinh";
-            this.lichtrinh.Size = new System.Drawing.Size(149, 23);
-            this.lichtrinh.TabIndex = 0;
-            this.lichtrinh.Text = "Có lịch làm việc:";
-            this.lichtrinh.UseWaitCursor = true;
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.textBox2);
@@ -330,7 +273,7 @@
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(359, 57);
-            this.panel7.TabIndex = 12;
+            this.panel7.TabIndex = 0;
             this.panel7.UseWaitCursor = true;
             // 
             // panel6
@@ -341,7 +284,7 @@
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(359, 57);
-            this.panel6.TabIndex = 11;
+            this.panel6.TabIndex = 1;
             this.panel6.UseWaitCursor = true;
             // 
             // label1
@@ -363,7 +306,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(380, 334);
+            this.dataGridView2.Size = new System.Drawing.Size(380, 275);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.UseWaitCursor = true;
             // 
@@ -394,7 +337,7 @@
             this.findbuttuon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.findbuttuon.Name = "findbuttuon";
             this.findbuttuon.Size = new System.Drawing.Size(104, 37);
-            this.findbuttuon.TabIndex = 0;
+            this.findbuttuon.TabIndex = 2;
             this.findbuttuon.Text = "Tìm kiếm";
             this.findbuttuon.UseVisualStyleBackColor = true;
             this.findbuttuon.UseWaitCursor = true;
@@ -407,7 +350,7 @@
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(364, 47);
-            this.panel5.TabIndex = 1;
+            this.panel5.TabIndex = 7;
             this.panel5.UseWaitCursor = true;
             // 
             // tabPage1
@@ -442,7 +385,7 @@
             this.button5.Location = new System.Drawing.Point(312, 6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 46);
-            this.button5.TabIndex = 7;
+            this.button5.TabIndex = 6;
             this.button5.Text = "Xem";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.UseWaitCursor = true;
@@ -452,7 +395,7 @@
             this.button4.Location = new System.Drawing.Point(147, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 46);
-            this.button4.TabIndex = 6;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.UseWaitCursor = true;
@@ -462,7 +405,7 @@
             this.button6.Location = new System.Drawing.Point(3, 6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 44);
-            this.button6.TabIndex = 5;
+            this.button6.TabIndex = 4;
             this.button6.Text = "Sửa";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.UseWaitCursor = true;
@@ -477,7 +420,7 @@
             this.tabinformation.Name = "tabinformation";
             this.tabinformation.SelectedIndex = 0;
             this.tabinformation.Size = new System.Drawing.Size(846, 419);
-            this.tabinformation.TabIndex = 4;
+            this.tabinformation.TabIndex = 10;
             this.tabinformation.UseWaitCursor = true;
             // 
             // tabPage3
@@ -502,7 +445,7 @@
             this.panel14.Location = new System.Drawing.Point(390, 260);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(393, 127);
-            this.panel14.TabIndex = 4;
+            this.panel14.TabIndex = 6;
             this.panel14.UseWaitCursor = true;
             // 
             // button2
@@ -512,7 +455,7 @@
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 37);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Phân công";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.UseWaitCursor = true;
@@ -524,7 +467,7 @@
             this.panel15.Location = new System.Drawing.Point(2, 15);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(389, 52);
-            this.panel15.TabIndex = 1;
+            this.panel15.TabIndex = 7;
             this.panel15.UseWaitCursor = true;
             // 
             // textBox6
@@ -560,7 +503,7 @@
             this.panel11.Location = new System.Drawing.Point(389, 59);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(453, 191);
-            this.panel11.TabIndex = 3;
+            this.panel11.TabIndex = 0;
             this.panel11.UseWaitCursor = true;
             // 
             // label8
@@ -590,7 +533,7 @@
             this.dateTimePicker4.Location = new System.Drawing.Point(230, 78);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(206, 22);
-            this.dateTimePicker4.TabIndex = 5;
+            this.dateTimePicker4.TabIndex = 3;
             this.dateTimePicker4.UseWaitCursor = true;
             this.dateTimePicker4.FormatChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
@@ -601,7 +544,7 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(3, 78);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(202, 22);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dateTimePicker3.TabIndex = 2;
             this.dateTimePicker3.UseWaitCursor = true;
             this.dateTimePicker3.Value = new System.DateTime(2024, 4, 6, 13, 17, 40, 0);
             this.dateTimePicker3.FormatChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
@@ -614,7 +557,7 @@
             this.panel13.Location = new System.Drawing.Point(6, 3);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(389, 32);
-            this.panel13.TabIndex = 3;
+            this.panel13.TabIndex = 1;
             this.panel13.UseWaitCursor = true;
             // 
             // textBox7
@@ -644,7 +587,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 37);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.UseWaitCursor = true;
@@ -656,7 +599,7 @@
             this.panel12.Location = new System.Drawing.Point(6, 115);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(389, 32);
-            this.panel12.TabIndex = 0;
+            this.panel12.TabIndex = 4;
             this.panel12.UseWaitCursor = true;
             // 
             // textBox5
@@ -702,6 +645,39 @@
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.UseWaitCursor = true;
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.comboBox1);
+            this.panel10.Controls.Add(this.lichtrinh);
+            this.panel10.Location = new System.Drawing.Point(3, 199);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(359, 57);
+            this.panel10.TabIndex = 3;
+            this.panel10.UseWaitCursor = true;
+            // 
+            // lichtrinh
+            // 
+            this.lichtrinh.AutoSize = true;
+            this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lichtrinh.Location = new System.Drawing.Point(3, 21);
+            this.lichtrinh.Name = "lichtrinh";
+            this.lichtrinh.Size = new System.Drawing.Size(111, 23);
+            this.lichtrinh.TabIndex = 0;
+            this.lichtrinh.Text = "Tình trạng: ";
+            this.lichtrinh.UseWaitCursor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Rảnh",
+            "Bận"});
+            this.comboBox1.Location = new System.Drawing.Point(138, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(133, 24);
+            this.comboBox1.TabIndex = 2;
+            // 
             // fDoctorforAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -718,8 +694,6 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -744,6 +718,8 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -775,12 +751,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabinformation;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label lichtrinh;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel11;
@@ -804,5 +775,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label lichtrinh;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

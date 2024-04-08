@@ -30,39 +30,39 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.findbuttuon = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.position = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.degree = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.position = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnAddequip = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -70,9 +70,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -84,29 +87,26 @@
             this.panel18 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.panel19 = new System.Windows.Forms.Panel();
             this.checkbutton = new System.Windows.Forms.Button();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -118,9 +118,9 @@
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,27 +149,12 @@
             this.tabPage1.Text = "Thuốc";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.panel10);
-            this.tabPage2.Controls.Add(this.panel11);
-            this.tabPage2.Controls.Add(this.panel12);
-            this.tabPage2.Controls.Add(this.panel13);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 420);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Thiết bị y tế";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // panel16
             // 
             this.panel16.Controls.Add(this.button5);
             this.panel16.Controls.Add(this.button4);
             this.panel16.Controls.Add(this.button6);
-            this.panel16.Controls.Add(this.button3);
+            this.panel16.Controls.Add(this.btnAdd);
             this.panel16.Location = new System.Drawing.Point(5, 17);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(390, 63);
@@ -202,14 +187,15 @@
             this.button6.Text = "Sửa";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 46);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(3, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 46);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAddmed_Click);
             // 
             // panel5
             // 
@@ -219,7 +205,7 @@
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(364, 47);
-            this.panel5.TabIndex = 5;
+            this.panel5.TabIndex = 8;
             this.panel5.UseWaitCursor = true;
             // 
             // textBox1
@@ -238,7 +224,7 @@
             this.findbuttuon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.findbuttuon.Name = "findbuttuon";
             this.findbuttuon.Size = new System.Drawing.Size(104, 37);
-            this.findbuttuon.TabIndex = 0;
+            this.findbuttuon.TabIndex = 2;
             this.findbuttuon.Text = "Tìm kiếm";
             this.findbuttuon.UseVisualStyleBackColor = true;
             this.findbuttuon.UseWaitCursor = true;
@@ -277,6 +263,36 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.UseWaitCursor = true;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Controls.Add(this.position);
+            this.panel6.Location = new System.Drawing.Point(417, 213);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(356, 57);
+            this.panel6.TabIndex = 3;
+            this.panel6.UseWaitCursor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(152, 19);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(193, 22);
+            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.UseWaitCursor = true;
+            // 
+            // position
+            // 
+            this.position.AutoSize = true;
+            this.position.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.position.Location = new System.Drawing.Point(4, 18);
+            this.position.Name = "position";
+            this.position.Size = new System.Drawing.Size(142, 23);
+            this.position.TabIndex = 0;
+            this.position.Text = "Ngày nhập kho:";
+            this.position.UseWaitCursor = true;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel1);
@@ -287,8 +303,39 @@
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(366, 319);
-            this.panel3.TabIndex = 4;
+            this.panel3.TabIndex = 0;
             this.panel3.UseWaitCursor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(3, 69);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 57);
+            this.panel1.TabIndex = 2;
+            this.panel1.UseWaitCursor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(138, 20);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(218, 22);
+            this.textBox3.TabIndex = 1;
+            this.textBox3.UseWaitCursor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Số lượng:";
+            this.label2.UseWaitCursor = true;
             // 
             // panel9
             // 
@@ -298,7 +345,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(359, 57);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 5;
             this.panel9.UseWaitCursor = true;
             // 
             // textBox4
@@ -325,12 +372,20 @@
             // 
             this.panel8.Controls.Add(this.dateTimePicker2);
             this.panel8.Controls.Add(this.degree);
-            this.panel8.Location = new System.Drawing.Point(0, 193);
+            this.panel8.Location = new System.Drawing.Point(4, 193);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(359, 57);
-            this.panel8.TabIndex = 13;
+            this.panel8.Size = new System.Drawing.Size(355, 57);
+            this.panel8.TabIndex = 4;
             this.panel8.UseWaitCursor = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(152, 18);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(193, 22);
+            this.dateTimePicker2.TabIndex = 2;
+            this.dateTimePicker2.UseWaitCursor = true;
             // 
             // degree
             // 
@@ -351,7 +406,7 @@
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(359, 57);
-            this.panel7.TabIndex = 12;
+            this.panel7.TabIndex = 1;
             this.panel7.UseWaitCursor = true;
             // 
             // textBox2
@@ -374,83 +429,31 @@
             this.name.Text = "Tên thuốc:";
             this.name.UseWaitCursor = true;
             // 
-            // panel6
+            // tabPage2
             // 
-            this.panel6.Controls.Add(this.dateTimePicker1);
-            this.panel6.Controls.Add(this.position);
-            this.panel6.Location = new System.Drawing.Point(414, 213);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(359, 57);
-            this.panel6.TabIndex = 11;
-            this.panel6.UseWaitCursor = true;
-            // 
-            // position
-            // 
-            this.position.AutoSize = true;
-            this.position.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.position.Location = new System.Drawing.Point(4, 18);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(142, 23);
-            this.position.TabIndex = 0;
-            this.position.Text = "Ngày nhập kho:";
-            this.position.UseWaitCursor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(152, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(193, 22);
-            this.dateTimePicker1.TabIndex = 1;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(152, 18);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(193, 22);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 69);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 57);
-            this.panel1.TabIndex = 15;
-            this.panel1.UseWaitCursor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(138, 20);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 22);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Số lượng:";
-            this.label2.UseWaitCursor = true;
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Controls.Add(this.panel10);
+            this.tabPage2.Controls.Add(this.panel11);
+            this.tabPage2.Controls.Add(this.panel12);
+            this.tabPage2.Controls.Add(this.panel13);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(786, 420);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Thiết bị y tế";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.btnAddequip);
             this.panel2.Location = new System.Drawing.Point(5, 17);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 63);
-            this.panel2.TabIndex = 15;
+            this.panel2.TabIndex = 7;
             // 
             // button1
             // 
@@ -479,14 +482,15 @@
             this.button7.Text = "Sửa";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnAddequip
             // 
-            this.button8.Location = new System.Drawing.Point(3, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 46);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Thêm";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAddequip.Location = new System.Drawing.Point(3, 3);
+            this.btnAddequip.Name = "btnAddequip";
+            this.btnAddequip.Size = new System.Drawing.Size(75, 46);
+            this.btnAddequip.TabIndex = 4;
+            this.btnAddequip.Text = "Thêm";
+            this.btnAddequip.UseVisualStyleBackColor = true;
+            this.btnAddequip.Click += new System.EventHandler(this.btnAddequip_Click);
             // 
             // panel10
             // 
@@ -496,7 +500,7 @@
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(364, 47);
-            this.panel10.TabIndex = 13;
+            this.panel10.TabIndex = 8;
             this.panel10.UseWaitCursor = true;
             // 
             // textBox5
@@ -515,7 +519,7 @@
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(104, 37);
-            this.button9.TabIndex = 0;
+            this.button9.TabIndex = 2;
             this.button9.Text = "Tìm kiếm";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.UseWaitCursor = true;
@@ -528,7 +532,7 @@
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(382, 318);
-            this.panel11.TabIndex = 14;
+            this.panel11.TabIndex = 6;
             this.panel11.UseWaitCursor = true;
             // 
             // label3
@@ -558,12 +562,21 @@
             // 
             this.panel12.Controls.Add(this.textBox9);
             this.panel12.Controls.Add(this.label4);
-            this.panel12.Location = new System.Drawing.Point(414, 213);
+            this.panel12.Location = new System.Drawing.Point(417, 213);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(359, 57);
-            this.panel12.TabIndex = 16;
+            this.panel12.Size = new System.Drawing.Size(336, 57);
+            this.panel12.TabIndex = 3;
             this.panel12.UseWaitCursor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(171, 20);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(94, 22);
+            this.textBox9.TabIndex = 2;
+            this.textBox9.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -586,7 +599,7 @@
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(366, 319);
-            this.panel13.TabIndex = 12;
+            this.panel13.TabIndex = 0;
             this.panel13.UseWaitCursor = true;
             // 
             // panel14
@@ -599,8 +612,29 @@
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(359, 57);
-            this.panel14.TabIndex = 15;
+            this.panel14.TabIndex = 2;
             this.panel14.UseWaitCursor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(280, 28);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseWaitCursor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(202, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 23);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Sẵn có:";
+            this.label9.UseWaitCursor = true;
             // 
             // textBox6
             // 
@@ -630,7 +664,7 @@
             this.panel15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(359, 57);
-            this.panel15.TabIndex = 14;
+            this.panel15.TabIndex = 5;
             this.panel15.UseWaitCursor = true;
             // 
             // textBox7
@@ -657,11 +691,11 @@
             // 
             this.panel17.Controls.Add(this.dateTimePicker4);
             this.panel17.Controls.Add(this.label7);
-            this.panel17.Location = new System.Drawing.Point(0, 193);
+            this.panel17.Location = new System.Drawing.Point(4, 193);
             this.panel17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(359, 57);
-            this.panel17.TabIndex = 13;
+            this.panel17.Size = new System.Drawing.Size(355, 57);
+            this.panel17.TabIndex = 4;
             this.panel17.UseWaitCursor = true;
             // 
             // dateTimePicker4
@@ -691,7 +725,7 @@
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(359, 57);
-            this.panel18.TabIndex = 12;
+            this.panel18.TabIndex = 1;
             this.panel18.UseWaitCursor = true;
             // 
             // textBox8
@@ -714,35 +748,6 @@
             this.label8.Text = "Tên thiết bị:";
             this.label8.UseWaitCursor = true;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(202, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 23);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Sẵn có:";
-            this.label9.UseWaitCursor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(280, 28);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(171, 20);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(94, 22);
-            this.textBox9.TabIndex = 2;
-            this.textBox9.UseWaitCursor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel20);
@@ -754,6 +759,24 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhập xuất kho";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.dataGridView3);
+            this.panel20.Location = new System.Drawing.Point(9, 64);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(770, 341);
+            this.panel20.TabIndex = 6;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(765, 342);
+            this.dataGridView3.TabIndex = 0;
             // 
             // panel19
             // 
@@ -796,24 +819,6 @@
             this.dateTimePicker5.TabIndex = 1;
             this.dateTimePicker5.UseWaitCursor = true;
             // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.dataGridView3);
-            this.panel20.Location = new System.Drawing.Point(9, 64);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(770, 341);
-            this.panel20.TabIndex = 6;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(765, 342);
-            this.dataGridView3.TabIndex = 0;
-            // 
             // fMedicalEqipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -825,24 +830,24 @@
             this.Text = "Thiết bị y tế";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -861,9 +866,9 @@
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -877,7 +882,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button findbuttuon;
@@ -904,7 +909,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnAddequip;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button9;

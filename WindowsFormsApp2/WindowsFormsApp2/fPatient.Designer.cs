@@ -125,6 +125,7 @@
             this.txtDate.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
             this.txtDate.Location = new System.Drawing.Point(179, 3);
             this.txtDate.Name = "txtDate";
+            this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(681, 32);
             this.txtDate.TabIndex = 1;
             // 
@@ -153,6 +154,7 @@
             this.txtDia.Location = new System.Drawing.Point(179, 3);
             this.txtDia.Multiline = true;
             this.txtDia.Name = "txtDia";
+            this.txtDia.ReadOnly = true;
             this.txtDia.Size = new System.Drawing.Size(678, 27);
             this.txtDia.TabIndex = 1;
             // 
@@ -181,6 +183,7 @@
             this.txtTesRes.Location = new System.Drawing.Point(180, 3);
             this.txtTesRes.Multiline = true;
             this.txtTesRes.Name = "txtTesRes";
+            this.txtTesRes.ReadOnly = true;
             this.txtTesRes.Size = new System.Drawing.Size(678, 76);
             this.txtTesRes.TabIndex = 1;
             // 
@@ -209,6 +212,7 @@
             this.txtMedHis.Location = new System.Drawing.Point(180, 3);
             this.txtMedHis.Multiline = true;
             this.txtMedHis.Name = "txtMedHis";
+            this.txtMedHis.ReadOnly = true;
             this.txtMedHis.Size = new System.Drawing.Size(678, 81);
             this.txtMedHis.TabIndex = 1;
             // 
@@ -236,6 +240,7 @@
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
             this.txtName.Location = new System.Drawing.Point(178, 3);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(681, 32);
             this.txtName.TabIndex = 1;
             // 

@@ -161,6 +161,18 @@
     <Compile Include="fAccManagementforDoctor.Designer.cs">
       <DependentUpon>fAccManagementforDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="fAddEqipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddEqipment.Designer.cs">
+      <DependentUpon>fAddEqipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAddMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAddMed.Designer.cs">
+      <DependentUpon>fAddMed.cs</DependentUpon>
+    </Compile>
     <Compile Include="fDangKi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +250,12 @@
     <Compile Include="Taikhoan.cs" />
     <EmbeddedResource Include="fAccManagementforDoctor.resx">
       <DependentUpon>fAccManagementforDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddEqipment.resx">
+      <DependentUpon>fAddEqipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAddMed.resx">
+      <DependentUpon>fAddMed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fDangKi.resx">
       <DependentUpon>fDangKi.cs</DependentUpon>

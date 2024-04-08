@@ -16,5 +16,23 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+       
+
+        private void btnAddmed_Click(object sender, EventArgs e)
+        {
+            fAddMed f = new fAddMed();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnAddequip_Click(object sender, EventArgs e)
+        {
+            fAddEqipment f = new fAddEqipment();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

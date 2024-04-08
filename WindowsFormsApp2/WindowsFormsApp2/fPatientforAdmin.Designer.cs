@@ -114,7 +114,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 78);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(416, 419);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 5;
             // 
             // label12
             // 
@@ -142,7 +142,7 @@
             this.panel4.Location = new System.Drawing.Point(426, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(440, 69);
-            this.panel4.TabIndex = 6;
+            this.panel4.TabIndex = 7;
             // 
             // textBox1
             // 
@@ -156,7 +156,7 @@
             this.button6.Location = new System.Drawing.Point(345, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(88, 56);
-            this.button6.TabIndex = 4;
+            this.button6.TabIndex = 6;
             this.button6.Text = "Tìm";
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +170,7 @@
             this.panel3.Location = new System.Drawing.Point(422, 78);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(440, 385);
-            this.panel3.TabIndex = 5;
+            this.panel3.TabIndex = 0;
             // 
             // panel6
             // 
@@ -179,7 +179,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 54);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(433, 44);
-            this.panel6.TabIndex = 5;
+            this.panel6.TabIndex = 1;
             // 
             // textBox3
             // 
@@ -318,7 +318,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(413, 69);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 6;
             // 
             // button4
             // 

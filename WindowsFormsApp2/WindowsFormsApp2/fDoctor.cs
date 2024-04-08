@@ -24,7 +24,7 @@ namespace WindowsFormsApp2
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-         
+
         }
 
         private async void fDoctor_Load(object sender, EventArgs e)

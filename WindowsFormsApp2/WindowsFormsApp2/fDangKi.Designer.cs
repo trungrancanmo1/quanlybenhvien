@@ -128,7 +128,7 @@
             this.btnDoctorRegister.Location = new System.Drawing.Point(572, 311);
             this.btnDoctorRegister.Name = "btnDoctorRegister";
             this.btnDoctorRegister.Size = new System.Drawing.Size(121, 68);
-            this.btnDoctorRegister.TabIndex = 15;
+            this.btnDoctorRegister.TabIndex = 5;
             this.btnDoctorRegister.Text = "Đăng kí";
             this.btnDoctorRegister.UseVisualStyleBackColor = true;
             this.btnDoctorRegister.Click += new System.EventHandler(this.btnDoctorRegister_Click);
@@ -140,7 +140,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 234);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(747, 71);
-            this.panel3.TabIndex = 14;
+            this.panel3.TabIndex = 4;
             // 
             // txtSpe
             // 
@@ -166,7 +166,7 @@
             this.panel4.Location = new System.Drawing.Point(3, 157);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(747, 71);
-            this.panel4.TabIndex = 14;
+            this.panel4.TabIndex = 3;
             // 
             // txtPos
             // 
@@ -192,7 +192,7 @@
             this.panel10.Location = new System.Drawing.Point(3, 80);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(747, 71);
-            this.panel10.TabIndex = 14;
+            this.panel10.TabIndex = 2;
             // 
             // txtDocName
             // 
@@ -219,7 +219,7 @@
             this.panel11.Location = new System.Drawing.Point(3, 3);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(747, 71);
-            this.panel11.TabIndex = 13;
+            this.panel11.TabIndex = 1;
             // 
             // label10
             // 
@@ -279,7 +279,7 @@
             this.panel12.Location = new System.Drawing.Point(3, 249);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(747, 56);
-            this.panel12.TabIndex = 14;
+            this.panel12.TabIndex = 5;
             // 
             // txtDia
             // 
@@ -315,7 +315,7 @@
             this.panel9.Location = new System.Drawing.Point(3, 191);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(747, 52);
-            this.panel9.TabIndex = 14;
+            this.panel9.TabIndex = 4;
             // 
             // txtTesRes
             // 
@@ -341,7 +341,7 @@
             this.panel8.Location = new System.Drawing.Point(3, 132);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(747, 53);
-            this.panel8.TabIndex = 14;
+            this.panel8.TabIndex = 3;
             // 
             // txtMedHis
             // 
@@ -367,7 +367,7 @@
             this.panel7.Location = new System.Drawing.Point(3, 80);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(747, 46);
-            this.panel7.TabIndex = 14;
+            this.panel7.TabIndex = 2;
             // 
             // txtPatName
             // 
@@ -394,7 +394,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(747, 71);
-            this.panel6.TabIndex = 13;
+            this.panel6.TabIndex = 1;
             // 
             // label11
             // 
