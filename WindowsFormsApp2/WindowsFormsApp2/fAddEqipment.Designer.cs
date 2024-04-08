@@ -283,7 +283,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "fAddEqipment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fAddEqipment";
+            this.Text = "Trang thiết bị";
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
