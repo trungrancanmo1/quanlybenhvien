@@ -151,9 +151,10 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(162, 17);
+            this.textBox5.Location = new System.Drawing.Point(175, 17);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(220, 34);
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(207, 34);
             this.textBox5.TabIndex = 1;
             // 
             // label4
@@ -178,9 +179,9 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(161, 17);
+            this.textBox4.Location = new System.Drawing.Point(175, 17);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 34);
+            this.textBox4.Size = new System.Drawing.Size(207, 34);
             this.textBox4.TabIndex = 1;
             // 
             // label3
@@ -205,9 +206,10 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(161, 17);
+            this.textBox3.Location = new System.Drawing.Point(175, 17);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 34);
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(207, 34);
             this.textBox3.TabIndex = 1;
             // 
             // label2
@@ -232,9 +234,9 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(161, 17);
+            this.textBox2.Location = new System.Drawing.Point(174, 17);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 34);
+            this.textBox2.Size = new System.Drawing.Size(208, 34);
             this.textBox2.TabIndex = 1;
             // 
             // label1

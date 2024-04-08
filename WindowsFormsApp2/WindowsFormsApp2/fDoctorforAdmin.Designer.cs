@@ -43,6 +43,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lichtrinh = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,15 +80,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.lichtrinh = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -101,7 +102,6 @@
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -129,6 +129,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "đ/MM/yyyy hh:mm tt";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(3, 10);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -138,6 +140,8 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(565, 10);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -264,6 +268,40 @@
             this.panel3.Size = new System.Drawing.Size(366, 261);
             this.panel3.TabIndex = 0;
             this.panel3.UseWaitCursor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.comboBox1);
+            this.panel10.Controls.Add(this.lichtrinh);
+            this.panel10.Location = new System.Drawing.Point(3, 199);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(359, 57);
+            this.panel10.TabIndex = 3;
+            this.panel10.UseWaitCursor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Rảnh",
+            "Bận"});
+            this.comboBox1.Location = new System.Drawing.Point(138, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(133, 24);
+            this.comboBox1.TabIndex = 2;
+            this.comboBox1.UseWaitCursor = true;
+            // 
+            // lichtrinh
+            // 
+            this.lichtrinh.AutoSize = true;
+            this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lichtrinh.Location = new System.Drawing.Point(3, 21);
+            this.lichtrinh.Name = "lichtrinh";
+            this.lichtrinh.Size = new System.Drawing.Size(111, 23);
+            this.lichtrinh.TabIndex = 0;
+            this.lichtrinh.Text = "Tình trạng: ";
+            this.lichtrinh.UseWaitCursor = true;
             // 
             // panel7
             // 
@@ -645,39 +683,6 @@
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.UseWaitCursor = true;
             // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.comboBox1);
-            this.panel10.Controls.Add(this.lichtrinh);
-            this.panel10.Location = new System.Drawing.Point(3, 199);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(359, 57);
-            this.panel10.TabIndex = 3;
-            this.panel10.UseWaitCursor = true;
-            // 
-            // lichtrinh
-            // 
-            this.lichtrinh.AutoSize = true;
-            this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lichtrinh.Location = new System.Drawing.Point(3, 21);
-            this.lichtrinh.Name = "lichtrinh";
-            this.lichtrinh.Size = new System.Drawing.Size(111, 23);
-            this.lichtrinh.TabIndex = 0;
-            this.lichtrinh.Text = "Tình trạng: ";
-            this.lichtrinh.UseWaitCursor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Rảnh",
-            "Bận"});
-            this.comboBox1.Location = new System.Drawing.Point(138, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 24);
-            this.comboBox1.TabIndex = 2;
-            // 
             // fDoctorforAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -694,6 +699,8 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -718,8 +725,6 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }

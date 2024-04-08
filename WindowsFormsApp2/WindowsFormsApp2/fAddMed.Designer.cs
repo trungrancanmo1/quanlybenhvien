@@ -32,6 +32,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.position = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,13 +41,11 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.degree = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,6 +67,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(152, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(193, 22);
@@ -99,6 +101,27 @@
             this.panel3.Size = new System.Drawing.Size(756, 423);
             this.panel3.TabIndex = 12;
             this.panel3.UseWaitCursor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(495, 338);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(125, 63);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseWaitCursor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(164, 338);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(125, 63);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -174,14 +197,6 @@
             this.panel8.TabIndex = 4;
             this.panel8.UseWaitCursor = true;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(152, 18);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(193, 22);
-            this.dateTimePicker2.TabIndex = 4;
-            this.dateTimePicker2.UseWaitCursor = true;
-            // 
             // degree
             // 
             this.degree.AutoSize = true;
@@ -224,24 +239,15 @@
             this.name.Text = "Tên thuốc:";
             this.name.UseWaitCursor = true;
             // 
-            // btnAdd
+            // dateTimePicker2
             // 
-            this.btnAdd.Location = new System.Drawing.Point(164, 338);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 63);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(495, 338);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(125, 63);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(152, 19);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(193, 22);
+            this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.UseWaitCursor = true;
             // 
             // fAddMed
             // 
@@ -282,12 +288,12 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label specialize;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label degree;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

@@ -141,7 +141,7 @@
             this.btnExit.Location = new System.Drawing.Point(589, 377);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(154, 61);
-            this.btnExit.TabIndex = 3;
+            this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.exit_Click);
@@ -151,7 +151,7 @@
             this.btnAccManegement.Location = new System.Drawing.Point(62, 377);
             this.btnAccManegement.Name = "btnAccManegement";
             this.btnAccManegement.Size = new System.Drawing.Size(154, 61);
-            this.btnAccManegement.TabIndex = 4;
+            this.btnAccManegement.TabIndex = 3;
             this.btnAccManegement.Text = "Quản lí tài khoản";
             this.btnAccManegement.UseVisualStyleBackColor = true;
             this.btnAccManegement.Click += new System.EventHandler(this.quanlitaikhoan_Click);
@@ -161,7 +161,7 @@
             this.btnRegister.Location = new System.Drawing.Point(334, 377);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(154, 61);
-            this.btnRegister.TabIndex = 5;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Mở tài khoản";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
