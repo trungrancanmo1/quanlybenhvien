@@ -35,6 +35,7 @@
             this.btnDoctorRegister = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbSpe = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtPos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPatAcc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbSpe = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -151,6 +151,22 @@
             this.label1.Size = new System.Drawing.Size(147, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chuyên môn:";
+            // 
+            // cbSpe
+            // 
+            this.cbSpe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSpe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbSpe.FormattingEnabled = true;
+            this.cbSpe.Items.AddRange(new object[] {
+            "Răng-hàm-mặt",
+            "Hô hấp",
+            "Xương khớp",
+            "Mắt",
+            "Dị ứng"});
+            this.cbSpe.Location = new System.Drawing.Point(276, 22);
+            this.cbSpe.Name = "cbSpe";
+            this.cbSpe.Size = new System.Drawing.Size(468, 24);
+            this.cbSpe.TabIndex = 2;
             // 
             // panel4
             // 
@@ -415,22 +431,6 @@
             this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tài khoản:";
-            // 
-            // cbSpe
-            // 
-            this.cbSpe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbSpe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbSpe.FormattingEnabled = true;
-            this.cbSpe.Items.AddRange(new object[] {
-            "Răng-hàm-mặt",
-            "Hô hấp",
-            "Xương khớp",
-            "Mắt",
-            "Dị ứng"});
-            this.cbSpe.Location = new System.Drawing.Point(276, 22);
-            this.cbSpe.Name = "cbSpe";
-            this.cbSpe.Size = new System.Drawing.Size(468, 24);
-            this.cbSpe.TabIndex = 2;
             // 
             // fDangKi
             // 

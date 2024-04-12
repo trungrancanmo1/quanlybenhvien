@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
         [FirestoreProperty]
         public virtual string diagnosis { get; set; }
         [FirestoreProperty]
-        public virtual Timestamp regDate { get; set; }
+        public virtual Google.Cloud.Firestore.Timestamp regDate { get; set; }
     }
 
     [FirestoreData]
@@ -60,7 +60,7 @@ namespace WindowsFormsApp2
         [FirestoreProperty]
         public override string diagnosis { get; set; }
         [FirestoreProperty]
-        public Timestamp regDate { get; set; }
+        public Google.Cloud.Firestore.Timestamp regDate { get; set; }
     }
 
 }
