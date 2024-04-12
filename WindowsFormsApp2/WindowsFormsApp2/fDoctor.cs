@@ -38,7 +38,7 @@ namespace WindowsFormsApp2
             DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
             Taikhoan doc = curSnap.ConvertTo<Doctor>();
 
-            DocumentReference accRes = database.Collection("Account").Document(doc.type).Collection(doc.userName).Document(doc.userName);
+            DocumentReference accRes = database.Collection("Doctor").Document(doc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             doc = accSnap.ConvertTo<Doctor>();
 

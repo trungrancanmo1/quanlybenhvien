@@ -34,7 +34,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDoctorRegister = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtSpe = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtPos = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPatAcc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbSpe = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -135,19 +135,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtSpe);
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.cbSpe);
             this.panel3.Location = new System.Drawing.Point(3, 234);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(747, 71);
             this.panel3.TabIndex = 4;
-            // 
-            // txtSpe
-            // 
-            this.txtSpe.Location = new System.Drawing.Point(276, 26);
-            this.txtSpe.Name = "txtSpe";
-            this.txtSpe.Size = new System.Drawing.Size(468, 22);
-            this.txtSpe.TabIndex = 1;
             // 
             // label1
             // 
@@ -423,6 +416,22 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Tài khoản:";
             // 
+            // cbSpe
+            // 
+            this.cbSpe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSpe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbSpe.FormattingEnabled = true;
+            this.cbSpe.Items.AddRange(new object[] {
+            "Răng-hàm-mặt",
+            "Hô hấp",
+            "Xương khớp",
+            "Mắt",
+            "Dị ứng"});
+            this.cbSpe.Location = new System.Drawing.Point(276, 22);
+            this.cbSpe.Name = "cbSpe";
+            this.cbSpe.Size = new System.Drawing.Size(468, 24);
+            this.cbSpe.TabIndex = 2;
+            // 
             // fDangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,7 +478,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDoctorRegister;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtSpe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtPos;
@@ -500,5 +508,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPatAcc;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbSpe;
     }
 }

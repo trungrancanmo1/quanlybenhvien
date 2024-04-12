@@ -46,46 +46,65 @@ namespace WindowsFormsApp2
 
             for (int j = 0; j < 3; j++)
             {
-                Counter cnt = null;
-                string path;
                 if (j == 0)
                 {
-                    DocumentReference res = database.Collection("Counter").Document("Admin");
-                    DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
-                    cnt = cntSnap.ConvertTo<Counter>();
-                    path = "Admin";
+                    Query list = database.Collection("Admin");
+                    QuerySnapshot listSnap = await list.GetSnapshotAsync();
+                    foreach (DocumentSnapshot document in listSnap.Documents)
+                    {
+                        string reference = document.Id;                        
+                        DocumentReference res = database.Collection("Admin").Document(reference).Collection("Information").Document("Information");
+                        DocumentSnapshot resSnap = await res.GetSnapshotAsync();
+                        Taikhoan data = resSnap.ConvertTo<Taikhoan>();
+                        DataRow row = dt.NewRow();
+                        row["displayName"] += data.displayName;
+                        row["userName"] += data.userName;
+                        row["password"] += data.password;
+                        row["type"] += data.type;
+                        dt.Rows.Add(row);
+                    }
                 }
                 else if(j == 1)
                 {
-                    DocumentReference res = database.Collection("Counter").Document("Doctor");
-                    DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
-                    cnt = cntSnap.ConvertTo<Counter>();
-                    path = "Doctor";
+                    /*DocumentReference res1 = database.Collection("Doctor").Document("0123456789").Collection("Information").Document("Information");
+                    DocumentSnapshot listSnap1 = await res1.GetSnapshotAsync();
+                    Taikhoan f = listSnap1.ConvertTo<Taikhoan>();
+                    MessageBox.Show(f.userName);*/
+                    Query list = database.Collection("Doctor");
+                    QuerySnapshot listSnap = await list.GetSnapshotAsync();
+                    foreach (DocumentSnapshot document in listSnap.Documents)
+                    {
+                        string reference = document.Id;
+                        DocumentReference res = database.Collection("Doctor").Document(reference).Collection("Information").Document("Information");
+                        DocumentSnapshot resSnap = await res.GetSnapshotAsync();
+                        Taikhoan data = resSnap.ConvertTo<Taikhoan>();
+                        DataRow row = dt.NewRow();
+                        row["displayName"] += data.displayName;
+                        row["userName"] += data.userName;
+                        row["password"] += data.password;
+                        row["type"] += data.type;
+                        dt.Rows.Add(row);
+                    }
                 }
                 else
                 {
-                    DocumentReference res = database.Collection("Counter").Document("Patient");
-                    DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
-                    cnt = cntSnap.ConvertTo<Counter>();
-                    path = "Patient";
+                    Query list = database.Collection("Patient");
+                    QuerySnapshot listSnap = await list.GetSnapshotAsync();
+                    foreach (DocumentSnapshot document in listSnap.Documents)
+                    {
+                        string reference = document.Id;
+                        DocumentReference res = database.Collection("Patient").Document(reference).Collection("Information").Document("Information");
+                        DocumentSnapshot resSnap = await res.GetSnapshotAsync();
+                        Taikhoan data = resSnap.ConvertTo<Taikhoan>();
+                        DataRow row = dt.NewRow();
+                        row["displayName"] += data.displayName;
+                        row["userName"] += data.userName;
+                        row["password"] += data.password;
+                        row["type"] += data.type;
+                        dt.Rows.Add(row);
+                    }
                 }
-                for (int i = 0; i < cnt.cnt; i++)
-                {
-                    DocumentReference adRes = database.Collection("AccountList").Document(path).Collection(i.ToString()).Document(i.ToString());
-                    DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
-                    AccountList list = adSnap.ConvertTo<AccountList>();
-
-                    DocumentReference adGet = database.Collection("Account").Document(path).Collection(list.userName).Document(list.userName);
-                    DocumentSnapshot adminSnap = await adGet.GetSnapshotAsync();
-                    Taikhoan data = adminSnap.ConvertTo<Taikhoan>();
-
-                    DataRow row = dt.NewRow();
-                    row["displayName"] += data.displayName;
-                    row["userName"] += data.userName;
-                    row["password"] += data.password;
-                    row["type"] += data.type;
-                    dt.Rows.Add(row); 
-                }
+                
             }
             dgvAccList.DataSource = dt;
         }

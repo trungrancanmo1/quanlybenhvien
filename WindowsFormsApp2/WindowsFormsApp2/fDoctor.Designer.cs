@@ -32,8 +32,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.lichtrinh = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtSpe = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
@@ -50,12 +48,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnset = new System.Windows.Forms.Button();
             this.tabinformation.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -105,39 +100,15 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel10);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Location = new System.Drawing.Point(6, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(798, 269);
+            this.panel3.Size = new System.Drawing.Size(798, 266);
             this.panel3.TabIndex = 0;
             this.panel3.UseWaitCursor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.btnset);
-            this.panel10.Controls.Add(this.comboBox1);
-            this.panel10.Controls.Add(this.lichtrinh);
-            this.panel10.Location = new System.Drawing.Point(3, 199);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(792, 57);
-            this.panel10.TabIndex = 1;
-            this.panel10.UseWaitCursor = true;
-            // 
-            // lichtrinh
-            // 
-            this.lichtrinh.AutoSize = true;
-            this.lichtrinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lichtrinh.Location = new System.Drawing.Point(3, 21);
-            this.lichtrinh.Name = "lichtrinh";
-            this.lichtrinh.Size = new System.Drawing.Size(106, 23);
-            this.lichtrinh.TabIndex = 0;
-            this.lichtrinh.Text = "Tình trạng:";
-            this.lichtrinh.UseWaitCursor = true;
             // 
             // panel9
             // 
@@ -312,26 +283,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UseWaitCursor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Rảnh",
-            "Bận"});
-            this.comboBox1.Location = new System.Drawing.Point(138, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // btnset
-            // 
-            this.btnset.Location = new System.Drawing.Point(312, 17);
-            this.btnset.Name = "btnset";
-            this.btnset.Size = new System.Drawing.Size(142, 35);
-            this.btnset.TabIndex = 2;
-            this.btnset.Text = "Thiết lập";
-            this.btnset.UseVisualStyleBackColor = true;
-            // 
             // fDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,8 +296,6 @@
             this.tabinformation.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -366,8 +315,6 @@
         private System.Windows.Forms.TabControl tabinformation;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label lichtrinh;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label specialize;
         private System.Windows.Forms.Panel panel7;
@@ -385,7 +332,5 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSpe;
         private System.Windows.Forms.Button btnChangePass;
-        private System.Windows.Forms.Button btnset;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

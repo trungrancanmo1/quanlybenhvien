@@ -38,6 +38,7 @@ namespace WindowsFormsApp2
 
         private async void btnDoctorRegister_Click(object sender, EventArgs e)
         {
+            
             DocumentReference totalRes = database.Collection("Counter").Document("Total");
             DocumentSnapshot totalSnap = await totalRes.GetSnapshotAsync();
             Counter totalCnt = totalSnap.ConvertTo<Counter>();
@@ -52,10 +53,10 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference docRes = database.Collection("Account").Document("Doctor").Collection(txtDocAcc.Text).Document(txtDocAcc.Text);
+            DocumentReference docRes = database.Collection("Doctor").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Account").Document("Patient").Collection(txtDocAcc.Text).Document(txtDocAcc.Text);
+            DocumentReference patRes = database.Collection("Patient").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (docSnap.Exists || patSnap.Exists)
@@ -71,7 +72,7 @@ namespace WindowsFormsApp2
                 displayName = txtDocName.Text,
                 type = "Doctor",
                 position = txtPos.Text,
-                specialization = txtSpe.Text,
+                specialization = cbSpe.SelectedItem.ToString(),
             };
 
             var count = new Counter
@@ -84,13 +85,9 @@ namespace WindowsFormsApp2
                 cnt = cnt.cnt + 1,
             };
 
-            var list = new AccountList
-            {
-                userName = data.userName,
-                type = data.type,
-            };            
+        
 
-            DocumentReference docSet = database.Collection("Account").Document("Doctor").Collection(data.userName).Document(data.userName);
+            DocumentReference docSet = database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
             docSet.SetAsync(data);
 
             DocumentReference totalCntSet = database.Collection("Counter").Document("Total");
@@ -99,8 +96,6 @@ namespace WindowsFormsApp2
             DocumentReference docCntSet = database.Collection("Counter").Document("Doctor");
             docCntSet.SetAsync(doc);
            
-            DocumentReference listSet = database.Collection("AccountList").Document("Doctor").Collection((cnt.cnt).ToString()).Document((cnt.cnt).ToString());
-            listSet.SetAsync(list);
 
             MessageBox.Show("Đăng kí thành công");
         }
@@ -121,10 +116,10 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference docRes = database.Collection("Account").Document("Doctor").Collection(txtPatAcc.Text).Document(txtPatAcc.Text);
+            DocumentReference docRes = database.Collection("Doctor").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Account").Document("Patient").Collection(txtPatAcc.Text).Document(txtPatAcc.Text);
+            DocumentReference patRes = database.Collection("Patient").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (docSnap.Exists || patSnap.Exists)
@@ -142,6 +137,7 @@ namespace WindowsFormsApp2
                 medicalHistory = txtMedHis.Text,
                 testingResult = txtTesRes.Text,
                 diagnosis = txtDia.Text,
+                regDate = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow),
             };
 
             var count = new Counter
@@ -154,21 +150,8 @@ namespace WindowsFormsApp2
                 cnt = cnt.cnt + 1,
             };
 
-            var list = new AccountList
-            {
-                userName = data.userName,
-                type = data.type,
-            };
 
-            var date = new ThoiGian
-            {
-                timestamp = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow),
-            };
-
-            DocumentReference patTimeSet = database.Collection("Account").Document("Patient").Collection(data.userName).Document("DateTime");
-            patTimeSet.SetAsync(date);
-
-            DocumentReference patSet = database.Collection("Account").Document("Patient").Collection(data.userName).Document(data.userName);
+            DocumentReference patSet = database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
             patSet.SetAsync(data);
 
             DocumentReference totalCntSet = database.Collection("Counter").Document("Total");
@@ -177,10 +160,12 @@ namespace WindowsFormsApp2
             DocumentReference patCntSet = database.Collection("Counter").Document("Patient");
             patCntSet.SetAsync(doc);
 
-            DocumentReference listSet = database.Collection("AccountList").Document("Patient").Collection((cnt.cnt).ToString()).Document((cnt.cnt).ToString());
-            listSet.SetAsync(list);
-
             MessageBox.Show("Đăng kí thành công");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(cbSpe.SelectedItem.ToString());
         }
     }
 }

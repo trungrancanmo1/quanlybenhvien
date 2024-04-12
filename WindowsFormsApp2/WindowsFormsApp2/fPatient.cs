@@ -36,14 +36,11 @@ namespace WindowsFormsApp2
             DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
             Taikhoan pat = curSnap.ConvertTo<Patient>();
 
-            DocumentReference accRes = database.Collection("Account").Document(pat.type).Collection(pat.userName).Document(pat.userName);
+            DocumentReference accRes = database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             pat = accSnap.ConvertTo<Patient>();
 
-            DocumentReference patTimeGet = database.Collection("Account").Document("Patient").Collection(pat.userName).Document("DateTime");
-            DocumentSnapshot patTimeSnap = await patTimeGet.GetSnapshotAsync();
-            ThoiGian dateTime = patTimeSnap.ConvertTo<ThoiGian>();
-            System.DateTime date = dateTime.timestamp.ToDateTime();
+            System.DateTime date = pat.regDate.ToDateTime();
             date = date.AddHours(7);
 
             txtName.Text = pat.displayName;

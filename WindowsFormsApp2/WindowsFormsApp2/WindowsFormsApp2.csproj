@@ -155,7 +155,6 @@
   <ItemGroup>
     <Compile Include="AccountList.cs" />
     <Compile Include="Counter.cs" />
-    <Compile Include="ThoiGian.cs" />
     <Compile Include="fAccManagementforDoctor.cs">
       <SubType>Form</SubType>
     </Compile>

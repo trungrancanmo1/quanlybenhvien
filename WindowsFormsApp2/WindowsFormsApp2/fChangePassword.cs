@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
             Taikhoan acc = curSnap.ConvertTo<Taikhoan>();
 
-            DocumentReference accRes = database.Collection("Account").Document(acc.type).Collection(acc.userName).Document(acc.userName);
+            DocumentReference accRes = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
 
             if (txtOldPass.Text != acc.password)
@@ -51,7 +51,7 @@ namespace WindowsFormsApp2
                     displayName = acc.displayName,
                     type = acc.type,
                 };
-                DocumentReference passSet = database.Collection("Account").Document("Admin").Collection(acc.userName).Document(acc.userName);
+                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
             else if (acc.type == "Doctor")
@@ -66,7 +66,7 @@ namespace WindowsFormsApp2
                     position = acc.position,
                     specialization = acc.specialization,
                 };
-                DocumentReference passSet = database.Collection("Account").Document("Doctor").Collection(acc.userName).Document(acc.userName);
+                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
             else
@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
                     testingResult = acc.testingResult,
                     diagnosis = acc.diagnosis,
                 };
-                DocumentReference passSet = database.Collection("Account").Document("Patient").Collection(acc.userName).Document(acc.userName);
+                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
 

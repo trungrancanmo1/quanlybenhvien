@@ -42,13 +42,13 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Tài khoản không tồn tại");
                 return;
             }
-            DocumentReference adRes = database.Collection("Account").Document("Admin").Collection(userName).Document(userName);
+            DocumentReference adRes = database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
 
-            DocumentReference docRes = database.Collection("Account").Document("Doctor").Collection(userName).Document(userName);
+            DocumentReference docRes = database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Account").Document("Patient").Collection(userName).Document(userName);
+            DocumentReference patRes = database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if(!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)

@@ -33,6 +33,8 @@ namespace WindowsFormsApp2
         public virtual string testingResult { get; set; }
         [FirestoreProperty]
         public virtual string diagnosis { get; set; }
+        [FirestoreProperty]
+        public virtual Timestamp regDate { get; set; }
     }
 
     [FirestoreData]
@@ -57,6 +59,8 @@ namespace WindowsFormsApp2
         public override string testingResult { get; set; }
         [FirestoreProperty]
         public override string diagnosis { get; set; }
+        [FirestoreProperty]
+        public Timestamp regDate { get; set; }
     }
 
 }
