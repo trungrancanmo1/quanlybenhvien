@@ -49,10 +49,7 @@ namespace WindowsFormsApp2
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
             database = FirestoreDb.Create("test-964d0");
 
-            DocumentReference curRes = database.Collection("CurrentAccount").Document("Acc");
-            DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
-
-            Taikhoan admin = curSnap.ConvertTo<Admin>();
+            Taikhoan admin = CurrentAccount.Instance.GetData();
 
             textName.Text = admin.displayName;
             textAcc.Text = admin.userName;

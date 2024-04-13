@@ -153,8 +153,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountList.cs" />
-    <Compile Include="Counter.cs" />
+    <Compile Include="CurrentAccount.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="fAccManagementforDoctor.cs">
       <SubType>Form</SubType>

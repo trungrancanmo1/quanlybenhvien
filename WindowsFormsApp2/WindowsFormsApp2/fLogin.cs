@@ -73,7 +73,6 @@ namespace WindowsFormsApp2
 
             if (acc.password == textPass.Text)
             {
-                DocumentReference adSet = database.Collection("CurrentAccount").Document("Acc");
                 var cur = new Taikhoan
                 {
                     userName = acc.userName,
@@ -81,7 +80,8 @@ namespace WindowsFormsApp2
                     displayName = acc.displayName,
                     type = acc.type,
                 };
-                adSet.SetAsync(cur);
+                CurrentAccount.Instance.SetData(cur); 
+
                 if (acc.type == "Admin")
                 {
                     fInterface f = new fInterface();

@@ -29,9 +29,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Mật khẩu không khớp");
                 return;
             }
-            DocumentReference curRes = database.Collection("CurrentAccount").Document("Acc");
-            DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
-            Taikhoan acc = curSnap.ConvertTo<Taikhoan>();
+            Taikhoan acc = CurrentAccount.Instance.GetData();
 
             DocumentReference accRes = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
@@ -65,6 +63,7 @@ namespace WindowsFormsApp2
                     type = acc.type,
                     position = acc.position,
                     specialization = acc.specialization,
+                    credential = acc.credential,
                 };
                 DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
@@ -81,6 +80,7 @@ namespace WindowsFormsApp2
                     medicalHistory = acc.medicalHistory,
                     testingResult = acc.testingResult,
                     diagnosis = acc.diagnosis,
+                    progress = acc.progress,
                 };
                 DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);

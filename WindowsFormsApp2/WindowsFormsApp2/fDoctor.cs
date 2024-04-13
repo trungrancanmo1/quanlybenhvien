@@ -34,9 +34,7 @@ namespace WindowsFormsApp2
 
             database = FirestoreDb.Create("test-964d0");
 
-            DocumentReference curRes = database.Collection("CurrentAccount").Document("Acc");
-            DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
-            Taikhoan doc = curSnap.ConvertTo<Doctor>();
+            Taikhoan doc = CurrentAccount.Instance.GetData();
 
             DocumentReference accRes = database.Collection("Doctor").Document(doc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
