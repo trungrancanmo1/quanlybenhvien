@@ -28,6 +28,8 @@ namespace WindowsFormsApp2
         [FirestoreProperty]
         public virtual string specialization { get; set; }
         [FirestoreProperty]
+        public virtual string credential  { get; set; }
+        [FirestoreProperty]
         public virtual string medicalHistory { get; set; }
         [FirestoreProperty]
         public virtual string testingResult { get; set; }
@@ -35,6 +37,8 @@ namespace WindowsFormsApp2
         public virtual string diagnosis { get; set; }
         [FirestoreProperty]
         public virtual Google.Cloud.Firestore.Timestamp regDate { get; set; }
+        [FirestoreProperty]
+        public virtual string progress { get; set; }
     }
 
     [FirestoreData]
@@ -48,6 +52,8 @@ namespace WindowsFormsApp2
         public override string position { get; set; }
         [FirestoreProperty]
         public override string specialization { get; set; }
+        [FirestoreProperty]
+        public override string credential { get; set; }
     }
 
     [FirestoreData]
@@ -61,6 +67,8 @@ namespace WindowsFormsApp2
         public override string diagnosis { get; set; }
         [FirestoreProperty]
         public Google.Cloud.Firestore.Timestamp regDate { get; set; }
+        [FirestoreProperty]
+        public override string progress { get; set; }
     }
 
 }

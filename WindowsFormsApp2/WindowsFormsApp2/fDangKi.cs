@@ -65,6 +65,11 @@ namespace WindowsFormsApp2
                 return;
             }
 
+            var rong = new Empty
+            {
+                rong = "null",
+            };
+
             var data = new Doctor
             {
                 userName = txtDocAcc.Text,
@@ -73,6 +78,7 @@ namespace WindowsFormsApp2
                 type = "Doctor",
                 position = txtPos.Text,
                 specialization = cbSpe.SelectedItem.ToString(),
+                credential = txtCre.Text,
             };
 
             var count = new Counter
@@ -85,7 +91,8 @@ namespace WindowsFormsApp2
                 cnt = cnt.cnt + 1,
             };
 
-        
+            DocumentReference emptySet = database.Collection("Doctor").Document(data.userName);
+            emptySet.SetAsync(rong);
 
             DocumentReference docSet = database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
             docSet.SetAsync(data);
@@ -128,6 +135,11 @@ namespace WindowsFormsApp2
                 return;
             }
 
+            var rong = new Empty
+            {
+                rong = "null",
+            };
+
             var data = new Patient
             {
                 userName = txtPatAcc.Text,
@@ -138,6 +150,7 @@ namespace WindowsFormsApp2
                 testingResult = txtTesRes.Text,
                 diagnosis = txtDia.Text,
                 regDate = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow),
+                progress = "chưa có tiến triển",
             };
 
             var count = new Counter
@@ -150,6 +163,8 @@ namespace WindowsFormsApp2
                 cnt = cnt.cnt + 1,
             };
 
+            DocumentReference emptySet = database.Collection("Patient").Document(data.userName);
+            emptySet.SetAsync(rong);
 
             DocumentReference patSet = database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
             patSet.SetAsync(data);
@@ -166,6 +181,14 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show(cbSpe.SelectedItem.ToString());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Google.Cloud.Firestore.Timestamp regDate = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow);
+            System.DateTime date = regDate.ToDateTime();
+            MessageBox.Show(date.ToString());
+            date = date.AddHours(7);
         }
     }
 }

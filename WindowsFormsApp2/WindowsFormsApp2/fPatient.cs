@@ -48,6 +48,7 @@ namespace WindowsFormsApp2
             txtTesRes.Text = pat.testingResult;
             txtDia.Text = pat.diagnosis;
             dtpRegDate.Value = date;
+            txtPro.Text = pat.progress;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)

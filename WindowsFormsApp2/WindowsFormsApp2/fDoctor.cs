@@ -45,6 +45,7 @@ namespace WindowsFormsApp2
             txtName.Text = doc.displayName;
             txtPos.Text = doc.position;
             txtSpe.Text = doc.specialization;
+            txtCre.Text = doc.credential;
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)

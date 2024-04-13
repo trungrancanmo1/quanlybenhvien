@@ -54,6 +54,9 @@
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPro = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -66,6 +69,7 @@
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,6 +94,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.btnChangePass);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel9);
@@ -144,7 +149,7 @@
             // 
             this.panel9.Controls.Add(this.txtDia);
             this.panel9.Controls.Add(this.label5);
-            this.panel9.Location = new System.Drawing.Point(0, 292);
+            this.panel9.Location = new System.Drawing.Point(0, 233);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(860, 45);
             this.panel9.TabIndex = 4;
@@ -163,7 +168,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(3, 3);
+            this.label5.Location = new System.Drawing.Point(9, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 25);
             this.label5.TabIndex = 0;
@@ -173,9 +178,9 @@
             // 
             this.panel8.Controls.Add(this.txtTesRes);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Location = new System.Drawing.Point(2, 204);
+            this.panel8.Location = new System.Drawing.Point(2, 164);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(861, 82);
+            this.panel8.Size = new System.Drawing.Size(861, 63);
             this.panel8.TabIndex = 3;
             // 
             // txtTesRes
@@ -185,14 +190,14 @@
             this.txtTesRes.Multiline = true;
             this.txtTesRes.Name = "txtTesRes";
             this.txtTesRes.ReadOnly = true;
-            this.txtTesRes.Size = new System.Drawing.Size(678, 76);
+            this.txtTesRes.Size = new System.Drawing.Size(678, 53);
             this.txtTesRes.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(1, 6);
+            this.label4.Location = new System.Drawing.Point(7, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 50);
             this.label4.TabIndex = 0;
@@ -204,7 +209,7 @@
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(2, 104);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(861, 94);
+            this.panel7.Size = new System.Drawing.Size(861, 54);
             this.panel7.TabIndex = 2;
             // 
             // txtMedHis
@@ -214,7 +219,7 @@
             this.txtMedHis.Multiline = true;
             this.txtMedHis.Name = "txtMedHis";
             this.txtMedHis.ReadOnly = true;
-            this.txtMedHis.Size = new System.Drawing.Size(678, 81);
+            this.txtMedHis.Size = new System.Drawing.Size(678, 45);
             this.txtMedHis.TabIndex = 1;
             // 
             // label3
@@ -322,6 +327,35 @@
             this.dgv.Size = new System.Drawing.Size(759, 389);
             this.dgv.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtPro);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(3, 284);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(860, 45);
+            this.panel1.TabIndex = 5;
+            // 
+            // txtPro
+            // 
+            this.txtPro.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtPro.Location = new System.Drawing.Point(179, 3);
+            this.txtPro.Multiline = true;
+            this.txtPro.Name = "txtPro";
+            this.txtPro.ReadOnly = true;
+            this.txtPro.Size = new System.Drawing.Size(678, 27);
+            this.txtPro.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tiến triển:";
+            // 
             // fPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,6 +383,8 @@
             this.panel19.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -381,5 +417,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.DateTimePicker dtpRegDate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtPro;
+        private System.Windows.Forms.Label label6;
     }
 }

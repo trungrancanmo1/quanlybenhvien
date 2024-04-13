@@ -48,6 +48,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtCre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabinformation.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -58,6 +61,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabinformation
@@ -100,6 +104,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
@@ -283,6 +288,38 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UseWaitCursor = true;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtCre);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(3, 199);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(792, 57);
+            this.panel4.TabIndex = 3;
+            this.panel4.UseWaitCursor = true;
+            // 
+            // txtCre
+            // 
+            this.txtCre.Location = new System.Drawing.Point(138, 18);
+            this.txtCre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCre.Name = "txtCre";
+            this.txtCre.ReadOnly = true;
+            this.txtCre.Size = new System.Drawing.Size(649, 22);
+            this.txtCre.TabIndex = 2;
+            this.txtCre.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bằng cấp:";
+            this.label1.UseWaitCursor = true;
+            // 
             // fDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,6 +343,8 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,5 +371,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSpe;
         private System.Windows.Forms.Button btnChangePass;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtCre;
+        private System.Windows.Forms.Label label1;
     }
 }
