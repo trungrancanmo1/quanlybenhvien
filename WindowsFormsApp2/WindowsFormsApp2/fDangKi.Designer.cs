@@ -32,6 +32,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.txtCre = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnDoctorRegister = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +51,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txtDia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,14 +69,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPatAcc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.txtCre = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -84,7 +85,6 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -128,6 +128,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(753, 382);
             this.panel2.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.txtCre);
+            this.panel13.Controls.Add(this.label12);
+            this.panel13.Location = new System.Drawing.Point(3, 232);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(747, 42);
+            this.panel13.TabIndex = 4;
+            // 
+            // txtCre
+            // 
+            this.txtCre.Location = new System.Drawing.Point(273, 7);
+            this.txtCre.Name = "txtCre";
+            this.txtCre.Size = new System.Drawing.Size(468, 22);
+            this.txtCre.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 25);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Bằng cấp:";
             // 
             // btnDoctorRegister
             // 
@@ -254,6 +280,7 @@
             this.txtDocAcc.Name = "txtDocAcc";
             this.txtDocAcc.Size = new System.Drawing.Size(471, 22);
             this.txtDocAcc.TabIndex = 1;
+            this.txtDocAcc.TextChanged += new System.EventHandler(this.txtDocAcc_TextChanged);
             // 
             // label4
             // 
@@ -289,6 +316,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(753, 382);
             this.panel5.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(152, 344);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel12
             // 
@@ -441,42 +478,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Tài khoản:";
             // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.txtCre);
-            this.panel13.Controls.Add(this.label12);
-            this.panel13.Location = new System.Drawing.Point(3, 232);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(747, 42);
-            this.panel13.TabIndex = 4;
-            // 
-            // txtCre
-            // 
-            this.txtCre.Location = new System.Drawing.Point(273, 7);
-            this.txtCre.Name = "txtCre";
-            this.txtCre.Size = new System.Drawing.Size(468, 22);
-            this.txtCre.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(115, 25);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Bằng cấp:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(152, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // fDangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -491,6 +492,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -511,8 +514,6 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
             this.ResumeLayout(false);
 
         }

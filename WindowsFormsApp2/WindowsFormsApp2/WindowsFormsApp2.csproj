@@ -248,6 +248,7 @@
     <Compile Include="fMedicalEqipment.Designer.cs">
       <DependentUpon>fMedicalEqipment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Schedule.cs" />
     <Compile Include="Taikhoan.cs" />
     <EmbeddedResource Include="fAccManagementforDoctor.resx">
       <DependentUpon>fAccManagementforDoctor.cs</DependentUpon>

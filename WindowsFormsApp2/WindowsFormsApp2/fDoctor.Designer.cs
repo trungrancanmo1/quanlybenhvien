@@ -32,6 +32,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtCre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtSpe = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
@@ -48,12 +51,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabinformation.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -61,7 +66,6 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabinformation
@@ -114,6 +118,38 @@
             this.panel3.Size = new System.Drawing.Size(798, 266);
             this.panel3.TabIndex = 0;
             this.panel3.UseWaitCursor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtCre);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(3, 199);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(792, 57);
+            this.panel4.TabIndex = 3;
+            this.panel4.UseWaitCursor = true;
+            // 
+            // txtCre
+            // 
+            this.txtCre.Location = new System.Drawing.Point(138, 18);
+            this.txtCre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCre.Name = "txtCre";
+            this.txtCre.ReadOnly = true;
+            this.txtCre.Size = new System.Drawing.Size(649, 22);
+            this.txtCre.TabIndex = 2;
+            this.txtCre.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bằng cấp:";
+            this.label1.UseWaitCursor = true;
             // 
             // panel9
             // 
@@ -247,6 +283,7 @@
             this.checkbutton.Text = "Kiểm tra";
             this.checkbutton.UseVisualStyleBackColor = true;
             this.checkbutton.UseWaitCursor = true;
+            this.checkbutton.Click += new System.EventHandler(this.checkbutton_Click);
             // 
             // dateTimePicker1
             // 
@@ -279,6 +316,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(3, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
@@ -288,37 +330,33 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UseWaitCursor = true;
             // 
-            // panel4
+            // Column1
             // 
-            this.panel4.Controls.Add(this.txtCre);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(3, 199);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(792, 57);
-            this.panel4.TabIndex = 3;
-            this.panel4.UseWaitCursor = true;
+            this.Column1.HeaderText = "begin";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
-            // txtCre
+            // Column2
             // 
-            this.txtCre.Location = new System.Drawing.Point(138, 18);
-            this.txtCre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCre.Name = "txtCre";
-            this.txtCre.ReadOnly = true;
-            this.txtCre.Size = new System.Drawing.Size(649, 22);
-            this.txtCre.TabIndex = 2;
-            this.txtCre.UseWaitCursor = true;
+            this.Column2.HeaderText = "end";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
-            // label1
+            // Column3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bằng cấp:";
-            this.label1.UseWaitCursor = true;
+            this.Column3.HeaderText = "room";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Patient";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
             // fDoctor
             // 
@@ -333,6 +371,8 @@
             this.tabinformation.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -343,8 +383,6 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +412,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtCre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

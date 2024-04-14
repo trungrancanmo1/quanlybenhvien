@@ -126,6 +126,36 @@ namespace WindowsFormsApp2
 
             database = FirestoreDb.Create("test-964d0");
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            testing();
+        }
+        private async void testing()
+        {
+            DocumentReference documentReference = database.Collection("Doctor").Document("069")
+               .Collection("Schedule").Document("first");
+            DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
+            if (snapshot.Exists)
+            {
+                Dictionary<string, DocumentReference> data = snapshot.ConvertTo<Dictionary<string, DocumentReference>>();
+                foreach (var item in data)
+                {
+                    DocumentReference tmp = item.Value;
+                    DocumentSnapshot snap = await tmp.GetSnapshotAsync();
+                    Schedule schedule = snap.ConvertTo<Schedule>();
+                    System.DateTime dateTime = schedule.begin.ToDateTime();
+                    System.DateTime endTime = schedule.end.ToDateTime();
+                    Console.WriteLine(dateTime);
+                    Console.WriteLine(endTime);
+                }
+            }
+            else
+            {
+                MessageBox.Show("NOT EXISTED");
+            }
+            //DocumentReference documentReference = database.Document("Schedules/first");
+            //Console.WriteLine(documentReference.Id);
+        }
     }
 }

@@ -47,11 +47,11 @@ namespace WindowsFormsApp2
             DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
             Counter cnt = cntSnap.ConvertTo<Counter>();
 
-            if (txtDocAcc.Text.Length != 10 || txtDocAcc.Text[0] != '0')
-            {
-                MessageBox.Show("Sai định dạng số điện thoại");
-                return;
-            }
+            //if (txtDocAcc.Text.Length != 10 || txtDocAcc.Text[0] != '0')
+            //{
+            //    MessageBox.Show("Sai định dạng số điện thoại");
+            //    return;
+            //}
 
             DocumentReference docRes = database.Collection("Doctor").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
@@ -117,11 +117,11 @@ namespace WindowsFormsApp2
             DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
             Counter cnt = cntSnap.ConvertTo<Counter>();
 
-            if (txtPatAcc.Text.Length != 10 || txtPatAcc.Text[0] != '0')
-            {
-                MessageBox.Show("Sai định dạng số điện thoại");
-                return;
-            }
+            //if (txtPatAcc.Text.Length != 10 || txtPatAcc.Text[0] != '0')
+            //{
+            //    MessageBox.Show("Sai định dạng số điện thoại");
+            //    return;
+            //}
 
             DocumentReference docRes = database.Collection("Doctor").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
@@ -189,6 +189,11 @@ namespace WindowsFormsApp2
             System.DateTime date = regDate.ToDateTime();
             MessageBox.Show(date.ToString());
             date = date.AddHours(7);
+        }
+
+        private void txtDocAcc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

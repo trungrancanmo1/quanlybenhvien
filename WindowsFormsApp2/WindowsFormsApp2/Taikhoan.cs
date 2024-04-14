@@ -66,7 +66,7 @@ namespace WindowsFormsApp2
         [FirestoreProperty]
         public override string diagnosis { get; set; }
         [FirestoreProperty]
-        public Google.Cloud.Firestore.Timestamp regDate { get; set; }
+        public override Google.Cloud.Firestore.Timestamp regDate { get; set; }
         [FirestoreProperty]
         public override string progress { get; set; }
     }
