@@ -40,17 +40,13 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.specialize = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.degree = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +63,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(152, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -93,9 +89,8 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel9);
-            this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.panel7);
-            this.panel3.Location = new System.Drawing.Point(1, 11);
+            this.panel3.Location = new System.Drawing.Point(24, 11);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(756, 423);
@@ -122,6 +117,7 @@
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.UseWaitCursor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel1
             // 
@@ -159,10 +155,10 @@
             this.panel9.AutoSize = true;
             this.panel9.Controls.Add(this.textBox4);
             this.panel9.Controls.Add(this.specialize);
-            this.panel9.Location = new System.Drawing.Point(12, 259);
+            this.panel9.Location = new System.Drawing.Point(12, 206);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(472, 57);
+            this.panel9.Size = new System.Drawing.Size(480, 65);
             this.panel9.TabIndex = 5;
             this.panel9.UseWaitCursor = true;
             // 
@@ -179,34 +175,12 @@
             // 
             this.specialize.AutoSize = true;
             this.specialize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specialize.Location = new System.Drawing.Point(7, 18);
+            this.specialize.Location = new System.Drawing.Point(5, 18);
             this.specialize.Name = "specialize";
             this.specialize.Size = new System.Drawing.Size(122, 23);
             this.specialize.TabIndex = 0;
             this.specialize.Text = "Hạn sử dụng:";
             this.specialize.UseWaitCursor = true;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.dateTimePicker2);
-            this.panel8.Controls.Add(this.degree);
-            this.panel8.Location = new System.Drawing.Point(12, 194);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(359, 57);
-            this.panel8.TabIndex = 4;
-            this.panel8.UseWaitCursor = true;
-            // 
-            // degree
-            // 
-            this.degree.AutoSize = true;
-            this.degree.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.degree.Location = new System.Drawing.Point(5, 18);
-            this.degree.Name = "degree";
-            this.degree.Size = new System.Drawing.Size(139, 23);
-            this.degree.TabIndex = 0;
-            this.degree.Text = "Ngày xuất kho:";
-            this.degree.UseWaitCursor = true;
             // 
             // panel7
             // 
@@ -239,16 +213,6 @@
             this.name.Text = "Tên thuốc:";
             this.name.UseWaitCursor = true;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(152, 19);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(193, 22);
-            this.dateTimePicker2.TabIndex = 4;
-            this.dateTimePicker2.UseWaitCursor = true;
-            // 
             // fAddMed
             // 
             this.AcceptButton = this.btnAdd;
@@ -259,6 +223,7 @@
             this.Name = "fAddMed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm thuốc";
+            this.Load += new System.EventHandler(this.fAddMed_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -267,8 +232,6 @@
             this.panel1.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
@@ -287,13 +250,10 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label specialize;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label degree;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
