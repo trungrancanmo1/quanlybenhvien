@@ -141,21 +141,21 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp2.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 224);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // fLogin
             // 
             this.AcceptButton = this.btnSignIn;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelAcc);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelAcc);
             this.Controls.Add(this.panelPass);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSignIn);
@@ -180,7 +180,6 @@
         private System.Windows.Forms.Panel panelAcc;
         private System.Windows.Forms.TextBox textAcc;
         private System.Windows.Forms.Label lblAcc;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelPass;
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Label lblPass;
@@ -188,6 +187,7 @@
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnForgotpass;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

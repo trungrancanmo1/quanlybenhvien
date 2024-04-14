@@ -49,7 +49,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFind = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccList)).BeginInit();
@@ -251,19 +251,19 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.txtFind);
             this.panel4.Controls.Add(this.button6);
             this.panel4.Location = new System.Drawing.Point(408, 1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(390, 78);
             this.panel4.TabIndex = 8;
             // 
-            // textBox1
+            // txtFind
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 22);
-            this.textBox1.TabIndex = 9;
+            this.txtFind.Location = new System.Drawing.Point(3, 24);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(289, 22);
+            this.txtFind.TabIndex = 9;
             // 
             // button6
             // 
@@ -328,7 +328,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label6;
     }

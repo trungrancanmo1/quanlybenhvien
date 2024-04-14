@@ -38,14 +38,6 @@ namespace WindowsFormsApp2
 
         private async void btnDoctorRegister_Click(object sender, EventArgs e)
         {
-            
-            DocumentReference totalRes = database.Collection("Counter").Document("Total");
-            DocumentSnapshot totalSnap = await totalRes.GetSnapshotAsync();
-            Counter totalCnt = totalSnap.ConvertTo<Counter>();
-
-            DocumentReference res = database.Collection("Counter").Document("Doctor");
-            DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
-            Counter cnt = cntSnap.ConvertTo<Counter>();
 
             //if (txtDocAcc.Text.Length != 10 || txtDocAcc.Text[0] != '0')
             //{
@@ -81,15 +73,6 @@ namespace WindowsFormsApp2
                 credential = txtCre.Text,
             };
 
-            var count = new Counter
-            {
-                cnt = totalCnt.cnt + 1,
-            };
-
-            var doc = new Counter
-            {
-                cnt = cnt.cnt + 1,
-            };
 
             DocumentReference emptySet = database.Collection("Doctor").Document(data.userName);
             emptySet.SetAsync(rong);
@@ -97,25 +80,11 @@ namespace WindowsFormsApp2
             DocumentReference docSet = database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
             docSet.SetAsync(data);
 
-            DocumentReference totalCntSet = database.Collection("Counter").Document("Total");
-            totalCntSet.SetAsync(count);
-
-            DocumentReference docCntSet = database.Collection("Counter").Document("Doctor");
-            docCntSet.SetAsync(doc);
-           
-
             MessageBox.Show("Đăng kí thành công");
         }
 
         private async void btnPatRes_Click(object sender, EventArgs e)
         {
-            DocumentReference totalRes = database.Collection("Counter").Document("Total");
-            DocumentSnapshot totalSnap = await totalRes.GetSnapshotAsync();
-            Counter totalCnt = totalSnap.ConvertTo<Counter>();
-
-            DocumentReference res = database.Collection("Counter").Document("Patient");
-            DocumentSnapshot cntSnap = await res.GetSnapshotAsync();
-            Counter cnt = cntSnap.ConvertTo<Counter>();
 
             //if (txtPatAcc.Text.Length != 10 || txtPatAcc.Text[0] != '0')
             //{
@@ -153,27 +122,12 @@ namespace WindowsFormsApp2
                 progress = "chưa có tiến triển",
             };
 
-            var count = new Counter
-            {
-                cnt = totalCnt.cnt + 1,
-            };
-
-            var doc = new Counter
-            {
-                cnt = cnt.cnt + 1,
-            };
 
             DocumentReference emptySet = database.Collection("Patient").Document(data.userName);
             emptySet.SetAsync(rong);
 
             DocumentReference patSet = database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
             patSet.SetAsync(data);
-
-            DocumentReference totalCntSet = database.Collection("Counter").Document("Total");
-            totalCntSet.SetAsync(count);
-
-            DocumentReference patCntSet = database.Collection("Counter").Document("Patient");
-            patCntSet.SetAsync(doc);
 
             MessageBox.Show("Đăng kí thành công");
         }
@@ -182,7 +136,7 @@ namespace WindowsFormsApp2
         {
             MessageBox.Show(cbSpe.SelectedItem.ToString());
         }
-
+        
         private void button1_Click_1(object sender, EventArgs e)
         {
             Google.Cloud.Firestore.Timestamp regDate = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow);

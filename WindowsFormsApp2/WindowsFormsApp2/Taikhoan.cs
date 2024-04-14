@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace WindowsFormsApp2
 {
     [FirestoreData]
-    class Taikhoan
+    public class Taikhoan
     {
         [FirestoreProperty]
         public string userName { get; set; }
@@ -39,14 +39,16 @@ namespace WindowsFormsApp2
         public virtual Google.Cloud.Firestore.Timestamp regDate { get; set; }
         [FirestoreProperty]
         public virtual string progress { get; set; }
+
+
     }
 
     [FirestoreData]
-    class Admin : Taikhoan {
+    public class Admin : Taikhoan {
     }
 
     [FirestoreData]
-    class Doctor : Taikhoan
+    public class Doctor : Taikhoan
     {
         [FirestoreProperty]
         public override string position { get; set; }
@@ -57,7 +59,7 @@ namespace WindowsFormsApp2
     }
 
     [FirestoreData]
-    class Patient : Taikhoan
+    public class Patient : Taikhoan
     {
         [FirestoreProperty]
         public override string medicalHistory { get; set; }
