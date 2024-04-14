@@ -91,7 +91,7 @@ namespace WindowsFormsApp2
                     addRowToGridDataView(doctor);
                 }else
                 {
-                    MessageBox.Show("NOT EXISTED");
+                    Console.WriteLine("NOT EXISTED");
                 }
             }
         }
@@ -126,14 +126,35 @@ namespace WindowsFormsApp2
         {
             string tel = this.textBox1.Text;
             DocumentReference documentReference = database.Collection("Doctor").Document(tel);
+            // Delete doctor's schedule
+            await deleteDoctorSchedules(tel);
             // Delete SubCollection
             await DeleteCollection(documentReference.Collection("Information"), 2);
+            await DeleteCollection(documentReference.Collection("Schedule"), 2);
             // Delete field
             Dictionary<string, object> updates = new Dictionary<string, object>
             {
                 { "rong", FieldValue.Delete }
             };
             await documentReference.UpdateAsync(updates);
+        }
+        private async Task deleteDoctorSchedules(string tel)
+        {
+            Query query = database.Collection("Schedules");
+            QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
+            foreach (DocumentSnapshot documentSnapshot in querySnapshots)
+            {
+                if (documentSnapshot.Exists)
+                {
+                    if (documentSnapshot.GetValue<string>("doctor") == tel)
+                    {
+                        await documentSnapshot.Reference.DeleteAsync();
+                    }
+                } else
+                {
+                    Console.WriteLine("SCHEDULE NOT EXISTED IN FINDING DOCTOR");
+                }
+            }
         }
         private async Task DeleteCollection(CollectionReference collectionReference, int batchSize)
         {
@@ -190,6 +211,10 @@ namespace WindowsFormsApp2
         // Search Doctor to make appointment
         private void button1_Click(object sender, EventArgs e)
         {
+            if (this.comboBox1.Text == "")
+            {
+                MessageBox.Show("HAY NHAP CHUYEN MON");
+            }
             System.DateTime beginTime = this.dateTimePicker3.Value;
             System.DateTime endTime = this.dateTimePicker4.Value;
             beginTime = resetSecond(beginTime);
@@ -256,7 +281,7 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    MessageBox.Show("NOT EXISTED");
+                    Console.WriteLine("NOT EXISTED");
                 }
             }
         }
@@ -295,7 +320,22 @@ namespace WindowsFormsApp2
         {
             System.DateTime begin = resetSecond(this.dateTimePicker3.Value);
             System.DateTime end = resetSecond(this.dateTimePicker4.Value);
-            string patient = this.textBox7.Text;    
+            string patient = this.textBox7.Text;
+            string doctor = this.textBox6.Text;
+            string room = this.textBox3.Text;
+
+            if (patient == "")
+            {
+                MessageBox.Show("HAY NHAP ID BENH NHAN");
+            }
+            if (doctor == "")
+            {
+                MessageBox.Show("HAY NHAP ID BAC SI");
+            }
+            if (room == "")
+            {
+                MessageBox.Show("HAY NHAP PHONG");
+            }
             // Check if patient have a schedule or not
             if (!await checkIfPatientAvailable(patient, begin, end))
             {
@@ -303,8 +343,6 @@ namespace WindowsFormsApp2
             }else
             {
                 // Make an appointment for a doctor and a patient
-                string doctor = this.textBox6.Text;
-                string room = this.textBox3.Text;
                 Schedule newSchedule = new Schedule()
                 {
                     begin = Google.Cloud.Firestore.Timestamp.FromDateTime(System.DateTime.SpecifyKind(begin.AddHours(-7), DateTimeKind.Utc)),
@@ -344,12 +382,18 @@ namespace WindowsFormsApp2
             {
                 DocumentReference scheduleRef = scheduleSnap.GetValue<DocumentReference>("ref");
                 DocumentSnapshot tmp = await scheduleRef.GetSnapshotAsync();
-                Schedule schedule = tmp.ConvertTo<Schedule>();
-                System.DateTime begin = schedule.begin.ToDateTime().ToLocalTime();
-                System.DateTime end = schedule.end.ToDateTime().ToLocalTime();
-                if (!validTime(begin, end, a, b))
+                if (tmp.Exists)
                 {
-                    return false;
+                    Schedule schedule = tmp.ConvertTo<Schedule>();
+                    System.DateTime begin = schedule.begin.ToDateTime().ToLocalTime();
+                    System.DateTime end = schedule.end.ToDateTime().ToLocalTime();
+                    if (!validTime(begin, end, a, b))
+                    {
+                        return false;
+                    }
+                }else
+                {
+                    Console.WriteLine("SCHEDULE NOT EXISTED !");
                 }
             }
             return true;

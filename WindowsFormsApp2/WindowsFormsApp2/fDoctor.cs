@@ -57,6 +57,7 @@ namespace WindowsFormsApp2
 
         private void checkbutton_Click(object sender, EventArgs e)
         {
+            this.dataGridView1.Rows.Clear();
             displayAllShedules();
         }
         private async void displayAllShedules()

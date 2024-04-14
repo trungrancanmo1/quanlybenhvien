@@ -97,7 +97,7 @@
             // 
             // btnChangePass
             // 
-            this.btnChangePass.Location = new System.Drawing.Point(57, 297);
+            this.btnChangePass.Location = new System.Drawing.Point(676, 303);
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Size = new System.Drawing.Size(128, 68);
             this.btnChangePass.TabIndex = 2;
