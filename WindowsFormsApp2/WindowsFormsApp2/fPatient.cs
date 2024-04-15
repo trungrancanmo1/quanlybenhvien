@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
     public partial class fPatient : Form
     {
         public FirestoreDb database;
-        string patientuserName ="" ;
+        public string patientuserName = "" ;
         public fPatient()
         {
             InitializeComponent();
