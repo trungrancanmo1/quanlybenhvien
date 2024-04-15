@@ -32,13 +32,11 @@ namespace WindowsFormsApp2
 
             database = FirestoreDb.Create("test-964d0");
 
-            DocumentReference curRes = database.Collection("CurrentAccount").Document("Acc");
-            DocumentSnapshot curSnap = await curRes.GetSnapshotAsync();
-            Taikhoan pat = curSnap.ConvertTo<Taikhoan>();
+            Taikhoan pat = CurrentAccount.Instance.GetData();
 
             DocumentReference accRes = database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
-            pat = accSnap.ConvertTo<Taikhoan>();
+            pat = accSnap.ConvertTo<Patient>();
 
             System.DateTime date = pat.regDate.ToDateTime();
             date = date.AddHours(7);

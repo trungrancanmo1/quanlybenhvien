@@ -64,11 +64,15 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDia = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.btnViewDia = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -94,6 +98,7 @@
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -281,6 +286,7 @@
             this.textBox1.Size = new System.Drawing.Size(247, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.UseWaitCursor = true;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // findbuttuon
             // 
@@ -361,7 +367,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 44);
             this.button6.TabIndex = 4;
-            this.button6.Text = "Sửa";
+            this.button6.Text = "Cập nhật";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.UseWaitCursor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -481,6 +487,7 @@
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.panel1);
             this.panel11.Controls.Add(this.label8);
             this.panel11.Controls.Add(this.label7);
             this.panel11.Controls.Add(this.dateTimePicker4);
@@ -488,17 +495,47 @@
             this.panel11.Controls.Add(this.panel13);
             this.panel11.Controls.Add(this.button1);
             this.panel11.Controls.Add(this.panel12);
-            this.panel11.Location = new System.Drawing.Point(389, 59);
+            this.panel11.Location = new System.Drawing.Point(389, 6);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(453, 191);
+            this.panel11.Size = new System.Drawing.Size(453, 244);
             this.panel11.TabIndex = 0;
             this.panel11.UseWaitCursor = true;
             this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtDia);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(6, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(437, 43);
+            this.panel1.TabIndex = 5;
+            this.panel1.UseWaitCursor = true;
+            // 
+            // txtDia
+            // 
+            this.txtDia.Location = new System.Drawing.Point(119, 4);
+            this.txtDia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDia.Name = "txtDia";
+            this.txtDia.Size = new System.Drawing.Size(297, 22);
+            this.txtDia.TabIndex = 4;
+            this.txtDia.UseWaitCursor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(3, 7);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Chẩn đoán:";
+            this.label10.UseWaitCursor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(273, 49);
+            this.label8.Location = new System.Drawing.Point(293, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 16);
             this.label8.TabIndex = 7;
@@ -508,7 +545,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 49);
+            this.label7.Location = new System.Drawing.Point(27, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 16);
             this.label7.TabIndex = 6;
@@ -519,19 +556,17 @@
             // 
             this.dateTimePicker4.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(233, 68);
+            this.dateTimePicker4.Location = new System.Drawing.Point(237, 140);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(206, 22);
             this.dateTimePicker4.TabIndex = 3;
             this.dateTimePicker4.UseWaitCursor = true;
-            this.dateTimePicker4.FormatChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
-            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // dateTimePicker3
             // 
             this.dateTimePicker3.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(6, 68);
+            this.dateTimePicker3.Location = new System.Drawing.Point(6, 140);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(202, 22);
             this.dateTimePicker3.TabIndex = 2;
@@ -542,28 +577,43 @@
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.btnViewDia);
             this.panel13.Controls.Add(this.textBox7);
             this.panel13.Controls.Add(this.label5);
-            this.panel13.Location = new System.Drawing.Point(6, 3);
+            this.panel13.Location = new System.Drawing.Point(6, 29);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(437, 43);
             this.panel13.TabIndex = 1;
             this.panel13.UseWaitCursor = true;
             // 
+            // btnViewDia
+            // 
+            this.btnViewDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewDia.Location = new System.Drawing.Point(304, 7);
+            this.btnViewDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViewDia.Name = "btnViewDia";
+            this.btnViewDia.Size = new System.Drawing.Size(130, 29);
+            this.btnViewDia.TabIndex = 8;
+            this.btnViewDia.Text = "Xem chẩn đoán";
+            this.btnViewDia.UseVisualStyleBackColor = true;
+            this.btnViewDia.UseWaitCursor = true;
+            this.btnViewDia.Click += new System.EventHandler(this.btnViewDia_Click);
+            // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(119, 4);
+            this.textBox7.Location = new System.Drawing.Point(122, 10);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(297, 22);
+            this.textBox7.Size = new System.Drawing.Size(167, 22);
             this.textBox7.TabIndex = 4;
             this.textBox7.UseWaitCursor = true;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(3, 7);
+            this.label5.Location = new System.Drawing.Point(8, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 17);
             this.label5.TabIndex = 3;
@@ -573,7 +623,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(293, 147);
+            this.button1.Location = new System.Drawing.Point(296, 205);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 37);
@@ -587,7 +637,7 @@
             // 
             this.panel12.Controls.Add(this.label4);
             this.panel12.Controls.Add(this.comboBox1);
-            this.panel12.Location = new System.Drawing.Point(6, 110);
+            this.panel12.Location = new System.Drawing.Point(9, 168);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(413, 32);
             this.panel12.TabIndex = 4;
@@ -608,7 +658,13 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Xương"});
+            "Răng-hàm-mặt",
+            "Hô hấp",
+            "Xương khớp",
+            "Mắt",
+            "Dị ứng",
+            "Y tá",
+            "Đièu Dưỡng"});
             this.comboBox1.Location = new System.Drawing.Point(119, 0);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(294, 24);
@@ -702,6 +758,8 @@
             this.panel15.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -764,5 +822,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtDia;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnViewDia;
     }
 }

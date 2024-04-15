@@ -38,12 +38,12 @@ namespace WindowsFormsApp2
 
         private async void btnDoctorRegister_Click(object sender, EventArgs e)
         {
-
-            //if (txtDocAcc.Text.Length != 10 || txtDocAcc.Text[0] != '0')
-            //{
-            //    MessageBox.Show("Sai định dạng số điện thoại");
-            //    return;
-            //}
+            if (txtDocAcc.Text == "") return;
+            if (txtDocAcc.Text.Length != 10 || txtDocAcc.Text[0] != '0')
+            {
+                MessageBox.Show("Sai định dạng số điện thoại");
+                return;
+            }
 
             DocumentReference docRes = database.Collection("Doctor").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
@@ -75,22 +75,22 @@ namespace WindowsFormsApp2
 
 
             DocumentReference emptySet = database.Collection("Doctor").Document(data.userName);
-            emptySet.SetAsync(rong);
+            await emptySet.SetAsync(rong);
 
             DocumentReference docSet = database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
-            docSet.SetAsync(data);
+            await docSet.SetAsync(data);
 
             MessageBox.Show("Đăng kí thành công");
         }
 
         private async void btnPatRes_Click(object sender, EventArgs e)
         {
-
-            //if (txtPatAcc.Text.Length != 10 || txtPatAcc.Text[0] != '0')
-            //{
-            //    MessageBox.Show("Sai định dạng số điện thoại");
-            //    return;
-            //}
+            if (txtPatAcc.Text == "") return;
+            if (txtPatAcc.Text.Length != 10 || txtPatAcc.Text[0] != '0')
+            {
+                MessageBox.Show("Sai định dạng số điện thoại");
+                return;
+            }
 
             DocumentReference docRes = database.Collection("Doctor").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
@@ -124,30 +124,57 @@ namespace WindowsFormsApp2
 
 
             DocumentReference emptySet = database.Collection("Patient").Document(data.userName);
-            emptySet.SetAsync(rong);
+            await emptySet.SetAsync(rong);
 
             DocumentReference patSet = database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
-            patSet.SetAsync(data);
+            await patSet.SetAsync(data);
 
             MessageBox.Show("Đăng kí thành công");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(cbSpe.SelectedItem.ToString());
-        }
-        
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Google.Cloud.Firestore.Timestamp regDate = Google.Cloud.Firestore.Timestamp.FromDateTime(DateTime.UtcNow);
-            System.DateTime date = regDate.ToDateTime();
-            MessageBox.Show(date.ToString());
-            date = date.AddHours(7);
         }
 
         private void txtDocAcc_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnAdminRes_Click(object sender, EventArgs e)
+        {
+            if (txtAdminAcc.Text == "") return;
+            if (!char.IsLetter(txtAdminAcc.Text[0]))
+            {
+                MessageBox.Show("Tài khoản Admin bắt đầu bằng chữ cái");
+                return;
+            }
+            DocumentReference adRes = database.Collection("Admin").Document(txtAdminAcc.Text).Collection("Information").Document("Information");
+            DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
+
+            if (adSnap.Exists)
+            {
+                MessageBox.Show("Tài khoản đã tồn tại");
+                return;
+            }
+
+            var rong = new Empty
+            {
+                rong = "null",
+            };
+
+            var data = new Admin
+            {
+                userName = txtAdminAcc.Text,
+                password = txtAdminPass.Text,
+                displayName = "Administrator",
+                type = "Admin",
+            };
+
+
+            DocumentReference emptySet = database.Collection("Admin").Document(data.userName);
+            await emptySet.SetAsync(rong);
+
+            DocumentReference adminSet = database.Collection("Admin").Document(data.userName).Collection("Information").Document("Information");
+            await adminSet.SetAsync(data);
+
+            MessageBox.Show("Đăng kí thành công");
         }
     }
 }

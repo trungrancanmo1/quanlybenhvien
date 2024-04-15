@@ -51,7 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txtDia = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,6 +68,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtPatAcc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.txtAdminPass = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnAdminRes = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.txtAdminAcc = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -85,6 +93,10 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +111,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(6, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -305,7 +318,6 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.panel12);
             this.panel5.Controls.Add(this.btnPatRes);
             this.panel5.Controls.Add(this.panel9);
@@ -316,16 +328,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(753, 382);
             this.panel5.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(152, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel12
             // 
@@ -478,6 +480,89 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Tài khoản:";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel14);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(759, 388);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Admin";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.panel15);
+            this.panel14.Controls.Add(this.btnAdminRes);
+            this.panel14.Controls.Add(this.panel19);
+            this.panel14.Location = new System.Drawing.Point(3, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(753, 382);
+            this.panel14.TabIndex = 1;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.txtAdminPass);
+            this.panel15.Controls.Add(this.label13);
+            this.panel15.Location = new System.Drawing.Point(3, 80);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(747, 56);
+            this.panel15.TabIndex = 5;
+            // 
+            // txtAdminPass
+            // 
+            this.txtAdminPass.Location = new System.Drawing.Point(263, 18);
+            this.txtAdminPass.Name = "txtAdminPass";
+            this.txtAdminPass.Size = new System.Drawing.Size(471, 22);
+            this.txtAdminPass.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(14, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Mật khẩu:";
+            // 
+            // btnAdminRes
+            // 
+            this.btnAdminRes.Location = new System.Drawing.Point(572, 311);
+            this.btnAdminRes.Name = "btnAdminRes";
+            this.btnAdminRes.Size = new System.Drawing.Size(121, 68);
+            this.btnAdminRes.TabIndex = 15;
+            this.btnAdminRes.Text = "Đăng kí";
+            this.btnAdminRes.UseVisualStyleBackColor = true;
+            this.btnAdminRes.Click += new System.EventHandler(this.btnAdminRes_Click);
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.txtAdminAcc);
+            this.panel19.Controls.Add(this.label18);
+            this.panel19.Location = new System.Drawing.Point(3, 3);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(747, 71);
+            this.panel19.TabIndex = 1;
+            // 
+            // txtAdminAcc
+            // 
+            this.txtAdminAcc.Location = new System.Drawing.Point(263, 9);
+            this.txtAdminAcc.Name = "txtAdminAcc";
+            this.txtAdminAcc.Size = new System.Drawing.Size(471, 22);
+            this.txtAdminAcc.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(14, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(120, 25);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Tài khoản:";
+            // 
             // fDangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -514,6 +599,12 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -560,6 +651,14 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.TextBox txtCre;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.TextBox txtAdminPass;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnAdminRes;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox txtAdminAcc;
+        private System.Windows.Forms.Label label18;
     }
 }

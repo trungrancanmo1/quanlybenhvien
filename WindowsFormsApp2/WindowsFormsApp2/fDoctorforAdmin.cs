@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp2
 {
@@ -19,6 +20,8 @@ namespace WindowsFormsApp2
     {
         private FirestoreDb database;
         private List<DocumentReference> availableDoctorRefs;
+        private bool exist = false;
+        private bool check = false;
         public fDoctorforAdmin()
         {
             InitializeComponent();
@@ -55,9 +58,10 @@ namespace WindowsFormsApp2
             {
                 Doctor doctor = snapshot.ConvertTo<Doctor>();
                 showDoctorInfomation(doctor);
+                exist = true;
             }else
             {
-                MessageBox.Show("NOT FOUND");
+                MessageBox.Show("Tài khoản không tồn tại");
             }
         }
         private void showDoctorInfomation(Doctor doctor)
@@ -120,7 +124,13 @@ namespace WindowsFormsApp2
         // Delete a doctor
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!exist)
+            {
+                MessageBox.Show("Hãy nhập đúng số điện thoại");
+                return;
+            }
             deleteDoctor();
+            MessageBox.Show("Xóa tài khoản thành công");
         }
         private async void deleteDoctor()
         {
@@ -137,6 +147,7 @@ namespace WindowsFormsApp2
                 { "rong", FieldValue.Delete }
             };
             await documentReference.UpdateAsync(updates);
+            await documentReference.DeleteAsync();
         }
         private async Task deleteDoctorSchedules(string tel)
         {
@@ -175,6 +186,11 @@ namespace WindowsFormsApp2
         // Update Information
         private void button6_Click(object sender, EventArgs e)
         {
+            if (!exist)
+            {
+                MessageBox.Show("Hãy nhập đúng số điện thoại");
+                return;
+            }
             UpdateDoctorInformation();
         }
         private async void UpdateDoctorInformation()
@@ -196,12 +212,7 @@ namespace WindowsFormsApp2
                 updates.Add("specialization", this.specBox.Text);
             }
             await documentReference.UpdateAsync(updates);
-            MessageBox.Show("INFORMATION UPDATED");
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Cập nhật thành công");
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
@@ -307,13 +318,14 @@ namespace WindowsFormsApp2
             }
             return false;
         }
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (check == false)
+            {
+                MessageBox.Show("Hãy xem chẩn đoán của bệnh nhân");
+                return;
+            }
             foo();
         }
         private async void foo()
@@ -331,11 +343,23 @@ namespace WindowsFormsApp2
             if (doctor == "")
             {
                 MessageBox.Show("HAY NHAP ID BAC SI");
+                return;
             }
             if (room == "")
             {
                 MessageBox.Show("HAY NHAP PHONG");
+                return;
             }
+
+            DocumentReference docRes = database.Collection("Doctor").Document(textBox6.Text).Collection("Information").Document("Information");
+            DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
+
+            if (!docSnap.Exists)
+            {
+                MessageBox.Show("ID nhân viên y tế không tồn tại");
+                return;
+            }
+
             // Check if patient have a schedule or not
             if (!await checkIfPatientAvailable(patient, begin, end))
             {
@@ -371,7 +395,7 @@ namespace WindowsFormsApp2
                     .Collection("Schedule");
                 await patientCollectionReference.AddAsync(newRef);
 
-                MessageBox.Show("PHAN CONG XONG");
+                MessageBox.Show("Phân công thành công");
             }
         }
         private async Task<bool> checkIfPatientAvailable(string patient, System.DateTime a, System.DateTime b)
@@ -403,9 +427,32 @@ namespace WindowsFormsApp2
 
         }
 
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        private async void btnViewDia_Click(object sender, EventArgs e)
         {
+            if (textBox7.Text == "") return;
+            DocumentReference diaRes = database.Collection("Patient").Document(textBox7.Text).Collection("Information").Document("Information");
+            DocumentSnapshot diaSnap = await diaRes.GetSnapshotAsync();
 
+            if (!diaSnap.Exists)
+            {
+                MessageBox.Show("ID bệnh nhân không tồn tại");
+                return;
+            }
+
+            Taikhoan pat = diaSnap.ConvertTo<Patient>();
+
+            txtDia.Text = pat.diagnosis.ToString();
+            check = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            exist = false;
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            check = false;
         }
     }
 }

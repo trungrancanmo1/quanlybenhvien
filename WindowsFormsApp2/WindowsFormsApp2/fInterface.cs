@@ -18,13 +18,10 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+       /* private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
+
+        }*/
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -33,24 +33,24 @@
             this.dgvAccList = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDisName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtFind = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccList)).BeginInit();
             this.panel2.SuspendLayout();
@@ -93,8 +93,8 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Location = new System.Drawing.Point(2, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(390, 79);
@@ -110,23 +110,25 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(143, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 56);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(143, 11);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(88, 56);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.Location = new System.Drawing.Point(3, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 56);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(3, 11);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(88, 56);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel3
             // 
@@ -141,21 +143,21 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox5);
+            this.panel8.Controls.Add(this.txtType);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Location = new System.Drawing.Point(3, 211);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(385, 63);
             this.panel8.TabIndex = 3;
             // 
-            // textBox5
+            // txtType
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(175, 17);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(207, 34);
-            this.textBox5.TabIndex = 1;
+            this.txtType.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType.Location = new System.Drawing.Point(175, 17);
+            this.txtType.Name = "txtType";
+            this.txtType.ReadOnly = true;
+            this.txtType.Size = new System.Drawing.Size(207, 34);
+            this.txtType.TabIndex = 1;
             // 
             // label4
             // 
@@ -169,20 +171,20 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox4);
+            this.panel7.Controls.Add(this.txtPass);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(3, 142);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(385, 63);
             this.panel7.TabIndex = 2;
             // 
-            // textBox4
+            // txtPass
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(175, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(207, 34);
-            this.textBox4.TabIndex = 1;
+            this.txtPass.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(175, 17);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(207, 34);
+            this.txtPass.TabIndex = 1;
             // 
             // label3
             // 
@@ -196,21 +198,21 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.textBox3);
+            this.panel6.Controls.Add(this.txtUserName);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(3, 73);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(385, 63);
             this.panel6.TabIndex = 1;
             // 
-            // textBox3
+            // txtUserName
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(175, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(207, 34);
-            this.textBox3.TabIndex = 1;
+            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(175, 17);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.ReadOnly = true;
+            this.txtUserName.Size = new System.Drawing.Size(207, 34);
+            this.txtUserName.TabIndex = 1;
             // 
             // label2
             // 
@@ -224,20 +226,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.txtDisName);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Location = new System.Drawing.Point(4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(385, 63);
             this.panel5.TabIndex = 0;
             // 
-            // textBox2
+            // txtDisName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(174, 17);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 34);
-            this.textBox2.TabIndex = 1;
+            this.txtDisName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisName.Location = new System.Drawing.Point(174, 17);
+            this.txtDisName.Name = "txtDisName";
+            this.txtDisName.Size = new System.Drawing.Size(208, 34);
+            this.txtDisName.TabIndex = 1;
             // 
             // label1
             // 
@@ -252,7 +254,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.txtFind);
-            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.btnFind);
             this.panel4.Location = new System.Drawing.Point(408, 1);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(390, 78);
@@ -264,15 +266,17 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(289, 22);
             this.txtFind.TabIndex = 9;
+            this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
             // 
-            // button6
+            // btnFind
             // 
-            this.button6.Location = new System.Drawing.Point(292, 7);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(88, 56);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Tìm";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnFind.Location = new System.Drawing.Point(292, 7);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(88, 56);
+            this.btnFind.TabIndex = 10;
+            this.btnFind.Text = "Tìm";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // fListAcc
             // 
@@ -312,24 +316,24 @@
         private System.Windows.Forms.DataGridView dgvAccList;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDisName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFind;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label label6;
     }
 }

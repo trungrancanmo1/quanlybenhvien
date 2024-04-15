@@ -1,22 +1,26 @@
-﻿using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
-using Google.Cloud.Firestore;
+﻿using Google.Cloud.Firestore;
+using Google.Protobuf.WellKnownTypes;
+using Google.Type;
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp2
 {
     public partial class fListAcc : Form
     {
         public FirestoreDb database;
+        public bool exist = false;
+        public Taikhoan acc = null;
         public fListAcc()
         {
             InitializeComponent();
@@ -66,10 +70,6 @@ namespace WindowsFormsApp2
                 }
                 else if(j == 1)
                 {
-                    /*DocumentReference res1 = database.Collection("Doctor").Document("0123456789").Collection("Information").Document("Information");
-                    DocumentSnapshot listSnap1 = await res1.GetSnapshotAsync();
-                    Taikhoan f = listSnap1.ConvertTo<Taikhoan>();
-                    MessageBox.Show(f.userName);*/
                     Query list = database.Collection("Doctor");
                     QuerySnapshot listSnap = await list.GetSnapshotAsync();
                     foreach (DocumentSnapshot document in listSnap.Documents)
@@ -107,6 +107,160 @@ namespace WindowsFormsApp2
                 
             }
             dgvAccList.DataSource = dt;
+        }
+
+        private async void btnFind_Click(object sender, EventArgs e)
+        {
+            DocumentReference adRes = database.Collection("Admin").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
+
+            DocumentReference docRes = database.Collection("Doctor").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
+
+            DocumentReference patRes = database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
+
+            if (!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)
+            {
+                MessageBox.Show("Tài khoản không tồn tại");
+                return;
+            }
+
+            exist = true;
+
+            if (adSnap.Exists)
+            {
+                acc = adSnap.ConvertTo<Admin>();
+            }
+            else if (docSnap.Exists)
+            {
+                acc = docSnap.ConvertTo<Doctor>();
+            }
+            else if (patSnap.Exists)
+            {
+                acc = patSnap.ConvertTo<Patient>();
+            }
+
+            txtDisName.Text = acc.displayName;
+            txtType.Text = acc.type;
+            txtUserName.Text = acc.userName;
+            txtPass.Text = acc.password;
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(!exist)
+            {
+                MessageBox.Show("Hãy nhập đúng tên tài khoản");
+                return;
+            }  
+
+            if (acc.type == "Admin")
+            {
+                if (txtFind.Text == CurrentAccount.Instance.GetData().userName)
+                {
+                    MessageBox.Show("Không thể xóa tài khoản Admin của bản thân");
+                    return;
+                }
+                Query ad = database.Collection("Admin");
+                QuerySnapshot adSnap = await ad.GetSnapshotAsync();
+                int cnt = 0;
+                foreach (DocumentSnapshot documentSnapshot in adSnap)
+                {
+                    cnt++;
+                }
+                if (cnt <= 1)
+                {
+                    MessageBox.Show("Cần chừa lại ít nhất 1 tài khoản Admin");
+                    return;
+                }
+                DocumentReference adRes = database.Collection("Admin").Document(acc.userName);
+                
+                await DeleteCollection(adRes.Collection("Information"), 2);
+
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { "rong", FieldValue.Delete }
+                };
+                await adRes.UpdateAsync(updates);
+
+                await adRes.DeleteAsync();
+
+                MessageBox.Show("Xóa tài khoản Admin thành công");
+            }
+            else if (acc.type == "Doctor")
+            {
+                string tel = txtFind.Text;
+                DocumentReference documentReference = database.Collection("Doctor").Document(tel);
+                // Delete doctor's schedule
+                await deleteDoctorSchedules(tel);
+                // Delete SubCollection
+                await DeleteCollection(documentReference.Collection("Information"), 2);
+                await DeleteCollection(documentReference.Collection("Schedule"), 2);
+                // Delete field
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                    { "rong", FieldValue.Delete }
+                };
+                await documentReference.UpdateAsync(updates);
+
+                await documentReference.DeleteAsync();
+                MessageBox.Show("Xóa tài khoản thành công");
+            }
+            
+        }
+
+        private async Task deleteDoctorSchedules(string tel)
+        {
+            Query query = database.Collection("Schedules");
+            QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
+            foreach (DocumentSnapshot documentSnapshot in querySnapshots)
+            {
+                if (documentSnapshot.Exists)
+                {
+                    if (documentSnapshot.GetValue<string>("doctor") == tel)
+                    {
+                        await documentSnapshot.Reference.DeleteAsync();
+                    }
+                }
+            }
+        }
+
+        private async Task DeleteCollection(CollectionReference collectionReference, int batchSize)
+        {
+            QuerySnapshot snapshot = await collectionReference.Limit(batchSize).GetSnapshotAsync();
+            IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
+            while (documents.Count > 0)
+            {
+                foreach (DocumentSnapshot document in documents)
+                {
+                    await document.Reference.DeleteAsync();
+                }
+                snapshot = await collectionReference.Limit(batchSize).GetSnapshotAsync();
+                documents = snapshot.Documents;
+            }
+        }
+
+        private void txtFind_TextChanged(object sender, EventArgs e)
+        {
+            exist = false;
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (!exist)
+            {
+                MessageBox.Show("Hãy nhập đúng tên tài khoản");
+                return;
+            }
+            DocumentReference res = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+            Dictionary<string, object> updates = new Dictionary<string, object>()
+            {
+                {"displayName", txtDisName.Text},
+                {"password", txtPass.Text}
+            };
+            await res.UpdateAsync(updates);
+            MessageBox.Show("Cập nhật thành công");
         }
     }
 }

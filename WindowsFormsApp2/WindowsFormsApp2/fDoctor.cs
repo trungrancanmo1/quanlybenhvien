@@ -103,5 +103,27 @@ namespace WindowsFormsApp2
         {
             return beginTime.AddSeconds(-beginTime.Second);
         }
+
+        private async void btnFind_Click(object sender, EventArgs e)
+        {
+            DocumentReference accRes = database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
+            if (!accSnap.Exists)
+            {
+                MessageBox.Show("ID bệnh nhân không đúng");
+                return;
+            }
+            Taikhoan pat = accSnap.ConvertTo<Patient>();
+
+            System.DateTime date = pat.regDate.ToDateTime();
+            date = date.AddHours(7);
+
+            txtPatName.Text = pat.displayName;
+            txtMedHis.Text = pat.medicalHistory;
+            txtTesRes.Text = pat.testingResult;
+            txtDia.Text = pat.diagnosis;
+            dtpRegDate.Value = date;
+            txtPro.Text = pat.progress;
+        }
     }
 }
