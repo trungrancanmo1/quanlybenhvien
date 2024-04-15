@@ -21,6 +21,7 @@ namespace WindowsFormsApp2
         public FirestoreDb database;
 
         public bool flag = false;
+        public bool fixFlag = false;
 
         public string userID;
         public fPatientforAdmin()
@@ -89,6 +90,7 @@ namespace WindowsFormsApp2
 
             }
             dataGridView1.DataSource = dt;
+            MessageBox.Show("Tài dữ liệu thành công");
         }
 
         private async void button3_Click(object sender, EventArgs e) //xóa
@@ -102,7 +104,7 @@ namespace WindowsFormsApp2
             dateTimePicker1.Value = System.DateTime.Now;
             dateTimePicker1.Enabled = true;
             flag = false;
-
+            fixFlag = false;
         }
 
         private async void button6_Click(object sender, EventArgs e) // tìm
@@ -110,10 +112,11 @@ namespace WindowsFormsApp2
             string id = textBox1.Text;
             if (textBox1.Text == "")
             {
-                MessageBox.Show("Please enter patient's phone number");
+                MessageBox.Show("Hãy nhập SĐT bệnh nhân muốn tìm kiếm!");
                 return;
             }
             flag = true;
+            fixFlag = true;    
             userID = id;
 
             DocumentReference patRes = database.Collection("Patient").Document(id).Collection("Information").Document("Information");
@@ -122,7 +125,7 @@ namespace WindowsFormsApp2
 
             if (!patSnap.Exists)
             {
-                MessageBox.Show("Sai số điện thoại");
+                MessageBox.Show("Không tìm thấy bệnh nhân có SĐT " + id );
                 flag = false;
                 return;
             }
@@ -143,9 +146,14 @@ namespace WindowsFormsApp2
 
         private async void button2_Click(object sender, EventArgs e) // Sửa
         {
+            if(!fixFlag)
+            {
+                MessageBox.Show("Tìm bệnh nhân và thay đổi thông tin cần sửa");
+                return;
+            }
             if (userID != textBox1.Text)
             {
-                MessageBox.Show("Cannot be edited");
+                MessageBox.Show("Không thể sửa");
                 return;
             }
             string id = textBox1.Text;
@@ -167,6 +175,7 @@ namespace WindowsFormsApp2
 
             };
             await patRes.UpdateAsync(updates);
+            MessageBox.Show("Sửa thành công");
 
 
 
