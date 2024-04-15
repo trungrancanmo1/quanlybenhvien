@@ -558,6 +558,7 @@
             this.textBox7.Size = new System.Drawing.Size(297, 22);
             this.textBox7.TabIndex = 4;
             this.textBox7.UseWaitCursor = true;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label5
             // 

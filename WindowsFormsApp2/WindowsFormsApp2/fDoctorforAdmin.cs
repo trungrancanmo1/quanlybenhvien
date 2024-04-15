@@ -47,18 +47,23 @@ namespace WindowsFormsApp2
         }
         private async void search(string tel)
         {
-            DocumentReference documentReference = database.Collection("Doctor").Document(tel)
+            if (doctorIdInputValid(tel))
+            {
+                DocumentReference documentReference = database.Collection("Doctor").Document(tel)
                 .Collection("Information").Document("Information");
-            DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
-            
-            if (snapshot.Exists)
-            {
-                Doctor doctor = snapshot.ConvertTo<Doctor>();
-                showDoctorInfomation(doctor);
-            }else
-            {
-                MessageBox.Show("NOT FOUND");
+                DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
+
+                if (snapshot.Exists)
+                {
+                    Doctor doctor = snapshot.ConvertTo<Doctor>();
+                    showDoctorInfomation(doctor);
+                }
+                else
+                {
+                    MessageBox.Show("NOT FOUND");
+                }
             }
+            
         }
         private void showDoctorInfomation(Doctor doctor)
         {
@@ -125,18 +130,31 @@ namespace WindowsFormsApp2
         private async void deleteDoctor()
         {
             string tel = this.textBox1.Text;
-            DocumentReference documentReference = database.Collection("Doctor").Document(tel);
-            // Delete doctor's schedule
-            await deleteDoctorSchedules(tel);
-            // Delete SubCollection
-            await DeleteCollection(documentReference.Collection("Information"), 2);
-            await DeleteCollection(documentReference.Collection("Schedule"), 2);
-            // Delete field
-            Dictionary<string, object> updates = new Dictionary<string, object>
+            if (doctorIdInputValid(tel))
+            {
+                DocumentReference documentReference = database.Collection("Doctor").Document(tel);
+                // Delete doctor's schedule
+                await deleteDoctorSchedules(tel);
+                // Delete SubCollection
+                await DeleteCollection(documentReference.Collection("Information"), 2);
+                await DeleteCollection(documentReference.Collection("Schedule"), 2);
+                // Delete field
+                Dictionary<string, object> updates = new Dictionary<string, object>
             {
                 { "rong", FieldValue.Delete }
             };
-            await documentReference.UpdateAsync(updates);
+                await documentReference.UpdateAsync(updates);
+            }
+            
+        }
+        private bool doctorIdInputValid(string tel)
+        {
+            if (tel == "")
+            {
+                MessageBox.Show("PLEASE INSERT DOCTOR ID");
+                return false;
+            }
+            return true;
         }
         private async Task deleteDoctorSchedules(string tel)
         {
@@ -214,19 +232,22 @@ namespace WindowsFormsApp2
             if (this.comboBox1.Text == "")
             {
                 MessageBox.Show("HAY NHAP CHUYEN MON");
-            }
-            System.DateTime beginTime = this.dateTimePicker3.Value;
-            System.DateTime endTime = this.dateTimePicker4.Value;
-            beginTime = resetSecond(beginTime);
-            endTime = resetSecond(endTime);
-            if (beginTime < endTime)
+            }else
             {
-                filterAllDoctorWithSpecAndTime(beginTime, endTime);
-
+                System.DateTime beginTime = this.dateTimePicker3.Value;
+                System.DateTime endTime = this.dateTimePicker4.Value;
+                beginTime = resetSecond(beginTime);
+                endTime = resetSecond(endTime);
+                if (beginTime < endTime)
+                {
+                    filterAllDoctorWithSpecAndTime(beginTime, endTime);
+                }
+                else
+                {
+                    MessageBox.Show("Invalid begin and end");
+                }
             }
-            else {
-                MessageBox.Show("Invalid begin and end");
-            }
+            
         }
         private void clearDataGridView()
         {
@@ -404,6 +425,11 @@ namespace WindowsFormsApp2
         }
 
         private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
         }
