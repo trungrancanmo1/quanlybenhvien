@@ -95,6 +95,67 @@ namespace WindowsFormsApp2
 
         private async void button3_Click(object sender, EventArgs e) //xóa
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Hãy nhập SĐT bệnh nhân muốn xóa");
+                return;
+            }
+            string telPati = textBox1.Text;
+            DocumentReference patRes = database.Collection("Patient").Document(telPati);
+            DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
+            Taikhoan data = patSnap.ConvertTo<Taikhoan>();
+
+            if (!patSnap.Exists)
+            {
+                MessageBox.Show("Không tìm thấy bệnh nhân có SĐT " + telPati);
+                return;
+            }
+
+            //Xóa schedule
+            DocumentReference path = database.Collection("Patient").Document(telPati);
+            Query query = database.Collection("Schedules");
+            QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
+            foreach (DocumentSnapshot documentSnapshot in querySnapshots)
+            {
+                if (documentSnapshot.Exists)
+                {
+                    if (documentSnapshot.GetValue<string>("patient") == telPati)
+                    {
+                        await documentSnapshot.Reference.DeleteAsync();
+                    }
+                }
+            }
+            // xóa colloection information 
+            QuerySnapshot snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
+            IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
+            while (documents.Count > 0)
+            {
+                foreach (DocumentSnapshot document in documents)
+                {
+                    await document.Reference.DeleteAsync();
+                }
+                snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
+                documents = snapshot.Documents;
+            }
+            // xóa colloection schedule
+            QuerySnapshot snapshotSche = await path.Collection("Schedule").Limit(2).GetSnapshotAsync();
+            IReadOnlyList<DocumentSnapshot> documentSche = snapshotSche.Documents;
+            while (documentSche.Count > 0)
+            {
+                foreach (DocumentSnapshot documentsch in documentSche)
+                {
+                    await documentsch.Reference.DeleteAsync();
+                }
+                snapshot = await path.Collection("Schedule").Limit(2).GetSnapshotAsync();
+                documentSche = snapshot.Documents;
+            }
+            Dictionary<string, object> updates = new Dictionary<string, object>
+            {
+                { "rong", FieldValue.Delete }
+            };
+            await path.UpdateAsync(updates);
+            await path.DeleteAsync();
+
             textBox2.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
@@ -105,6 +166,8 @@ namespace WindowsFormsApp2
             dateTimePicker1.Enabled = true;
             flag = false;
             fixFlag = false;
+            MessageBox.Show("Xóa thành công");
+
         }
 
         private async void button6_Click(object sender, EventArgs e) // tìm
