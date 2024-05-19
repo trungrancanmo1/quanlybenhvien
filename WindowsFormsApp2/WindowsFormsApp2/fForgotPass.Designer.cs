@@ -31,11 +31,11 @@
             this.panelAcc = new System.Windows.Forms.Panel();
             this.textAcc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelEmail = new System.Windows.Forms.Panel();
-            this.textEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btngetPass = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.panelEmail = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.panelAcc.SuspendLayout();
             this.panelEmail.SuspendLayout();
             this.SuspendLayout();
@@ -68,32 +68,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản:";
             // 
-            // panelEmail
-            // 
-            this.panelEmail.Controls.Add(this.textEmail);
-            this.panelEmail.Controls.Add(this.label2);
-            this.panelEmail.Location = new System.Drawing.Point(39, 164);
-            this.panelEmail.Name = "panelEmail";
-            this.panelEmail.Size = new System.Drawing.Size(722, 123);
-            this.panelEmail.TabIndex = 12;
-            // 
-            // textEmail
-            // 
-            this.textEmail.Location = new System.Drawing.Point(214, 49);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(465, 22);
-            this.textEmail.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Email:";
-            // 
             // btngetPass
             // 
             this.btngetPass.Location = new System.Drawing.Point(108, 347);
@@ -113,6 +87,33 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.thoat_Click);
+            // 
+            // panelEmail
+            // 
+            this.panelEmail.Controls.Add(this.textEmail);
+            this.panelEmail.Controls.Add(this.label2);
+            this.panelEmail.Location = new System.Drawing.Point(39, 164);
+            this.panelEmail.Name = "panelEmail";
+            this.panelEmail.Size = new System.Drawing.Size(722, 123);
+            this.panelEmail.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tên hiển thị:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textEmail
+            // 
+            this.textEmail.Location = new System.Drawing.Point(214, 49);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(465, 22);
+            this.textEmail.TabIndex = 1;
             // 
             // fForgotPass
             // 
@@ -141,10 +142,10 @@
         private System.Windows.Forms.Panel panelAcc;
         private System.Windows.Forms.TextBox textAcc;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btngetPass;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelEmail;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btngetPass;
-        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -336,11 +337,6 @@ namespace WindowsFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (check == false)
-            {
-                MessageBox.Show("Hãy xem chẩn đoán của bệnh nhân");
-                return;
-            }
             foo();
         }
         private async void foo()
@@ -378,7 +374,7 @@ namespace WindowsFormsApp2
             // Check if patient have a schedule or not
             if (!await checkIfPatientAvailable(patient, begin, end))
             {
-                MessageBox.Show("PATIENT BUSY THIS TIME");
+                MessageBox.Show("Bệnh nhân bận giờ này !");
             }else
             {
                 // Make an appointment for a doctor and a patient
@@ -468,6 +464,71 @@ namespace WindowsFormsApp2
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             check = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showAvailablePatient();
+        }
+        private async void showAvailablePatient()
+        {
+            System.DateTime beginTime = this.dateTimePicker3.Value;
+            System.DateTime endTime = this.dateTimePicker4.Value;
+            this.dataGridView1.Rows.Clear();
+            Query collectionReference = Database.Instance.database.Collection("Patient");
+            QuerySnapshot snapshots = await collectionReference.GetSnapshotAsync();
+            bool available = false;
+            foreach (var snapshot in snapshots)
+            {
+                string patientTel = snapshot.Reference.Id;
+                if (await checkIfPatientAvailable(patientTel, beginTime, endTime))
+                {
+                    DocumentReference docRef = Database.Instance.database.Collection("Patient").Document(patientTel).Collection("Information").Document("Information");
+                    DocumentSnapshot patientSnapshot = await docRef.GetSnapshotAsync();
+                    if (patientSnapshot.Exists)
+                    {
+                        available = true;
+                        Patient patient = patientSnapshot.ConvertTo<Patient>();
+                        addPatientToData(patient);
+                    }
+                }
+            }
+            if (available == false)
+            {
+                MessageBox.Show("Không có bênh nhân nào rảnh trong khoảng thời gian đã chọn !\n" +
+                                "Hãy lựa chọn khoảng thời gian khác !");
+            }
+        }
+        private void addPatientToData(Patient patient)
+        {
+            this.dataGridView1.Rows.Add(patient.displayName, patient.userName, patient.diagnosis);
+        }
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+        }
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel15_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

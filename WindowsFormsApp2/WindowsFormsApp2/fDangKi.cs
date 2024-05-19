@@ -139,7 +139,11 @@ namespace WindowsFormsApp2
 
         private async void btnAdminRes_Click(object sender, EventArgs e)
         {
-            if (txtAdminAcc.Text == "") return;
+            if (txtAdminAcc.Text == "")
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin !");
+                return;
+            }
             if (!char.IsLetter(txtAdminAcc.Text[0]))
             {
                 MessageBox.Show("Tài khoản Admin bắt đầu bằng chữ cái");
