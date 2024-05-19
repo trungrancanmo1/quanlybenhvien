@@ -130,6 +130,13 @@ namespace WindowsFormsApp2
                 return;
             }
             deleteDoctor();
+
+            textBox1.Text = "";
+            nameBox.Text = "";
+            positionBox.Text = "";
+            specBox.Text = "";
+            textBox7.Text = "";
+
             MessageBox.Show("Xóa tài khoản thành công");
         }
         private async void deleteDoctor()

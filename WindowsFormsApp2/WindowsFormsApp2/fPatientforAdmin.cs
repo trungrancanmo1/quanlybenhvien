@@ -111,8 +111,7 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            //Xóa schedule
-            DocumentReference path = database.Collection("Patient").Document(telPati);
+            //Xóa schedule          
             Query query = database.Collection("Schedules");
             QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in querySnapshots)
@@ -126,6 +125,7 @@ namespace WindowsFormsApp2
                 }
             }
             // xóa colloection information 
+            DocumentReference path = database.Collection("Patient").Document(telPati);
             QuerySnapshot snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
             IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
             while (documents.Count > 0)
@@ -239,26 +239,6 @@ namespace WindowsFormsApp2
             };
             await patRes.UpdateAsync(updates);
             MessageBox.Show("Sửa thành công");
-
-
-
-            /*      DocumentReference documentReference = database.Collection("Doctor").Document("069").Collection("Schedule").Document("first");
-                    DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
-                    if (snapshot.Exists)
-                    {
-                        Dictionary<string, DocumentReference> data1 = snapshot.ConvertTo<Dictionary<string, DocumentReference>>();
-                        foreach (var item in data1)
-                        {
-                            DocumentReference tmp = item.Value;
-
-                            Console.WriteLine(tmp.Id);
-                            Console.WriteLine(item.Value.GetType());
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("NOT EXISTED");
-                    }*/
         }
 
         private async void btnView_Click(object sender, EventArgs e)

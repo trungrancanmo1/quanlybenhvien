@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp2
@@ -26,7 +27,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private async void fListAcc_Load(object sender, EventArgs e)
+        private void fListAcc_Load(object sender, EventArgs e)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
@@ -207,7 +208,59 @@ namespace WindowsFormsApp2
                 await documentReference.DeleteAsync();
                 MessageBox.Show("Xóa tài khoản thành công");
             }
-            
+            else if (acc.type == "Patient")
+            {
+                string telPati = txtFind.Text;
+                //Xóa schedule          
+                Query query = database.Collection("Schedules");
+                QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
+                foreach (DocumentSnapshot documentSnapshot in querySnapshots)
+                {
+                    if (documentSnapshot.Exists)
+                    {
+                        if (documentSnapshot.GetValue<string>("patient") == telPati)
+                        {
+                            await documentSnapshot.Reference.DeleteAsync();
+                        }
+                    }
+                }
+                // xóa colloection information 
+                DocumentReference path = database.Collection("Patient").Document(telPati);
+                QuerySnapshot snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
+                IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
+                while (documents.Count > 0)
+                {
+                    foreach (DocumentSnapshot document in documents)
+                    {
+                        await document.Reference.DeleteAsync();
+                    }
+                    snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
+                    documents = snapshot.Documents;
+                }
+                // xóa colloection schedule
+                QuerySnapshot snapshotSche = await path.Collection("Schedule").Limit(2).GetSnapshotAsync();
+                IReadOnlyList<DocumentSnapshot> documentSche = snapshotSche.Documents;
+                while (documentSche.Count > 0)
+                {
+                    foreach (DocumentSnapshot documentsch in documentSche)
+                    {
+                        await documentsch.Reference.DeleteAsync();
+                    }
+                    snapshot = await path.Collection("Schedule").Limit(2).GetSnapshotAsync();
+                    documentSche = snapshot.Documents;
+                }
+                Dictionary<string, object> updates = new Dictionary<string, object>
+                {
+                { "rong", FieldValue.Delete }
+                };
+                await path.UpdateAsync(updates);
+                await path.DeleteAsync();
+                MessageBox.Show("Xóa tài khoản thành công");
+            }
+            txtFind.Text = "";
+            txtDisName.Text = "";
+            txtPass.Text = "";
+            txtUserName.Text = "";
         }
 
         private async Task deleteDoctorSchedules(string tel)
