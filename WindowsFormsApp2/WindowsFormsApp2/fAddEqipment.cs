@@ -53,12 +53,12 @@ namespace WindowsFormsApp2
                                                .Document(formattedDate);
             DocumentReference temp = Database.Instance.database.Collection("Equipment")
                                               .Document(textbox2Data);
-            temp.SetAsync(dummyMap);
+            await temp.SetAsync(dummyMap);
             temp = Database.Instance.database.Collection("EquipmentDelete")
                                               .Document(textbox2Data);
-            temp.SetAsync(dummyMap);
+            await temp.SetAsync(dummyMap);
 
-            item.SetAsync(data);
+            await item.SetAsync(data);
             MessageBox.Show("Đăng kí thành công");
     }
     }

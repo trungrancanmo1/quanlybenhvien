@@ -50,7 +50,7 @@ namespace WindowsFormsApp2
                     type = acc.type,
                 };
                 DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
-                passSet.SetAsync(data);
+                await passSet.SetAsync(data);
             }
             else if (acc.type == "Doctor")
             {
@@ -66,7 +66,7 @@ namespace WindowsFormsApp2
                     credential = acc.credential,
                 };
                 DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
-                passSet.SetAsync(data);
+                await passSet.SetAsync(data);
             }
             else
             {
@@ -83,7 +83,7 @@ namespace WindowsFormsApp2
                     progress = acc.progress,
                 };
                 DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
-                passSet.SetAsync(data);
+                await passSet.SetAsync(data);
             }
 
             MessageBox.Show("Đổi mật khẩu thành công");

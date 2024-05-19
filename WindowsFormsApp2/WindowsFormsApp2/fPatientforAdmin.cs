@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
         {
 
         }
-        private async void fPatientforAdmin_Load(object sender, EventArgs e)
+        private void fPatientforAdmin_Load(object sender, EventArgs e)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);

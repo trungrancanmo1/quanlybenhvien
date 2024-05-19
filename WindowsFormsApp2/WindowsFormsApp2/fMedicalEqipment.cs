@@ -88,22 +88,22 @@ namespace WindowsFormsApp2
             this.Show();
         }
         // Xem 
-        private async void seeMed_Click(object sender, EventArgs e)
+        private void seeMed_Click(object sender, EventArgs e)
         {
             LoadData<Medical>("Medical", dataGridView2, false, new string[] { "name", "count", "dateIn", "dateOut", "expiry" });
         }
 
-        private async void seeEquip_Click(object sender, EventArgs e)
+        private void seeEquip_Click(object sender, EventArgs e)
         {
             LoadData<Equipment>("Equipment", dataGridView1, false, new string[] { "name", "count", "dateIn", "dateOut", "dateMaintenance", "status" });
         }
         // Tìm kiếm
-        private async void FindMed_Click(object sender, EventArgs e)
+        private void FindMed_Click(object sender, EventArgs e)
         {
             SearchData<Medical>("Medical", dataGridView2, textBox1.Text, new string[] { "name", "count", "dateIn", "dateOut", "expiry" });
 
         }
-        private async void FindEquip_Click(object sender, EventArgs e)
+        private void FindEquip_Click(object sender, EventArgs e)
         {
             SearchData<Equipment>("Equipment", dataGridView1, textBox5.Text, new string[] { "name", "count", "dateIn", "dateOut", "dateMaintenance", "status" });
         }
@@ -173,7 +173,7 @@ namespace WindowsFormsApp2
         }
 
         // Xem lịch sử
-        private async void checkData_Click(object sender, EventArgs e)
+        private void checkData_Click(object sender, EventArgs e)
         {
             dataGridHis();
         }
@@ -241,10 +241,10 @@ namespace WindowsFormsApp2
             Dictionary<String, Object> dummyMap = new Dictionary<string, object>();
             DocumentReference temp = Database.Instance.database.Collection(collectionName)
                                               .Document(nameId);
-            temp.SetAsync(dummyMap);
+            await temp.SetAsync(dummyMap);
             temp = Database.Instance.database.Collection(collectionName + "Delete")
                                               .Document(nameId);
-            temp.SetAsync(dummyMap);
+            await temp.SetAsync(dummyMap);
 
             var data = new Dictionary<string, object>
             { 
