@@ -67,15 +67,26 @@ namespace WindowsFormsApp2
             Query scheduleCollection = database.Collection("Doctor").Document(doctor.userName)
                 .Collection("Schedule");
             QuerySnapshot tmp = await scheduleCollection.GetSnapshotAsync();
+            bool available = false;
             foreach (DocumentSnapshot doc in tmp)
             {
                 DocumentReference scheduleRef = doc.GetValue<DocumentReference>("ref");
                 DocumentSnapshot scheduleSnap = await scheduleRef.GetSnapshotAsync();
-                Schedule scheduleData = scheduleSnap.ConvertTo<Schedule>();
-                System.DateTime begin = scheduleData.begin.ToDateTime().ToLocalTime();
-                System.DateTime end = scheduleData.end.ToDateTime().ToLocalTime();
-                if (validTime(a, b, begin, end))
-                    addDoctorToDataGridView(scheduleData);
+                if (scheduleSnap.Exists)
+                {
+                    Schedule scheduleData = scheduleSnap.ConvertTo<Schedule>();
+                    System.DateTime begin = scheduleData.begin.ToDateTime().ToLocalTime();
+                    System.DateTime end = scheduleData.end.ToDateTime().ToLocalTime();
+                    if (validTime(a, b, begin, end))
+                    {
+                        addDoctorToDataGridView(scheduleData);
+                        available = true;
+                    }
+                }
+            }
+            if (!available)
+            {
+                MessageBox.Show("Không có lịch trình");
             }
 
         }

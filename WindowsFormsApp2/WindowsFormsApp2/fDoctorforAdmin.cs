@@ -19,7 +19,6 @@ namespace WindowsFormsApp2
     public partial class fDoctorforAdmin : Form
     {
         private FirestoreDb database;
-        private List<DocumentReference> availableDoctorRefs;
         private bool exist = false;
         private bool check = false;
         public fDoctorforAdmin()
@@ -261,6 +260,7 @@ namespace WindowsFormsApp2
             Query collectionReference = database.Collection("Doctor");
             QuerySnapshot snapshots = await collectionReference.GetSnapshotAsync();
             string spec = this.comboBox1.Text;
+            bool available = false;
             foreach (var snapshot in snapshots)
             {
                 DocumentSnapshot tmp = await snapshot.Reference.Collection("Information")
@@ -281,18 +281,22 @@ namespace WindowsFormsApp2
                             DocumentReference temp = document.GetValue<DocumentReference>("ref");
                             Console.WriteLine(temp.ToString());
                             DocumentSnapshot scheduleSnap = await temp.GetSnapshotAsync();
-                            Schedule scheduleData = scheduleSnap.ConvertTo<Schedule>();
-                            System.DateTime begin = scheduleData.begin.ToDateTime().ToLocalTime();
-                            System.DateTime end = scheduleData.end.ToDateTime().ToLocalTime();
-                            Console.WriteLine(begin + " " + end);
-                            if (!validTime(begin, end, a, b))
+                            if (scheduleSnap.Exists)
                             {
-                                valid = false;
-                                break;
+                                Schedule scheduleData = scheduleSnap.ConvertTo<Schedule>();
+                                System.DateTime begin = scheduleData.begin.ToDateTime().ToLocalTime();
+                                System.DateTime end = scheduleData.end.ToDateTime().ToLocalTime();
+                                Console.WriteLine(begin + " " + end);
+                                if (!validTime(begin, end, a, b))
+                                {
+                                    valid = false;
+                                    break;
+                                }
                             }
                         }
                         if (valid)
                         {
+                            available = true;
                             addDoctorToData(doctor);
                         }
                     }
@@ -301,6 +305,11 @@ namespace WindowsFormsApp2
                 {
                     Console.WriteLine("NOT EXISTED");
                 }
+            }
+            if (available == false)
+            {
+                MessageBox.Show("Không có bác sĩ nào thuộc chuyên môn trên rảnh trong khoảng thời gian đã chọn !" +
+                    "Hãy lựa chọn khoảng thời gian khác !");
             }
         }
         
