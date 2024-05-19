@@ -89,7 +89,6 @@ C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFor
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\bin\Release\System.ValueTuple.xml
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.csproj.AssemblyReference.cache
-C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.Account.resources
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.fAddEqipment.resources
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.fAddMed.resources
 C:\Users\ADMIN\Desktop\New folder (2)\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Release\WindowsFormsApp2.fDangKi.resources

@@ -1,180 +1,282 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CurrentAccount" Collapsed="true">
+<<<<<<< HEAD
     <Position X="7.75" Y="0.5" Width="1.5" />
+=======
+    <Position X="4.75" Y="1.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAABEAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>CurrentAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Empty" Collapsed="true">
+<<<<<<< HEAD
     <Position X="9.5" Y="0.5" Width="1.5" />
+=======
+    <Position X="4.75" Y="3.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fAccManagementforAdmin" Collapsed="true">
+<<<<<<< HEAD
     <Position X="11.25" Y="0.5" Width="1.5" />
+=======
+    <Position X="4.75" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>ABAAAgAIAKAAAFBAAADAAEACACAAAAAAEAAAAABAQIA=</HashCode>
       <FileName>fAccManagementforAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fAddEqipment" Collapsed="true">
+<<<<<<< HEAD
     <Position X="13" Y="0.5" Width="1.5" />
+=======
+    <Position X="3" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>ACAAACAAECAAABBCAACAAABCICAEkAABAAAAAQAAAAI=</HashCode>
       <FileName>fAddEqipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fAddMed" Collapsed="true">
+<<<<<<< HEAD
     <Position X="14.75" Y="0.5" Width="1.5" />
+=======
+    <Position X="3" Y="1.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AiAAACAAECAAABBCAACAIABCICAEgAAAAAAAAQAAAAI=</HashCode>
       <FileName>fAddMed.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fChangePassword" Collapsed="true">
+<<<<<<< HEAD
     <Position X="7.75" Y="4.5" Width="1.5" />
+=======
+    <Position X="3" Y="3.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAQAAgACAAABBAgADAIEACAAAAAAAAAAAAASAACAA=</HashCode>
       <FileName>fChangePassword.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fDangKi" Collapsed="true">
+<<<<<<< HEAD
     <Position X="9.5" Y="1.5" Width="1.5" />
+=======
+    <Position X="4.75" Y="4.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>8AKACCAAACAIQBBAgBCEABECgCEAAABICAgEAQA/BhA=</HashCode>
       <FileName>fDangKi.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fDoctor" Collapsed="true">
+<<<<<<< HEAD
     <Position X="11.25" Y="1.5" Width="1.5" />
+=======
+    <Position X="6.5" Y="4.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAKAACADECAAQBBiqACQJCgSBCk8BAAIGAAwAQA/AAU=</HashCode>
       <FileName>fDoctor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fDoctorforAdmin" Collapsed="true">
+<<<<<<< HEAD
     <Position X="13" Y="1.5" Width="1.5" />
+=======
+    <Position X="6.5" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>UAAIESQRQCA4UBTyiACwIAhaQPC9FwQIEWBOARF/ABE=</HashCode>
       <FileName>fDoctorforAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fForgotPass" Collapsed="true">
+<<<<<<< HEAD
     <Position X="14.75" Y="1.5" Width="1.5" />
+=======
+    <Position X="6.5" Y="3.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>ABCAAAAIACAAABBEAQCAIAACACAAAAAADQAAAAAAUAA=</HashCode>
       <FileName>fForgotPass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fInterface" Collapsed="true">
+<<<<<<< HEAD
     <Position X="7.75" Y="5.5" Width="1.5" />
+=======
+    <Position X="8.5" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAABAAECIAAAIAAADBAIASACAAAAgAAAAIAQBgAEA=</HashCode>
       <FileName>fInterface.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fListAcc" Collapsed="true">
+<<<<<<< HEAD
     <Position X="9.5" Y="2.5" Width="1.5" />
+=======
+    <Position X="6.5" Y="5.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAUAATBCIECBBwAQCAAAACAEAAABAAAQAJAQAAAQQ=</HashCode>
       <FileName>fListAcc.cs</FileName>
     </TypeIdentifier>
   </Class>
+<<<<<<< HEAD
   <Class Name="WindowsFormsApp2.fLogin">
     <Position X="11.25" Y="2.5" Width="1.5" />
+=======
+  <Class Name="WindowsFormsApp2.fLogin" Collapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>EAACAAAIACEAAABAAADCAAACACEACQAACEQAACBAQAA=</HashCode>
       <FileName>fLogin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fMedicalEqipment" Collapsed="true">
+<<<<<<< HEAD
     <Position X="13" Y="2.5" Width="1.5" />
+=======
+    <Position X="3" Y="5.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>cCCIACAQgSEQQhDGEQCAAARCIPk/kwAAEAAgARP/J4g=</HashCode>
       <FileName>fMedicalEqipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fPatient" Collapsed="true">
+<<<<<<< HEAD
     <Position X="14.75" Y="2.5" Width="1.5" />
+=======
+    <Position X="6.5" Y="1.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>CAIAAIAAACAASBBAoACAACATAAEAAAAAUAAAAQABBgQ=</HashCode>
       <FileName>fPatient.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.fPatientforAdmin" Collapsed="true">
+<<<<<<< HEAD
     <Position X="7.75" Y="3.5" Width="1.5" />
+=======
+    <Position X="3" Y="4.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>QCAAAIAAASAASBDCCICAAAkDIEgxAAAAUDAKAQABBkA=</HashCode>
       <FileName>fPatientforAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Instrument" Collapsed="true">
+<<<<<<< HEAD
     <Position X="1.75" Y="3.5" Width="1.5" />
+=======
+    <Position X="11.5" Y="1" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAABAAAAAAAAAAkAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Instrument.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Medical" Collapsed="true">
+<<<<<<< HEAD
     <Position X="2.75" Y="4.75" Width="1.5" />
+=======
+    <Position X="12.75" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAABAAAAAAAEAAkAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Instrument.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Equipment" Collapsed="true">
+<<<<<<< HEAD
     <Position X="0.5" Y="4.75" Width="1.5" />
+=======
+    <Position X="10.25" Y="2.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAUAAAAAAAIAAAAABAAAAAAAAAAkAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Instrument.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Program" Collapsed="true">
+<<<<<<< HEAD
     <Position X="9.5" Y="3.5" Width="1.5" />
+=======
+    <Position X="8.5" Y="3.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Schedule" Collapsed="true">
+<<<<<<< HEAD
     <Position X="11.25" Y="3.5" Width="1.5" />
+=======
+    <Position X="8.5" Y="1.25" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAIAAACAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Schedule.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Taikhoan" Collapsed="true">
+<<<<<<< HEAD
     <Position X="3" Y="0.5" Width="1.5" />
+=======
+    <Position X="11.25" Y="3.5" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AgAAAAAAABAgAAAAAAgQIAAAAAABBAAAAIAAAgUAAAA=</HashCode>
       <FileName>Taikhoan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Admin" Collapsed="true">
+<<<<<<< HEAD
     <Position X="3" Y="1.75" Width="1.5" />
+=======
+    <Position X="9.5" Y="4.75" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Taikhoan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Doctor" Collapsed="true">
+<<<<<<< HEAD
     <Position X="5.25" Y="1.75" Width="1.5" />
+=======
+    <Position X="11.25" Y="4.75" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Taikhoan.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp2.Patient" Collapsed="true">
+<<<<<<< HEAD
     <Position X="0.75" Y="1.75" Width="1.5" />
+=======
+    <Position X="13.25" Y="4.75" Width="1.5" />
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAgQAAAAAAAABAAAAIAAAAAAAAA=</HashCode>
       <FileName>Taikhoan.cs</FileName>
     </TypeIdentifier>
   </Class>
+<<<<<<< HEAD
   <Class Name="WindowsFormsApp2.Properties.Resources" Collapsed="true">
     <Position X="17" Y="3" Width="1.5" />
     <TypeIdentifier>
@@ -187,5 +289,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
+=======
+>>>>>>> 1d055033bd8786c62b8a92be3883a09b3668235c
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
