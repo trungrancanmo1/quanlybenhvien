@@ -56,6 +56,7 @@
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(465, 22);
             this.textAcc.TabIndex = 1;
+            this.textAcc.TextChanged += new System.EventHandler(this.textAcc_TextChanged);
             // 
             // label1
             // 

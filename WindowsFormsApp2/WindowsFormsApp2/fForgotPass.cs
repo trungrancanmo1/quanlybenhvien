@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.Cloud.Firestore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp2
 {
     public partial class fForgotPass : Form
     {
+        public FirestoreDb database;
         public fForgotPass()
         {
             InitializeComponent();
@@ -27,10 +30,44 @@ namespace WindowsFormsApp2
 
         }
 
-        private void quenmatkhau_Click(object sender, EventArgs e)
+        private async void quenmatkhau_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mật khẩu mới của bạn là abc123");
-            this.Close();
+            string userName = textAcc.Text;
+            if (userName == "")
+            {
+                MessageBox.Show("Hãy nhập tên tài khoản");
+                return;
+            }
+            DocumentReference adRes = database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
+            DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
+
+            DocumentReference docRes = database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
+            DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
+
+            DocumentReference patRes = database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
+            DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
+
+            if (!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)
+            {
+                MessageBox.Show("Tài khoản không tồn tại");
+                return;
+            }
+
+            Taikhoan acc = null;
+            if (adSnap.Exists)
+            {
+                acc = adSnap.ConvertTo<Admin>();
+            }
+            else if (docSnap.Exists)
+            {
+                acc = docSnap.ConvertTo<Doctor>();
+            }
+            else if (patSnap.Exists)
+            {
+                acc = patSnap.ConvertTo<Patient>();
+            }
+
+            MessageBox.Show("Mật khẩu của bạn là: " + acc.password.ToString());
         }
         private void thoat_Click(object sender, EventArgs e)
         {
@@ -40,7 +77,14 @@ namespace WindowsFormsApp2
 
         private void quenmatkhau_Load(object sender, EventArgs e)
         {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
+            database = FirestoreDb.Create("test-964d0");
+        }
+
+        private void textAcc_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
