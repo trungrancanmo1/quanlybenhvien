@@ -18,7 +18,6 @@ namespace WindowsFormsApp2
 {
     public partial class fAccManagementforAdmin : Form
     {
-        public FirestoreDb database;
         public fAccManagementforAdmin()
         {
             InitializeComponent();
@@ -45,10 +44,6 @@ namespace WindowsFormsApp2
 
         private async void fAccManagementforAdmin_Load(object sender, EventArgs e)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-            database = FirestoreDb.Create("test-964d0");
-
             Taikhoan admin = CurrentAccount.Instance.GetData();
 
             textName.Text = admin.displayName;

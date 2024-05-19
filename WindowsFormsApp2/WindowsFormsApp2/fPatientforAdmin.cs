@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
 {
     public partial class fPatientforAdmin : Form
     {
-        public FirestoreDb database;
+        
 
         public bool flag = false;
         public bool fixFlag = false;
@@ -38,7 +38,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
         private async void button4_Click(object sender, EventArgs e) // xem
         {
@@ -60,7 +60,7 @@ namespace WindowsFormsApp2
             dt.Columns["Chuẩn đoán"].ReadOnly = true;
 
 
-            CollectionReference patientres = database.Collection("Patient");
+            CollectionReference patientres = Database.Instance.database.Collection("Patient");
             QuerySnapshot patientList = await patientres.GetSnapshotAsync();
             List<string> patientNames = new List<string>();
 
@@ -71,7 +71,7 @@ namespace WindowsFormsApp2
 
             foreach (string name in patientNames)
             {
-                DocumentReference patRes = database.Collection("Patient").Document(name).Collection("Information").Document("Information");
+                DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(name).Collection("Information").Document("Information");
                 DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
                 Taikhoan patdata = patSnap.ConvertTo<Taikhoan>();
                 System.DateTime date = patdata.regDate.ToDateTime();
@@ -101,7 +101,7 @@ namespace WindowsFormsApp2
                 return;
             }
             string telPati = textBox1.Text;
-            DocumentReference patRes = database.Collection("Patient").Document(telPati);
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(telPati);
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
             Taikhoan data = patSnap.ConvertTo<Taikhoan>();
 
@@ -112,7 +112,7 @@ namespace WindowsFormsApp2
             }
 
             //Xóa schedule          
-            Query query = database.Collection("Schedules");
+            Query query = Database.Instance.database.Collection("Schedules");
             QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in querySnapshots)
             {
@@ -125,7 +125,7 @@ namespace WindowsFormsApp2
                 }
             }
             // xóa colloection information 
-            DocumentReference path = database.Collection("Patient").Document(telPati);
+            DocumentReference path = Database.Instance.database.Collection("Patient").Document(telPati);
             QuerySnapshot snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
             IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
             while (documents.Count > 0)
@@ -182,7 +182,7 @@ namespace WindowsFormsApp2
             fixFlag = true;    
             userID = id;
 
-            DocumentReference patRes = database.Collection("Patient").Document(id).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(id).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
             Taikhoan data = patSnap.ConvertTo<Taikhoan>();
 
@@ -225,7 +225,7 @@ namespace WindowsFormsApp2
             string testResult = textBox5.Text;
             string dia = textBox6.Text;
 
-            DocumentReference patRes = database.Collection("Patient").Document(userID).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(userID).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
             Taikhoan data = patSnap.ConvertTo<Taikhoan>();
 
@@ -264,11 +264,11 @@ namespace WindowsFormsApp2
 
             if (flag)
             {
-                DocumentReference patRes = database.Collection("Patient").Document(userID).Collection("Information").Document("Information");
+                DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(userID).Collection("Information").Document("Information");
                 DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
                 Taikhoan patient = patSnap.ConvertTo<Taikhoan>();
 
-                CollectionReference schePatient = database.Collection("Patient").Document(userID).Collection("Schedule");
+                CollectionReference schePatient = Database.Instance.database.Collection("Patient").Document(userID).Collection("Schedule");
                 QuerySnapshot scheList = await schePatient.GetSnapshotAsync();
                 List<string> patientNames = new List<string>();
 
@@ -279,7 +279,7 @@ namespace WindowsFormsApp2
 
                 foreach (string name in patientNames)
                 {
-                    DocumentReference schedule = database.Collection("Patient").Document(userID).Collection("Schedule").Document(name);
+                    DocumentReference schedule = Database.Instance.database.Collection("Patient").Document(userID).Collection("Schedule").Document(name);
                     DocumentSnapshot scheSnap = await schedule.GetSnapshotAsync();
                     //MessageBox.Show("name  " + name);
                     string link = "";
@@ -297,7 +297,7 @@ namespace WindowsFormsApp2
                         }
                         //   MessageBox.Show(link);
 
-                        DocumentReference patschedule = database.Collection("Schedules").Document(link);
+                        DocumentReference patschedule = Database.Instance.database.Collection("Schedules").Document(link);
                         DocumentSnapshot patscheSnap = await patschedule.GetSnapshotAsync();
                         Schedule patSche = patscheSnap.ConvertTo<Schedule>();
 
@@ -308,7 +308,7 @@ namespace WindowsFormsApp2
                         string startDayString = startday.ToString("dd-MM-yyyy HH:mm:ss");
                         string endDayString = endday.ToString("dd-MM-yyyy HH:mm:ss");
 
-                        DocumentReference doctor = database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
+                        DocumentReference doctor = Database.Instance.database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
                         DocumentSnapshot doc = await doctor.GetSnapshotAsync();
                         Taikhoan doct = doc.ConvertTo<Taikhoan>();
                         string doctorName = doct.displayName;
@@ -330,7 +330,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                CollectionReference patientres = database.Collection("Patient");
+                CollectionReference patientres = Database.Instance.database.Collection("Patient");
                 QuerySnapshot patientList = await patientres.GetSnapshotAsync();
                 List<string> patNames = new List<string>();
 
@@ -341,11 +341,11 @@ namespace WindowsFormsApp2
 
                 foreach (string patName in patNames)
                 {
-                    DocumentReference patRes = database.Collection("Patient").Document(patName).Collection("Information").Document("Information");
+                    DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(patName).Collection("Information").Document("Information");
                     DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
                     Taikhoan patient = patSnap.ConvertTo<Taikhoan>();
 
-                    CollectionReference schePatient = database.Collection("Patient").Document(patName).Collection("Schedule");
+                    CollectionReference schePatient = Database.Instance.database.Collection("Patient").Document(patName).Collection("Schedule");
                     QuerySnapshot scheList = await schePatient.GetSnapshotAsync();
                     List<string> patientNames = new List<string>();
 
@@ -356,7 +356,7 @@ namespace WindowsFormsApp2
 
                     foreach (string name in patientNames)
                     {
-                        DocumentReference schedule = database.Collection("Patient").Document(patName).Collection("Schedule").Document(name);
+                        DocumentReference schedule = Database.Instance.database.Collection("Patient").Document(patName).Collection("Schedule").Document(name);
                         DocumentSnapshot scheSnap = await schedule.GetSnapshotAsync();
                         //MessageBox.Show("name  " + name);
                         string link = "";
@@ -374,7 +374,7 @@ namespace WindowsFormsApp2
                             }
                             //   MessageBox.Show(link);
 
-                            DocumentReference patschedule = database.Collection("Schedules").Document(link);
+                            DocumentReference patschedule = Database.Instance.database.Collection("Schedules").Document(link);
                             DocumentSnapshot patscheSnap = await patschedule.GetSnapshotAsync();
                             Schedule patSche = patscheSnap.ConvertTo<Schedule>();
 
@@ -385,7 +385,7 @@ namespace WindowsFormsApp2
                             string startDayString = startday.ToString("dd-MM-yyyy HH:mm:ss");
                             string endDayString = endday.ToString("dd-MM-yyyy HH:mm:ss");
 
-                            DocumentReference doctor = database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
+                            DocumentReference doctor = Database.Instance.database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
                             DocumentSnapshot doc = await doctor.GetSnapshotAsync();
                             Taikhoan doct = doc.ConvertTo<Taikhoan>();
                             string doctorName = doct.displayName;

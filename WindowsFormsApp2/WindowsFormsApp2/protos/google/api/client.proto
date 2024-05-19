@@ -130,7 +130,7 @@ message CommonLanguageSettings {
 message ClientLibrarySettings {
   // Version of the API to apply these settings to. This is the full protobuf
   // package for the API, ending in the version element.
-  // Examples: "google.cloud.speech.v1" and "google.spanner.admin.database.v1".
+  // Examples: "google.cloud.speech.v1" and "google.spanner.admin.Database.Instance.database.v1".
   string version = 1;
 
   // Launch stage of this version of the API.

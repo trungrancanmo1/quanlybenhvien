@@ -22,7 +22,7 @@ namespace WindowsFormsApp2
 {
     public partial class fDangKi : Form
     {
-        public FirestoreDb database;
+        
         public fDangKi()
         {
             InitializeComponent();
@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
 
         private async void btnDoctorRegister_Click(object sender, EventArgs e)
@@ -45,10 +45,10 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference docRes = database.Collection("Doctor").Document(txtDocAcc.Text).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Patient").Document(txtDocAcc.Text).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(txtDocAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (docSnap.Exists || patSnap.Exists)
@@ -74,10 +74,10 @@ namespace WindowsFormsApp2
             };
 
 
-            DocumentReference emptySet = database.Collection("Doctor").Document(data.userName);
+            DocumentReference emptySet = Database.Instance.database.Collection("Doctor").Document(data.userName);
             await emptySet.SetAsync(rong);
 
-            DocumentReference docSet = database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
+            DocumentReference docSet = Database.Instance.database.Collection("Doctor").Document(data.userName).Collection("Information").Document("Information");
             await docSet.SetAsync(data);
 
             MessageBox.Show("Đăng kí thành công");
@@ -92,10 +92,10 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference docRes = database.Collection("Doctor").Document(txtPatAcc.Text).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Patient").Document(txtPatAcc.Text).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(txtPatAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (docSnap.Exists || patSnap.Exists)
@@ -123,10 +123,10 @@ namespace WindowsFormsApp2
             };
 
 
-            DocumentReference emptySet = database.Collection("Patient").Document(data.userName);
+            DocumentReference emptySet = Database.Instance.database.Collection("Patient").Document(data.userName);
             await emptySet.SetAsync(rong);
 
-            DocumentReference patSet = database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
+            DocumentReference patSet = Database.Instance.database.Collection("Patient").Document(data.userName).Collection("Information").Document("Information");
             await patSet.SetAsync(data);
 
             MessageBox.Show("Đăng kí thành công");
@@ -145,7 +145,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Tài khoản Admin bắt đầu bằng chữ cái");
                 return;
             }
-            DocumentReference adRes = database.Collection("Admin").Document(txtAdminAcc.Text).Collection("Information").Document("Information");
+            DocumentReference adRes = Database.Instance.database.Collection("Admin").Document(txtAdminAcc.Text).Collection("Information").Document("Information");
             DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
 
             if (adSnap.Exists)
@@ -168,10 +168,10 @@ namespace WindowsFormsApp2
             };
 
 
-            DocumentReference emptySet = database.Collection("Admin").Document(data.userName);
+            DocumentReference emptySet = Database.Instance.database.Collection("Admin").Document(data.userName);
             await emptySet.SetAsync(rong);
 
-            DocumentReference adminSet = database.Collection("Admin").Document(data.userName).Collection("Information").Document("Information");
+            DocumentReference adminSet = Database.Instance.database.Collection("Admin").Document(data.userName).Collection("Information").Document("Information");
             await adminSet.SetAsync(data);
 
             MessageBox.Show("Đăng kí thành công");

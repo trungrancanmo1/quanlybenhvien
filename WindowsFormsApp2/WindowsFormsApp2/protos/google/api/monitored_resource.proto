@@ -66,7 +66,7 @@ message MonitoredResourceDescriptor {
   string description = 3;
 
   // Required. A set of labels used to describe instances of this monitored
-  // resource type. For example, an individual Google Cloud SQL database is
+  // resource type. For example, an individual Google Cloud SQL Database.Instance.database is
   // identified by values for the labels `"database_id"` and `"zone"`.
   repeated LabelDescriptor labels = 4;
 

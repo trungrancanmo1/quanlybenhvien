@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
 {
     public partial class fChangePassword : Form
     {
-        public FirestoreDb database;
+        
         public fChangePassword()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
             }
             Taikhoan acc = CurrentAccount.Instance.GetData();
 
-            DocumentReference accRes = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+            DocumentReference accRes = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
 
             if (txtOldPass.Text != acc.password)
@@ -49,7 +49,7 @@ namespace WindowsFormsApp2
                     displayName = acc.displayName,
                     type = acc.type,
                 };
-                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+                DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
             else if (acc.type == "Doctor")
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
                     specialization = acc.specialization,
                     credential = acc.credential,
                 };
-                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+                DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
             else
@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
                     diagnosis = acc.diagnosis,
                     progress = acc.progress,
                 };
-                DocumentReference passSet = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+                DocumentReference passSet = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
                 passSet.SetAsync(data);
             }
 
@@ -100,7 +100,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
     }
 }

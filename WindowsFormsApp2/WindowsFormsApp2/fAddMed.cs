@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
 {
     public partial class fAddMed : Form
     {
-        public FirestoreDb database;
+        
         public fAddMed()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -46,14 +46,14 @@ namespace WindowsFormsApp2
             };
             string formattedDate = dateTimePicker1.Value.ToString("MMddyyyy");
             Dictionary<String, Object> dummyMap = new Dictionary<string, object>();
-            DocumentReference item = database.Collection("Medical")
+            DocumentReference item = Database.Instance.database.Collection("Medical")
                                                .Document(textbox2Data)
                                                .Collection(textbox2Data)
                                                .Document(formattedDate);
-            DocumentReference temp = database.Collection("Medical")
+            DocumentReference temp = Database.Instance.database.Collection("Medical")
                                               .Document(textbox2Data);
             temp.SetAsync(dummyMap);
-            temp = database.Collection("MedicalDelete")
+            temp = Database.Instance.database.Collection("MedicalDelete")
                                               .Document(textbox2Data);
             temp.SetAsync(dummyMap);
             item.SetAsync(data);

@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentAccount.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="fAddEqipment.cs">
       <SubType>Form</SubType>

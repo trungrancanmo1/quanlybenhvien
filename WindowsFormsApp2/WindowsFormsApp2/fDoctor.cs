@@ -16,7 +16,6 @@ namespace WindowsFormsApp2
 {
     public partial class fDoctor : Form
     {
-        private FirestoreDb database;
         private Doctor doctor;
         public fDoctor()
         {
@@ -33,11 +32,11 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
 
             Taikhoan doc = CurrentAccount.Instance.GetData();
 
-            DocumentReference accRes = database.Collection("Doctor").Document(doc.userName).Collection("Information").Document("Information");
+            DocumentReference accRes = Database.Instance.database.Collection("Doctor").Document(doc.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             doctor = accSnap.ConvertTo<Doctor>();
 
@@ -64,7 +63,7 @@ namespace WindowsFormsApp2
         {
             System.DateTime a = resetSecond(this.dateTimePicker1.Value);
             System.DateTime b = resetSecond(this.dateTimePicker2.Value);
-            Query scheduleCollection = database.Collection("Doctor").Document(doctor.userName)
+            Query scheduleCollection = Database.Instance.database.Collection("Doctor").Document(doctor.userName)
                 .Collection("Schedule");
             QuerySnapshot tmp = await scheduleCollection.GetSnapshotAsync();
             bool available = false;
@@ -117,7 +116,7 @@ namespace WindowsFormsApp2
 
         private async void btnFind_Click(object sender, EventArgs e)
         {
-            DocumentReference accRes = database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentReference accRes = Database.Instance.database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             if (!accSnap.Exists)
             {

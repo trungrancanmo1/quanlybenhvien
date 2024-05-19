@@ -14,7 +14,6 @@ namespace WindowsFormsApp2
 {
     public partial class fForgotPass : Form
     {
-        public FirestoreDb database;
         public fForgotPass()
         {
             InitializeComponent();
@@ -38,13 +37,13 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Hãy nhập tên tài khoản");
                 return;
             }
-            DocumentReference adRes = database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
+            DocumentReference adRes = Database.Instance.database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
 
-            DocumentReference docRes = database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)
@@ -80,7 +79,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
 
         private void textAcc_TextChanged(object sender, EventArgs e)

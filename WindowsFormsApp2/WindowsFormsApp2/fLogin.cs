@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
 {
     public partial class fLogin : Form
     {
-        public FirestoreDb database;
+        
         public fLogin()
         {
             InitializeComponent();
@@ -42,13 +42,13 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Tài khoản không tồn tại");
                 return;
             }
-            DocumentReference adRes = database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
+            DocumentReference adRes = Database.Instance.database.Collection("Admin").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
 
-            DocumentReference docRes = database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(userName).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if(!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)
@@ -124,7 +124,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace WindowsFormsApp2
         }
         private async void testing()
         {
-            DocumentReference documentReference = database.Collection("Doctor").Document("069")
+            DocumentReference documentReference = Database.Instance.database.Collection("Doctor").Document("069")
                .Collection("Schedule").Document("first");
             DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
             if (snapshot.Exists)
@@ -154,7 +154,7 @@ namespace WindowsFormsApp2
             {
                 MessageBox.Show("NOT EXISTED");
             }
-            //DocumentReference documentReference = database.Document("Schedules/first");
+            //DocumentReference documentReference = Database.Instance.database.Document("Schedules/first");
             //Console.WriteLine(documentReference.Id);
         }
     }

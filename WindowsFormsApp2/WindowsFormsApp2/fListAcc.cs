@@ -19,7 +19,6 @@ namespace WindowsFormsApp2
 {
     public partial class fListAcc : Form
     {
-        public FirestoreDb database;
         public bool exist = false;
         public Taikhoan acc = null;
         public fListAcc()
@@ -32,7 +31,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
 
         private async void button4_Click(object sender, EventArgs e)
@@ -53,12 +52,12 @@ namespace WindowsFormsApp2
             {
                 if (j == 0)
                 {
-                    Query list = database.Collection("Admin");
+                    Query list = Database.Instance.database.Collection("Admin");
                     QuerySnapshot listSnap = await list.GetSnapshotAsync();
                     foreach (DocumentSnapshot document in listSnap.Documents)
                     {
                         string reference = document.Id;                        
-                        DocumentReference res = database.Collection("Admin").Document(reference).Collection("Information").Document("Information");
+                        DocumentReference res = Database.Instance.database.Collection("Admin").Document(reference).Collection("Information").Document("Information");
                         DocumentSnapshot resSnap = await res.GetSnapshotAsync();
                         Taikhoan data = resSnap.ConvertTo<Taikhoan>();
                         DataRow row = dt.NewRow();
@@ -71,12 +70,12 @@ namespace WindowsFormsApp2
                 }
                 else if(j == 1)
                 {
-                    Query list = database.Collection("Doctor");
+                    Query list = Database.Instance.database.Collection("Doctor");
                     QuerySnapshot listSnap = await list.GetSnapshotAsync();
                     foreach (DocumentSnapshot document in listSnap.Documents)
                     {
                         string reference = document.Id;
-                        DocumentReference res = database.Collection("Doctor").Document(reference).Collection("Information").Document("Information");
+                        DocumentReference res = Database.Instance.database.Collection("Doctor").Document(reference).Collection("Information").Document("Information");
                         DocumentSnapshot resSnap = await res.GetSnapshotAsync();
                         Taikhoan data = resSnap.ConvertTo<Taikhoan>();
                         DataRow row = dt.NewRow();
@@ -89,12 +88,12 @@ namespace WindowsFormsApp2
                 }
                 else
                 {
-                    Query list = database.Collection("Patient");
+                    Query list = Database.Instance.database.Collection("Patient");
                     QuerySnapshot listSnap = await list.GetSnapshotAsync();
                     foreach (DocumentSnapshot document in listSnap.Documents)
                     {
                         string reference = document.Id;
-                        DocumentReference res = database.Collection("Patient").Document(reference).Collection("Information").Document("Information");
+                        DocumentReference res = Database.Instance.database.Collection("Patient").Document(reference).Collection("Information").Document("Information");
                         DocumentSnapshot resSnap = await res.GetSnapshotAsync();
                         Taikhoan data = resSnap.ConvertTo<Taikhoan>();
                         DataRow row = dt.NewRow();
@@ -112,13 +111,13 @@ namespace WindowsFormsApp2
 
         private async void btnFind_Click(object sender, EventArgs e)
         {
-            DocumentReference adRes = database.Collection("Admin").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentReference adRes = Database.Instance.database.Collection("Admin").Document(txtFind.Text).Collection("Information").Document("Information");
             DocumentSnapshot adSnap = await adRes.GetSnapshotAsync();
 
-            DocumentReference docRes = database.Collection("Doctor").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(txtFind.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
-            DocumentReference patRes = database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(txtFind.Text).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
 
             if (!adSnap.Exists && !docSnap.Exists && !patSnap.Exists)
@@ -163,7 +162,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Không thể xóa tài khoản Admin của bản thân");
                     return;
                 }
-                Query ad = database.Collection("Admin");
+                Query ad = Database.Instance.database.Collection("Admin");
                 QuerySnapshot adSnap = await ad.GetSnapshotAsync();
                 int cnt = 0;
                 foreach (DocumentSnapshot documentSnapshot in adSnap)
@@ -175,7 +174,7 @@ namespace WindowsFormsApp2
                     MessageBox.Show("Cần chừa lại ít nhất 1 tài khoản Admin");
                     return;
                 }
-                DocumentReference adRes = database.Collection("Admin").Document(acc.userName);
+                DocumentReference adRes = Database.Instance.database.Collection("Admin").Document(acc.userName);
                 
                 await DeleteCollection(adRes.Collection("Information"), 2);
 
@@ -192,7 +191,7 @@ namespace WindowsFormsApp2
             else if (acc.type == "Doctor")
             {
                 string tel = txtFind.Text;
-                DocumentReference documentReference = database.Collection("Doctor").Document(tel);
+                DocumentReference documentReference = Database.Instance.database.Collection("Doctor").Document(tel);
                 // Delete doctor's schedule
                 await deleteDoctorSchedules(tel);
                 // Delete SubCollection
@@ -212,7 +211,7 @@ namespace WindowsFormsApp2
             {
                 string telPati = txtFind.Text;
                 //Xóa schedule          
-                Query query = database.Collection("Schedules");
+                Query query = Database.Instance.database.Collection("Schedules");
                 QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
                 foreach (DocumentSnapshot documentSnapshot in querySnapshots)
                 {
@@ -225,7 +224,7 @@ namespace WindowsFormsApp2
                     }
                 }
                 // xóa colloection information 
-                DocumentReference path = database.Collection("Patient").Document(telPati);
+                DocumentReference path = Database.Instance.database.Collection("Patient").Document(telPati);
                 QuerySnapshot snapshot = await path.Collection("Information").Limit(2).GetSnapshotAsync();
                 IReadOnlyList<DocumentSnapshot> documents = snapshot.Documents;
                 while (documents.Count > 0)
@@ -265,7 +264,7 @@ namespace WindowsFormsApp2
 
         private async Task deleteDoctorSchedules(string tel)
         {
-            Query query = database.Collection("Schedules");
+            Query query = Database.Instance.database.Collection("Schedules");
             QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in querySnapshots)
             {
@@ -306,7 +305,7 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Hãy nhập đúng tên tài khoản");
                 return;
             }
-            DocumentReference res = database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
+            DocumentReference res = Database.Instance.database.Collection(acc.type).Document(acc.userName).Collection("Information").Document("Information");
             Dictionary<string, object> updates = new Dictionary<string, object>()
             {
                 {"displayName", txtDisName.Text},

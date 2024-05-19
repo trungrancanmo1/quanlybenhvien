@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
 {
     public partial class fMedicalEqipment : Form
     {
-        public FirestoreDb database;
+        
         public fMedicalEqipment()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
             SetupDataGridViewBinding();
             dataGridView1.CellClick += DataGridView_CellClick;
             dataGridView2.CellClick += DataGridView_CellClick;
@@ -195,7 +195,7 @@ namespace WindowsFormsApp2
                 dt.Columns.Add(columnName, typeof(string)).ReadOnly = true;
             }
 
-            Query list = database.Collection(collectionName);
+            Query list = Database.Instance.database.Collection(collectionName);
             QuerySnapshot listSnap = await list.GetSnapshotAsync();
 
             if (listSnap.Count > 0)
@@ -203,11 +203,11 @@ namespace WindowsFormsApp2
                 foreach (DocumentSnapshot document in listSnap.Documents)
                 {
                     string reference = document.Id;
-                    Query res = database.Collection(collectionName).Document(reference).Collection(reference);
+                    Query res = Database.Instance.database.Collection(collectionName).Document(reference).Collection(reference);
                     QuerySnapshot resSnap = await res.GetSnapshotAsync();
                     foreach (DocumentSnapshot temp in resSnap.Documents)
                     {
-                        DocumentReference dataRef = database.Collection(collectionName).Document(reference).Collection(reference).Document(temp.Id);
+                        DocumentReference dataRef = Database.Instance.database.Collection(collectionName).Document(reference).Collection(reference).Document(temp.Id);
                         DocumentSnapshot dataSnap = await dataRef.GetSnapshotAsync();
                         T data = dataSnap.ConvertTo<T>();
                         DataRow row = dt.NewRow();
@@ -233,16 +233,16 @@ namespace WindowsFormsApp2
         // Cập nhật
         private async void UpdateDataAsync(string collectionName, string nameId, string dateId)
         {
-            DocumentReference item = database.Collection(collectionName)
+            DocumentReference item = Database.Instance.database.Collection(collectionName)
                                                .Document(nameId)
                                                .Collection(nameId)
                                                .Document(dateId);
 
             Dictionary<String, Object> dummyMap = new Dictionary<string, object>();
-            DocumentReference temp = database.Collection(collectionName)
+            DocumentReference temp = Database.Instance.database.Collection(collectionName)
                                               .Document(nameId);
             temp.SetAsync(dummyMap);
-            temp = database.Collection(collectionName + "Delete")
+            temp = Database.Instance.database.Collection(collectionName + "Delete")
                                               .Document(nameId);
             temp.SetAsync(dummyMap);
 
@@ -278,7 +278,7 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference item = database.Collection(collectionName)
+            DocumentReference item = Database.Instance.database.Collection(collectionName)
                                                .Document(nameId)
                                                .Collection(nameId)
                                                .Document(dateId);
@@ -303,7 +303,7 @@ namespace WindowsFormsApp2
 
             if (!change)
             {
-                DocumentReference dataDelete = database.Collection(collectionName + "Delete")
+                DocumentReference dataDelete = Database.Instance.database.Collection(collectionName + "Delete")
                                                         .Document(nameId)
                                                         .Collection(nameId)
                                                         .Document(dateId);
@@ -312,9 +312,9 @@ namespace WindowsFormsApp2
 
             await item.DeleteAsync();
 
-            Query list = database.Collection(collectionName).Document(nameId).Collection(nameId);
+            Query list = Database.Instance.database.Collection(collectionName).Document(nameId).Collection(nameId);
             QuerySnapshot listSnap = await list.GetSnapshotAsync();
-            item = database.Collection(collectionName).Document(nameId);
+            item = Database.Instance.database.Collection(collectionName).Document(nameId);
             if (listSnap.Count == 0)
             {
                 await item.DeleteAsync();
@@ -346,7 +346,7 @@ namespace WindowsFormsApp2
                 dt.Columns.Add(columnName, typeof(string)).ReadOnly = true;
             }
 
-            Query list = database.Collection(collectionName);
+            Query list = Database.Instance.database.Collection(collectionName);
             QuerySnapshot listSnap = await list.GetSnapshotAsync();
 
             if (listSnap.Count > 0)
@@ -356,11 +356,11 @@ namespace WindowsFormsApp2
                     if (document.Id == searchText)
                     {
                         string reference = document.Id;
-                        Query res = database.Collection(collectionName).Document(reference).Collection(reference);
+                        Query res = Database.Instance.database.Collection(collectionName).Document(reference).Collection(reference);
                         QuerySnapshot resSnap = await res.GetSnapshotAsync();
                         foreach (DocumentSnapshot temp in resSnap.Documents)
                         {
-                            DocumentReference dataRef = database.Collection(collectionName).Document(reference).Collection(reference).Document(temp.Id);
+                            DocumentReference dataRef = Database.Instance.database.Collection(collectionName).Document(reference).Collection(reference).Document(temp.Id);
                             DocumentSnapshot dataSnap = await dataRef.GetSnapshotAsync();
                             T data = dataSnap.ConvertTo<T>();
                             DataRow row = dt.NewRow();
@@ -422,7 +422,7 @@ namespace WindowsFormsApp2
         }
         private async Task ProcessInstruments(string CollectionName, DataTable dt, System.DateTime startDate, System.DateTime endDate)
         {
-            Query list = database.Collection(CollectionName);
+            Query list = Database.Instance.database.Collection(CollectionName);
             QuerySnapshot listSnap = await list.GetSnapshotAsync();
 
             if (listSnap.Count > 0)
@@ -430,11 +430,11 @@ namespace WindowsFormsApp2
                 foreach (DocumentSnapshot document in listSnap.Documents)
                 {
                     string reference = document.Id;
-                    Query res = database.Collection(CollectionName).Document(reference).Collection(reference);
+                    Query res = Database.Instance.database.Collection(CollectionName).Document(reference).Collection(reference);
                     QuerySnapshot resSnap = await res.GetSnapshotAsync();
                     foreach (DocumentSnapshot temp in resSnap.Documents)
                     {
-                        DocumentReference dataMed = database.Collection(CollectionName).Document(reference).Collection(reference).Document(temp.Id);
+                        DocumentReference dataMed = Database.Instance.database.Collection(CollectionName).Document(reference).Collection(reference).Document(temp.Id);
                         DocumentSnapshot dataMedSnap = await dataMed.GetSnapshotAsync();
                         Instrument data = dataMedSnap.ConvertTo<Instrument>();
                         if (System.DateTime.TryParse(data.dateIn, out System.DateTime dateInValue) &&
@@ -468,13 +468,13 @@ namespace WindowsFormsApp2
                     System.DateTime dateTime = System.DateTime.Parse(dateIn);
                     string formatDate = dateTime.ToString("MMddyyyyHHmm");
                     if (type == "Medical") formatDate = dateTime.ToString("MMddyyyy");
-                    DocumentReference docRef = database.Collection(type + "Delete").Document(name).Collection(name).Document(formatDate);
+                    DocumentReference docRef = Database.Instance.database.Collection(type + "Delete").Document(name).Collection(name).Document(formatDate);
                     await docRef.DeleteAsync();
-                    Query list = database.Collection(type + "Delete").Document(name).Collection(name);
+                    Query list = Database.Instance.database.Collection(type + "Delete").Document(name).Collection(name);
                     QuerySnapshot listSnap = await list.GetSnapshotAsync();
                     if(listSnap.Count == 0)
                     {
-                        DocumentReference temp = database.Collection(type + "Delete").Document(name);
+                        DocumentReference temp = Database.Instance.database.Collection(type + "Delete").Document(name);
                         await temp.DeleteAsync();
                     }
                 }

@@ -19,7 +19,7 @@ namespace WindowsFormsApp2
 {
     public partial class fPatient : Form
     {
-        public FirestoreDb database;
+        
         public string patientuserName = "" ;
         public fPatient()
         {
@@ -31,12 +31,12 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
 
             Taikhoan pat = CurrentAccount.Instance.GetData();
             patientuserName = pat.userName;
 
-            DocumentReference accRes = database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
+            DocumentReference accRes = Database.Instance.database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
             pat = accSnap.ConvertTo<Patient>();
 
@@ -80,11 +80,11 @@ namespace WindowsFormsApp2
             dt.Columns["Phòng"].ReadOnly = true;
             dt.Columns["Ghi chú"].ReadOnly = true;
 
-            DocumentReference patRes = database.Collection("Patient").Document(patientuserName).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
             Taikhoan patient = patSnap.ConvertTo<Taikhoan>();
 
-            CollectionReference schePatient = database.Collection("Patient").Document(patientuserName).Collection("Schedule");
+            CollectionReference schePatient = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Schedule");
             QuerySnapshot scheList = await schePatient.GetSnapshotAsync();
             List<string> patientNames = new List<string>();
 
@@ -95,7 +95,7 @@ namespace WindowsFormsApp2
 
             foreach (string name in patientNames)
             {
-                DocumentReference schedule = database.Collection("Patient").Document(patientuserName).Collection("Schedule").Document(name);
+                DocumentReference schedule = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Schedule").Document(name);
                 DocumentSnapshot scheSnap = await schedule.GetSnapshotAsync();
                 string link = "";
                 if (scheSnap.Exists)
@@ -112,7 +112,7 @@ namespace WindowsFormsApp2
                     }
                     //   MessageBox.Show(link);
 
-                    DocumentReference patschedule = database.Collection("Schedules").Document(link);
+                    DocumentReference patschedule = Database.Instance.database.Collection("Schedules").Document(link);
                     DocumentSnapshot patscheSnap = await patschedule.GetSnapshotAsync();
                     Schedule patSche = patscheSnap.ConvertTo<Schedule>();
 
@@ -123,7 +123,7 @@ namespace WindowsFormsApp2
                     string startDayString = startday.ToString("dd-MM-yyyy HH:mm:ss");
                     string endDayString = endday.ToString("dd-MM-yyyy HH:mm:ss");
 
-                    DocumentReference doctor = database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
+                    DocumentReference doctor = Database.Instance.database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
                     DocumentSnapshot doc = await doctor.GetSnapshotAsync();
                     Taikhoan doct = doc.ConvertTo<Taikhoan>();
                     string doctorName = doct.displayName;

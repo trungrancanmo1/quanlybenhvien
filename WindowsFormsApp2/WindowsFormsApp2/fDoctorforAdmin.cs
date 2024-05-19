@@ -18,7 +18,6 @@ namespace WindowsFormsApp2
 {
     public partial class fDoctorforAdmin : Form
     {
-        private FirestoreDb database;
         private bool exist = false;
         private bool check = false;
         public fDoctorforAdmin()
@@ -49,7 +48,7 @@ namespace WindowsFormsApp2
         }
         private async void search(string tel)
         {
-            DocumentReference documentReference = database.Collection("Doctor").Document(tel)
+            DocumentReference documentReference = Database.Instance.database.Collection("Doctor").Document(tel)
                 .Collection("Information").Document("Information");
             DocumentSnapshot snapshot = await documentReference.GetSnapshotAsync();
             
@@ -81,7 +80,7 @@ namespace WindowsFormsApp2
         }
         private async void showAllDoctor()
         {
-            Query collectionReference = database.Collection("Doctor");
+            Query collectionReference = Database.Instance.database.Collection("Doctor");
             QuerySnapshot snapshots = await collectionReference.GetSnapshotAsync();
             Console.WriteLine(snapshots.Count);
             foreach (var snapshot in snapshots)
@@ -108,7 +107,7 @@ namespace WindowsFormsApp2
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            database = FirestoreDb.Create("test-964d0");
+            Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -141,7 +140,7 @@ namespace WindowsFormsApp2
         private async void deleteDoctor()
         {
             string tel = this.textBox1.Text;
-            DocumentReference documentReference = database.Collection("Doctor").Document(tel);
+            DocumentReference documentReference = Database.Instance.database.Collection("Doctor").Document(tel);
             // Delete doctor's schedule
             await deleteDoctorSchedules(tel);
             // Delete SubCollection
@@ -157,7 +156,7 @@ namespace WindowsFormsApp2
         }
         private async Task deleteDoctorSchedules(string tel)
         {
-            Query query = database.Collection("Schedules");
+            Query query = Database.Instance.database.Collection("Schedules");
             QuerySnapshot querySnapshots = await query.GetSnapshotAsync();
             foreach (DocumentSnapshot documentSnapshot in querySnapshots)
             {
@@ -202,7 +201,7 @@ namespace WindowsFormsApp2
         private async void UpdateDoctorInformation()
         {
             string tel = this.textBox1.Text;
-            DocumentReference documentReference = database.Collection("Doctor").Document(tel)
+            DocumentReference documentReference = Database.Instance.database.Collection("Doctor").Document(tel)
                 .Collection("Information").Document("Information");
             Dictionary<string, object> updates = new Dictionary<string, object>();
             if (this.nameBox.Text != "")
@@ -257,7 +256,7 @@ namespace WindowsFormsApp2
         {
             this.dataGridView3.Rows.Clear();
             Console.WriteLine(a + " " + b);
-            Query collectionReference = database.Collection("Doctor");
+            Query collectionReference = Database.Instance.database.Collection("Doctor");
             QuerySnapshot snapshots = await collectionReference.GetSnapshotAsync();
             string spec = this.comboBox1.Text;
             bool available = false;
@@ -367,7 +366,7 @@ namespace WindowsFormsApp2
                 return;
             }
 
-            DocumentReference docRes = database.Collection("Doctor").Document(textBox6.Text).Collection("Information").Document("Information");
+            DocumentReference docRes = Database.Instance.database.Collection("Doctor").Document(textBox6.Text).Collection("Information").Document("Information");
             DocumentSnapshot docSnap = await docRes.GetSnapshotAsync();
 
             if (!docSnap.Exists)
@@ -394,7 +393,7 @@ namespace WindowsFormsApp2
                 };
 
                 // Create new schedule
-                DocumentReference newDocument = await database.Collection("Schedules")
+                DocumentReference newDocument = await Database.Instance.database.Collection("Schedules")
                     .AddAsync(newSchedule);
 
                 Dictionary<string, DocumentReference> newRef = new Dictionary<string, DocumentReference>()
@@ -402,12 +401,12 @@ namespace WindowsFormsApp2
                     {"ref", newDocument},
                 };
                 // Create new doc in doctor to ref to new schedule
-                CollectionReference doctorCollectionReference = database.Collection("Doctor").Document(doctor)
+                CollectionReference doctorCollectionReference = Database.Instance.database.Collection("Doctor").Document(doctor)
                     .Collection("Schedule");
                 await doctorCollectionReference.AddAsync(newRef);
 
                 // Create new doc in patient to ref to new schedule
-                CollectionReference patientCollectionReference = database.Collection("Patient").Document(patient)
+                CollectionReference patientCollectionReference = Database.Instance.database.Collection("Patient").Document(patient)
                     .Collection("Schedule");
                 await patientCollectionReference.AddAsync(newRef);
 
@@ -416,7 +415,7 @@ namespace WindowsFormsApp2
         }
         private async Task<bool> checkIfPatientAvailable(string patient, System.DateTime a, System.DateTime b)
         {
-            Query collectionReference = database.Collection("Patient").Document(patient).Collection("Schedule");
+            Query collectionReference = Database.Instance.database.Collection("Patient").Document(patient).Collection("Schedule");
             QuerySnapshot scheduleSnaps = await collectionReference.GetSnapshotAsync();
             foreach (DocumentSnapshot scheduleSnap in scheduleSnaps)
             {
@@ -446,7 +445,7 @@ namespace WindowsFormsApp2
         private async void btnViewDia_Click(object sender, EventArgs e)
         {
             if (textBox7.Text == "") return;
-            DocumentReference diaRes = database.Collection("Patient").Document(textBox7.Text).Collection("Information").Document("Information");
+            DocumentReference diaRes = Database.Instance.database.Collection("Patient").Document(textBox7.Text).Collection("Information").Document("Information");
             DocumentSnapshot diaSnap = await diaRes.GetSnapshotAsync();
 
             if (!diaSnap.Exists)
