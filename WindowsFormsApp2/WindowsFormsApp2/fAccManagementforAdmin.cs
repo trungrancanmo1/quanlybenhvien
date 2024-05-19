@@ -42,7 +42,7 @@ namespace WindowsFormsApp2
             this.Show();
         }
 
-        private async void fAccManagementforAdmin_Load(object sender, EventArgs e)
+        private void fAccManagementforAdmin_Load(object sender, EventArgs e)
         {
             Taikhoan admin = CurrentAccount.Instance.GetData();
 

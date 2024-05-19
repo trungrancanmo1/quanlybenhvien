@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
     public partial class fPatient : Form
     {
         
-        public string patientuserName = "" ;
+        private Taikhoan pat = null;
         public fPatient()
         {
             InitializeComponent();
@@ -33,8 +33,7 @@ namespace WindowsFormsApp2
 
             Database.Instance.database = FirestoreDb.Create("test-964d0");
 
-            Taikhoan pat = CurrentAccount.Instance.GetData();
-            patientuserName = pat.userName;
+            pat = CurrentAccount.Instance.GetData();
 
             DocumentReference accRes = Database.Instance.database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
             DocumentSnapshot accSnap = await accRes.GetSnapshotAsync();
@@ -80,11 +79,11 @@ namespace WindowsFormsApp2
             dt.Columns["Phòng"].ReadOnly = true;
             dt.Columns["Ghi chú"].ReadOnly = true;
 
-            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Information").Document("Information");
+            DocumentReference patRes = Database.Instance.database.Collection("Patient").Document(pat.userName).Collection("Information").Document("Information");
             DocumentSnapshot patSnap = await patRes.GetSnapshotAsync();
             Taikhoan patient = patSnap.ConvertTo<Taikhoan>();
 
-            CollectionReference schePatient = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Schedule");
+            CollectionReference schePatient = Database.Instance.database.Collection("Patient").Document(pat.userName).Collection("Schedule");
             QuerySnapshot scheList = await schePatient.GetSnapshotAsync();
             List<string> patientNames = new List<string>();
 
@@ -95,7 +94,7 @@ namespace WindowsFormsApp2
 
             foreach (string name in patientNames)
             {
-                DocumentReference schedule = Database.Instance.database.Collection("Patient").Document(patientuserName).Collection("Schedule").Document(name);
+                DocumentReference schedule = Database.Instance.database.Collection("Patient").Document(pat.userName).Collection("Schedule").Document(name);
                 DocumentSnapshot scheSnap = await schedule.GetSnapshotAsync();
                 string link = "";
                 if (scheSnap.Exists)

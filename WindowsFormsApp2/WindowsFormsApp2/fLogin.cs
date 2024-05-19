@@ -26,7 +26,7 @@ namespace WindowsFormsApp2
             Application.Exit();
         }
 
-        private async void quenmatkhau_Click(object sender, EventArgs e)
+        private void quenmatkhau_Click(object sender, EventArgs e)
         {
             fForgotPass f = new fForgotPass();
             this.Hide();

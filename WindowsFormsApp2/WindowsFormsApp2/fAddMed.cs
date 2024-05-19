@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             this.Close();
         }
 
-        private async void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             string textbox2Data = textBox2.Text.ToUpper().Replace(" ", "");
             var data = new Medical

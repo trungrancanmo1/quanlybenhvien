@@ -66,7 +66,13 @@ namespace WindowsFormsApp2
                 acc = patSnap.ConvertTo<Patient>();
             }
 
-            MessageBox.Show("Mật khẩu của bạn là: " + acc.password.ToString());
+            if (acc.displayName != textDisName.Text)
+            {
+                MessageBox.Show("Tên hiển thị sai");
+                return;
+            }
+
+             MessageBox.Show("Mật khẩu của bạn là: " + acc.password.ToString());
         }
         private void thoat_Click(object sender, EventArgs e)
         {
