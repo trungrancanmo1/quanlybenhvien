@@ -155,12 +155,6 @@
   <ItemGroup>
     <Compile Include="CurrentAccount.cs" />
     <Compile Include="Empty.cs" />
-    <Compile Include="fAccManagementforDoctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAccManagementforDoctor.Designer.cs">
-      <DependentUpon>fAccManagementforDoctor.cs</DependentUpon>
-    </Compile>
     <Compile Include="fAddEqipment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     </Compile>
     <Compile Include="Schedule.cs" />
     <Compile Include="Taikhoan.cs" />
-    <EmbeddedResource Include="fAccManagementforDoctor.resx">
-      <DependentUpon>fAccManagementforDoctor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fAddEqipment.resx">
       <DependentUpon>fAddEqipment.cs</DependentUpon>
     </EmbeddedResource>
