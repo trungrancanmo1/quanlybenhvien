@@ -988,7 +988,6 @@ C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\Windows
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.ValueTuple.xml
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
-C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Account.resources
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fAddEqipment.resources
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fAddMed.resources
 C:\Users\LAM TUAN HUY\OneDrive\Documents\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fDangKi.resources
@@ -1678,3 +1677,114 @@ C:\Users\vantr\source\adad\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\
 C:\Users\vantr\source\adad\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF.EA766B00.Up2Date
 C:\Users\vantr\source\adad\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\vantr\source\adad\quanlybenhvien\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fAddEqipment.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fAddMed.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fDangKi.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fDoctor.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fPatientforAdmin.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fPatient.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fListAcc.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fChangePassword.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fLogin.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fInterface.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fDoctorforAdmin.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fAccManagementforAdmin.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fForgotPass.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.fMedicalEqipment.resources
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\grpc_csharp_ext.x86.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\grpc_csharp_ext.x64.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\libgrpc_csharp_ext.x64.so
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\libgrpc_csharp_ext.x64.dylib
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\cloudfire.json
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\FireSharp.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.CommonProtos.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.Grpc.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Auth.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Core.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.V1.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Location.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.LongRunning.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Auth.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.Api.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Client.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Common.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\RestSharp.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.CodeDom.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Collections.Immutable.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Linq.Async.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Net.Http.WinHttpHandler.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.ValueTuple.dll
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.CommonProtos.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.CommonProtos.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.Grpc.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Api.Gax.Grpc.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Auth.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Core.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Apis.Core.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.V1.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Firestore.V1.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Location.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Cloud.Location.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.LongRunning.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.LongRunning.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Google.Protobuf.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Auth.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Auth.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.Api.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Core.Api.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Client.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Client.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Common.pdb
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Grpc.Net.Common.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\RestSharp.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Buffers.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.CodeDom.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Collections.Immutable.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Linq.Async.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Memory.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Net.Http.WinHttpHandler.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\System.ValueTuple.xml
+C:\Users\LAM TUAN HUY\Downloads\quanlybenhvien-main (2)\quanlybenhvien-main\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsF.EA766B00.Up2Date

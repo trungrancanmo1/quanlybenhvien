@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.sellMed = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -143,6 +146,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.textBox10);
+            this.tabPage1.Controls.Add(this.sellMed);
             this.tabPage1.Controls.Add(this.panel16);
             this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.panel4);
@@ -154,6 +160,36 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Thuốc";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(555, 457);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 23);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Số lượng bán:";
+            this.label12.UseWaitCursor = true;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(690, 458);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(78, 22);
+            this.textBox10.TabIndex = 10;
+            this.textBox10.UseWaitCursor = true;
+            // 
+            // sellMed
+            // 
+            this.sellMed.Location = new System.Drawing.Point(774, 438);
+            this.sellMed.Name = "sellMed";
+            this.sellMed.Size = new System.Drawing.Size(75, 46);
+            this.sellMed.TabIndex = 9;
+            this.sellMed.Text = "Bán";
+            this.sellMed.UseVisualStyleBackColor = true;
+            this.sellMed.Click += new System.EventHandler(this.sellMed_Click);
             // 
             // panel16
             // 
@@ -913,6 +949,7 @@
             this.Load += new System.EventHandler(this.fMedicalEqipment_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -1033,5 +1070,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button sellMed;
+        private System.Windows.Forms.Label label12;
     }
 }

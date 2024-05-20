@@ -119,7 +119,7 @@ namespace WindowsFormsApp2
             string nameId = textBox2.Text.ToUpper().Replace(" ", "");
             string formattedDate = dateTimePicker1.Value.ToString("MMddyyyy");
 
-            UpdateDataAsync("Medical", nameId, formattedDate);
+            UpdateDataAsync("Medical", nameId, formattedDate,false);
 
             if (nameId != dataGridView2.SelectedRows[0].Cells["Name"].Value.ToString())
             {
@@ -142,7 +142,7 @@ namespace WindowsFormsApp2
             string nameId = textBox8.Text.ToUpper().Replace(" ", "");
             string formattedDate = dateTimePicker6.Value.ToString("MMddyyyyHHmm");
 
-            UpdateDataAsync("Equipment", nameId, formattedDate);
+            UpdateDataAsync("Equipment", nameId, formattedDate, false);
 
             string dateId = dataGridView1.SelectedRows[0].Cells["dateIn"].Value.ToString();
             System.DateTime dateTime = System.DateTime.Parse(dateId);
@@ -231,44 +231,83 @@ namespace WindowsFormsApp2
             if (!change) MessageBox.Show("Tải dữ liệu thành công");
         }
         // Cập nhật
-        private async void UpdateDataAsync(string collectionName, string nameId, string dateId)
+        private async void UpdateDataAsync(string collectionName, string nameId, string dateId, bool sell)
         {
-            DocumentReference item = Database.Instance.database.Collection(collectionName)
-                                               .Document(nameId)
-                                               .Collection(nameId)
-                                               .Document(dateId);
-
-            Dictionary<String, Object> dummyMap = new Dictionary<string, object>();
-            DocumentReference temp = Database.Instance.database.Collection(collectionName)
-                                              .Document(nameId);
-            await temp.SetAsync(dummyMap);
-            temp = Database.Instance.database.Collection(collectionName + "Delete")
-                                              .Document(nameId);
-            await temp.SetAsync(dummyMap);
-
-            var data = new Dictionary<string, object>
-            { 
-                { "name", nameId },
-            };
-
-            if (collectionName == "Medical")
+            try
             {
-                data.Add("count", textBox3.Text);
-                data.Add("dateIn", dateTimePicker1.Text);
-                data.Add("dateOut", dateTimePicker2.Text);
-                data.Add("expiry", textBox4.Text);
-            }
-            else if (collectionName == "Equipment")
-            {
-                data.Add("count", textBox6.Text);
-                data.Add("dateIn", dateTimePicker6.Text);
-                data.Add("dateOut", dateTimePicker4.Text);
-                data.Add("dateMaintenance", dateTimePicker7.Text);
-                data.Add("status", textBox9.Text);
-            }
+                if (sell && string.IsNullOrWhiteSpace(textBox10.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng cần bán.");
+                    return;
+                }
 
-            await item.SetAsync(data);
+                int initialCount;
+                int sellCount = 0;
+
+                if (!int.TryParse(textBox3.Text, out initialCount))
+                {
+                    MessageBox.Show("Số lượng hiện có không hợp lệ.");
+                    return;
+                }
+
+                if (sell && !int.TryParse(textBox10.Text, out sellCount))
+                {
+                    MessageBox.Show("Số lượng cần bán không hợp lệ.");
+                    return;
+                }
+
+                int remainMed = initialCount - sellCount;
+                bool checkSell = remainMed >= 0;
+
+                if (!checkSell && sell)
+                {
+                    MessageBox.Show("Vượt quá số lượng hiện có.");
+                    return;
+                }
+
+                DocumentReference item = Database.Instance.database.Collection(collectionName)
+                                                   .Document(nameId)
+                                                   .Collection(nameId)
+                                                   .Document(dateId);
+
+                var dummyMap = new Dictionary<string, object>();
+                DocumentReference temp = Database.Instance.database.Collection(collectionName)
+                                                  .Document(nameId);
+                await temp.SetAsync(dummyMap);
+                temp = Database.Instance.database.Collection(collectionName + "Delete")
+                                                  .Document(nameId);
+                await temp.SetAsync(dummyMap);
+
+                var data = new Dictionary<string, object>
+        {
+            { "name", nameId },
+        };
+
+                if (collectionName == "Medical")
+                {
+                    data.Add("count", sell ? remainMed.ToString() : textBox3.Text);
+                    data.Add("dateIn", dateTimePicker1.Text);
+                    data.Add("dateOut", dateTimePicker2.Text);
+                    data.Add("expiry", textBox4.Text);
+                }
+                else if (collectionName == "Equipment")
+                {
+                    data.Add("count", textBox6.Text);
+                    data.Add("dateIn", dateTimePicker6.Text);
+                    data.Add("dateOut", dateTimePicker4.Text);
+                    data.Add("dateMaintenance", dateTimePicker7.Text);
+                    data.Add("status", textBox9.Text);
+                }
+
+                await item.SetAsync(data);
+                if(sell) { MessageBox.Show("Bán thành công"); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating data: {ex.Message}");
+            }
         }
+
         //Xóa 
         private async Task RemoveDataAsync(string collectionName, DataGridView dataGridView, string nameId, string dateId, bool change)
         {
@@ -301,7 +340,7 @@ namespace WindowsFormsApp2
                 dataCut = dataDel.ConvertTo<Equipment>();
             }
 
-            if (!change)
+            if (!change && collectionName == "Equipment")
             {
                 DocumentReference dataDelete = Database.Instance.database.Collection(collectionName + "Delete")
                                                         .Document(nameId)
@@ -370,7 +409,7 @@ namespace WindowsFormsApp2
                             }
                             dt.Rows.Add(row);
                         }
-                        break; // Once found, break out of the loop
+                        break; 
                     }
                 }
 
@@ -394,11 +433,13 @@ namespace WindowsFormsApp2
 
             dt.Columns.Add("name", typeof(string));
             dt.Columns.Add("type", typeof(string));
+            dt.Columns.Add("count", typeof(string));
             dt.Columns.Add("dateIn", typeof(string));
             dt.Columns.Add("dateOut", typeof(string));
 
             dt.Columns["name"].ReadOnly = true;
             dt.Columns["type"].ReadOnly = true;
+            dt.Columns["count"].ReadOnly = true;
             dt.Columns["dateIn"].ReadOnly = true;
             dt.Columns["dateOut"].ReadOnly = true;
 
@@ -446,6 +487,7 @@ namespace WindowsFormsApp2
                                 DataRow row = dt.NewRow();
                                 row["name"] = data.name;
                                 row["type"] = CollectionName.Replace("Delete","");
+                                row["count"] = data.count;
                                 row["dateIn"] = data.dateIn;
                                 row["dateOut"] = data.dateOut;
                                 dt.Rows.Add(row);
@@ -482,6 +524,37 @@ namespace WindowsFormsApp2
 
             MessageBox.Show("Đã xóa dữ liệu thành công");
             dataGridView.DataSource = null;
+        }
+
+        private async void sellMed_Click(object sender, EventArgs e)
+        {
+            ////////////////////////
+            if (dataGridView2.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một hàng để bán.");
+                return;
+            }
+
+            string nameId = textBox2.Text.ToUpper().Replace(" ", "");
+            string formattedDate = dateTimePicker1.Value.ToString("MMddyyyy");
+
+            UpdateDataAsync("Medical", nameId, formattedDate, true);
+
+            var data = new Medical
+            {
+                name = textBox2.Text,
+                count = textBox10.Text,
+                dateIn = dateTimePicker1.Text,
+                dateOut = dateTimePicker2.Text,
+                expiry = textBox4.Text,
+            };
+            formattedDate = dateTimePicker2.Value.ToString("MMddyyyy");
+            DocumentReference dataDelete = Database.Instance.database.Collection("MedicalDelete")
+                                                        .Document(nameId)
+                                                        .Collection(nameId)
+                                                        .Document(formattedDate);
+            await dataDelete.SetAsync(data);
+            LoadData<Medical>("Medical", dataGridView2, true, new string[] { "name", "count", "dateIn", "dateOut", "expiry" });
         }
     }
 }
