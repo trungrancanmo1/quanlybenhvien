@@ -539,7 +539,7 @@ namespace WindowsFormsApp2
             string formattedDate = dateTimePicker1.Value.ToString("MMddyyyy");
 
             UpdateDataAsync("Medical", nameId, formattedDate, true);
-
+            dateTimePicker2.Value = System.DateTime.Now;
             var data = new Medical
             {
                 name = textBox2.Text,
@@ -548,7 +548,9 @@ namespace WindowsFormsApp2
                 dateOut = dateTimePicker2.Text,
                 expiry = textBox4.Text,
             };
+
             formattedDate = dateTimePicker2.Value.ToString("MMddyyyyHHmm");
+
             DocumentReference dataDelete = Database.Instance.database.Collection("MedicalDelete")
                                                         .Document(nameId)
                                                         .Collection(nameId)
