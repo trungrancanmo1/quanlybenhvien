@@ -31,17 +31,11 @@
             this.panelAcc = new System.Windows.Forms.Panel();
             this.textAcc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-//<<<<<<< HEAD
-//=======
             this.panelEmail = new System.Windows.Forms.Panel();
             this.textDisName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-//>>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
             this.btngetPass = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.panelEmail = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            //this.textEmail = new System.Windows.Forms.TextBox();
             this.panelAcc.SuspendLayout();
             this.panelEmail.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +48,6 @@
             this.panelAcc.Name = "panelAcc";
             this.panelAcc.Size = new System.Drawing.Size(722, 123);
             this.panelAcc.TabIndex = 11;
-            this.panelAcc.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textAcc
             // 
@@ -62,7 +55,6 @@
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(465, 22);
             this.textAcc.TabIndex = 1;
-            this.textAcc.TextChanged += new System.EventHandler(this.textAcc_TextChanged);
             // 
             // label1
             // 
@@ -74,8 +66,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản:";
             // 
-//<<<<<<< HEAD
-//=======
             // panelEmail
             // 
             this.panelEmail.Controls.Add(this.textDisName);
@@ -102,7 +92,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên hiển thị:";
             // 
-//>>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
             // btngetPass
             // 
             this.btngetPass.Location = new System.Drawing.Point(108, 347);
@@ -122,33 +111,6 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.thoat_Click);
-            // 
-            // panelEmail
-            // 
-            //this.panelEmail.Controls.Add(this.textEmail);
-            this.panelEmail.Controls.Add(this.label2);
-            this.panelEmail.Location = new System.Drawing.Point(39, 164);
-            this.panelEmail.Name = "panelEmail";
-            this.panelEmail.Size = new System.Drawing.Size(722, 123);
-            this.panelEmail.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên hiển thị:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // textEmail
-            // 
-            //this.textEmail.Location = new System.Drawing.Point(214, 49);
-            //this.textEmail.Name = "textEmail";
-            //this.textEmail.Size = new System.Drawing.Size(465, 22);
-            //this.textEmail.TabIndex = 1;
             // 
             // fForgotPass
             // 

@@ -61,6 +61,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -83,7 +84,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -474,6 +474,19 @@
             this.panel11.UseWaitCursor = true;
             this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(209, 120);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(238, 38);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Tìm kiếm bệnh nhân ";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseWaitCursor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -521,7 +534,6 @@
             this.textBox7.Size = new System.Drawing.Size(311, 22);
             this.textBox7.TabIndex = 4;
             this.textBox7.UseWaitCursor = true;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox3
             // 
@@ -724,19 +736,6 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Width = 125;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(209, 120);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(238, 38);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Tìm kiếm bệnh nhân ";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.UseWaitCursor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // fDoctorforAdmin
             // 

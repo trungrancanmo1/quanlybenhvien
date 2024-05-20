@@ -19,16 +19,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private async void quenmatkhau_Click(object sender, EventArgs e)
         {
             string userName = textAcc.Text;
@@ -87,14 +77,6 @@ namespace WindowsFormsApp2
 
             Database.Instance.database = FirestoreDb.Create("test-964d0");
         }
-
-        private void textAcc_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

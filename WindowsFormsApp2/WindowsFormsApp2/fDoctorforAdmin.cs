@@ -20,7 +20,6 @@ namespace WindowsFormsApp2
     public partial class fDoctorforAdmin : Form
     {
         private bool exist = false;
-        private bool check = false;
         public fDoctorforAdmin()
         {
             InitializeComponent();
@@ -451,8 +450,6 @@ namespace WindowsFormsApp2
             }
 
             Taikhoan pat = diaSnap.ConvertTo<Patient>();
-
-            check = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -460,10 +457,6 @@ namespace WindowsFormsApp2
             exist = false;
         }
 
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-            check = false;
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
