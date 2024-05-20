@@ -113,30 +113,33 @@ namespace WindowsFormsApp2
 
                     DocumentReference patschedule = Database.Instance.database.Collection("Schedules").Document(link);
                     DocumentSnapshot patscheSnap = await patschedule.GetSnapshotAsync();
-                    Schedule patSche = patscheSnap.ConvertTo<Schedule>();
-
-                    System.DateTime startday = patSche.begin.ToDateTime();
-                    System.DateTime endday = patSche.end.ToDateTime();
-                    startday = startday.AddHours(7);
-                    endday = endday.AddHours(7);
-                    string startDayString = startday.ToString("dd-MM-yyyy HH:mm:ss");
-                    string endDayString = endday.ToString("dd-MM-yyyy HH:mm:ss");
-
-                    DocumentReference doctor = Database.Instance.database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
-                    DocumentSnapshot doc = await doctor.GetSnapshotAsync();
-                    Taikhoan doct = doc.ConvertTo<Taikhoan>();
-                    string doctorName = doct.displayName;
-
-                    if (startday > prevdate && endday < futuredate)
+                    if (patscheSnap.Exists)
                     {
-                        DataRow row = dt.NewRow();
-                        row["Bệnh nhân"] += patient.displayName;
-                        row["Bác sĩ"] += doctorName;
-                        row["Ngày vào viện"] += startDayString;
-                        row["Ngày xuất viện"] += endDayString;
-                        row["Phòng"] += patSche.room;
-                        row["Ghi chú"] += patSche.notes;
-                        dt.Rows.Add(row);
+                        Schedule patSche = patscheSnap.ConvertTo<Schedule>();
+
+                        System.DateTime startday = patSche.begin.ToDateTime();
+                        System.DateTime endday = patSche.end.ToDateTime();
+                        startday = startday.AddHours(7);
+                        endday = endday.AddHours(7);
+                        string startDayString = startday.ToString("dd-MM-yyyy HH:mm:ss");
+                        string endDayString = endday.ToString("dd-MM-yyyy HH:mm:ss");
+
+                        DocumentReference doctor = Database.Instance.database.Collection("Doctor").Document(patSche.doctor).Collection("Information").Document("Information");
+                        DocumentSnapshot doc = await doctor.GetSnapshotAsync();
+                        Taikhoan doct = doc.ConvertTo<Taikhoan>();
+                        string doctorName = doct.displayName;
+
+                        if (startday > prevdate && endday < futuredate)
+                        {
+                            DataRow row = dt.NewRow();
+                            row["Bệnh nhân"] += patient.displayName;
+                            row["Bác sĩ"] += doctorName;
+                            row["Ngày vào viện"] += startDayString;
+                            row["Ngày xuất viện"] += endDayString;
+                            row["Phòng"] += patSche.room;
+                            row["Ghi chú"] += patSche.notes;
+                            dt.Rows.Add(row);
+                        }
                     }
                 }
             }

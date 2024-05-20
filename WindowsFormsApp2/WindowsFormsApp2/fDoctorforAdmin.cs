@@ -452,7 +452,6 @@ namespace WindowsFormsApp2
 
             Taikhoan pat = diaSnap.ConvertTo<Patient>();
 
-            txtDia.Text = pat.diagnosis.ToString();
             check = true;
         }
 
@@ -529,6 +528,21 @@ namespace WindowsFormsApp2
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            showAvailablePatient();
         }
     }
 }

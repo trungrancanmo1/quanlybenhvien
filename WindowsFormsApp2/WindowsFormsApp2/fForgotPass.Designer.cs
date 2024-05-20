@@ -31,17 +31,17 @@
             this.panelAcc = new System.Windows.Forms.Panel();
             this.textAcc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             this.panelEmail = new System.Windows.Forms.Panel();
             this.textDisName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
->>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
+//>>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
             this.btngetPass = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panelEmail = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textEmail = new System.Windows.Forms.TextBox();
+            //this.textEmail = new System.Windows.Forms.TextBox();
             this.panelAcc.SuspendLayout();
             this.panelEmail.SuspendLayout();
             this.SuspendLayout();
@@ -74,8 +74,8 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản:";
             // 
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
             // panelEmail
             // 
             this.panelEmail.Controls.Add(this.textDisName);
@@ -102,7 +102,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên hiển thị:";
             // 
->>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
+//>>>>>>> 6d5e94b496d2054193b39f95370e535529b40b97
             // btngetPass
             // 
             this.btngetPass.Location = new System.Drawing.Point(108, 347);
@@ -125,7 +125,7 @@
             // 
             // panelEmail
             // 
-            this.panelEmail.Controls.Add(this.textEmail);
+            //this.panelEmail.Controls.Add(this.textEmail);
             this.panelEmail.Controls.Add(this.label2);
             this.panelEmail.Location = new System.Drawing.Point(39, 164);
             this.panelEmail.Name = "panelEmail";
@@ -145,10 +145,10 @@
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(214, 49);
-            this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(465, 22);
-            this.textEmail.TabIndex = 1;
+            //this.textEmail.Location = new System.Drawing.Point(214, 49);
+            //this.textEmail.Name = "textEmail";
+            //this.textEmail.Size = new System.Drawing.Size(465, 22);
+            //this.textEmail.TabIndex = 1;
             // 
             // fForgotPass
             // 

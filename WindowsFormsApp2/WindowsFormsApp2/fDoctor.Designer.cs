@@ -51,12 +51,12 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtPro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,10 +75,10 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.txtPatName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.txtFind = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnFind = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabinformation.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,13 +92,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabinformation
@@ -360,37 +360,10 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(810, 325);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UseWaitCursor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "begin";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "end";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "room";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Patient";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage3
             // 
@@ -402,6 +375,7 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tra cứu thông tin bệnh nhân";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.UseWaitCursor = true;
             // 
             // panel5
             // 
@@ -416,179 +390,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(809, 384);
             this.panel5.TabIndex = 7;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.txtPro);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Location = new System.Drawing.Point(4, 336);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(799, 35);
-            this.panel8.TabIndex = 5;
-            // 
-            // txtPro
-            // 
-            this.txtPro.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.txtPro.Location = new System.Drawing.Point(179, 3);
-            this.txtPro.Multiline = true;
-            this.txtPro.Name = "txtPro";
-            this.txtPro.ReadOnly = true;
-            this.txtPro.Size = new System.Drawing.Size(617, 27);
-            this.txtPro.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(3, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Tiến triển:";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.dtpRegDate);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Location = new System.Drawing.Point(4, 109);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(799, 44);
-            this.panel10.TabIndex = 5;
-            // 
-            // dtpRegDate
-            // 
-            this.dtpRegDate.CustomFormat = "dd/MM/yyyy hh:mm tt";
-            this.dtpRegDate.Enabled = false;
-            this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRegDate.Location = new System.Drawing.Point(179, 8);
-            this.dtpRegDate.Name = "dtpRegDate";
-            this.dtpRegDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpRegDate.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày vào viện:";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.txtDia);
-            this.panel11.Controls.Add(this.label5);
-            this.panel11.Location = new System.Drawing.Point(3, 288);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(803, 45);
-            this.panel11.TabIndex = 4;
-            // 
-            // txtDia
-            // 
-            this.txtDia.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.txtDia.Location = new System.Drawing.Point(179, 3);
-            this.txtDia.Multiline = true;
-            this.txtDia.Name = "txtDia";
-            this.txtDia.ReadOnly = true;
-            this.txtDia.Size = new System.Drawing.Size(618, 27);
-            this.txtDia.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(9, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Chẩn đoán:";
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.txtTesRes);
-            this.panel12.Controls.Add(this.label4);
-            this.panel12.Location = new System.Drawing.Point(3, 219);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(800, 63);
-            this.panel12.TabIndex = 3;
-            // 
-            // txtTesRes
-            // 
-            this.txtTesRes.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.txtTesRes.Location = new System.Drawing.Point(180, 3);
-            this.txtTesRes.Multiline = true;
-            this.txtTesRes.Name = "txtTesRes";
-            this.txtTesRes.ReadOnly = true;
-            this.txtTesRes.Size = new System.Drawing.Size(617, 53);
-            this.txtTesRes.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(7, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 50);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Kết quả xét \r\nnghiệm:";
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.txtMedHis);
-            this.panel13.Controls.Add(this.label3);
-            this.panel13.Location = new System.Drawing.Point(3, 159);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(800, 54);
-            this.panel13.TabIndex = 2;
-            // 
-            // txtMedHis
-            // 
-            this.txtMedHis.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.txtMedHis.Location = new System.Drawing.Point(180, 3);
-            this.txtMedHis.Multiline = true;
-            this.txtMedHis.Name = "txtMedHis";
-            this.txtMedHis.ReadOnly = true;
-            this.txtMedHis.Size = new System.Drawing.Size(617, 45);
-            this.txtMedHis.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(1, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Lịch sử bệnh án:";
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.txtPatName);
-            this.panel14.Controls.Add(this.label7);
-            this.panel14.Location = new System.Drawing.Point(4, 59);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(799, 44);
-            this.panel14.TabIndex = 0;
-            // 
-            // txtPatName
-            // 
-            this.txtPatName.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.txtPatName.Location = new System.Drawing.Point(178, 3);
-            this.txtPatName.Name = "txtPatName";
-            this.txtPatName.ReadOnly = true;
-            this.txtPatName.Size = new System.Drawing.Size(618, 32);
-            this.txtPatName.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(3, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tên:";
+            this.panel5.UseWaitCursor = true;
             // 
             // panel15
             // 
@@ -599,6 +401,18 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(799, 44);
             this.panel15.TabIndex = 2;
+            this.panel15.UseWaitCursor = true;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(650, 6);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(146, 31);
+            this.btnFind.TabIndex = 2;
+            this.btnFind.Text = "Tra cứu";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.UseWaitCursor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtFind
             // 
@@ -607,6 +421,7 @@
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(456, 32);
             this.txtFind.TabIndex = 1;
+            this.txtFind.UseWaitCursor = true;
             // 
             // label8
             // 
@@ -617,16 +432,226 @@
             this.label8.Size = new System.Drawing.Size(149, 25);
             this.label8.TabIndex = 0;
             this.label8.Text = "ID bệnh nhân:";
+            this.label8.UseWaitCursor = true;
             // 
-            // btnFind
+            // panel8
             // 
-            this.btnFind.Location = new System.Drawing.Point(650, 6);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(146, 31);
-            this.btnFind.TabIndex = 2;
-            this.btnFind.Text = "Tra cứu";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            this.panel8.Controls.Add(this.txtPro);
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Location = new System.Drawing.Point(4, 336);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(799, 35);
+            this.panel8.TabIndex = 5;
+            this.panel8.UseWaitCursor = true;
+            // 
+            // txtPro
+            // 
+            this.txtPro.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtPro.Location = new System.Drawing.Point(179, 3);
+            this.txtPro.Multiline = true;
+            this.txtPro.Name = "txtPro";
+            this.txtPro.ReadOnly = true;
+            this.txtPro.Size = new System.Drawing.Size(617, 27);
+            this.txtPro.TabIndex = 1;
+            this.txtPro.UseWaitCursor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(3, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Tiến triển:";
+            this.label6.UseWaitCursor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.dtpRegDate);
+            this.panel10.Controls.Add(this.label2);
+            this.panel10.Location = new System.Drawing.Point(4, 109);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(799, 44);
+            this.panel10.TabIndex = 5;
+            this.panel10.UseWaitCursor = true;
+            // 
+            // dtpRegDate
+            // 
+            this.dtpRegDate.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dtpRegDate.Enabled = false;
+            this.dtpRegDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRegDate.Location = new System.Drawing.Point(179, 8);
+            this.dtpRegDate.Name = "dtpRegDate";
+            this.dtpRegDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpRegDate.TabIndex = 1;
+            this.dtpRegDate.UseWaitCursor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ngày vào viện:";
+            this.label2.UseWaitCursor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.txtDia);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Location = new System.Drawing.Point(3, 288);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(803, 45);
+            this.panel11.TabIndex = 4;
+            this.panel11.UseWaitCursor = true;
+            // 
+            // txtDia
+            // 
+            this.txtDia.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtDia.Location = new System.Drawing.Point(179, 3);
+            this.txtDia.Multiline = true;
+            this.txtDia.Name = "txtDia";
+            this.txtDia.ReadOnly = true;
+            this.txtDia.Size = new System.Drawing.Size(618, 27);
+            this.txtDia.TabIndex = 1;
+            this.txtDia.UseWaitCursor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(9, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Chẩn đoán:";
+            this.label5.UseWaitCursor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.txtTesRes);
+            this.panel12.Controls.Add(this.label4);
+            this.panel12.Location = new System.Drawing.Point(3, 219);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(800, 63);
+            this.panel12.TabIndex = 3;
+            this.panel12.UseWaitCursor = true;
+            // 
+            // txtTesRes
+            // 
+            this.txtTesRes.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtTesRes.Location = new System.Drawing.Point(180, 3);
+            this.txtTesRes.Multiline = true;
+            this.txtTesRes.Name = "txtTesRes";
+            this.txtTesRes.ReadOnly = true;
+            this.txtTesRes.Size = new System.Drawing.Size(617, 53);
+            this.txtTesRes.TabIndex = 1;
+            this.txtTesRes.UseWaitCursor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(7, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 50);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Kết quả xét \r\nnghiệm:";
+            this.label4.UseWaitCursor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.txtMedHis);
+            this.panel13.Controls.Add(this.label3);
+            this.panel13.Location = new System.Drawing.Point(3, 159);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(800, 54);
+            this.panel13.TabIndex = 2;
+            this.panel13.UseWaitCursor = true;
+            // 
+            // txtMedHis
+            // 
+            this.txtMedHis.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtMedHis.Location = new System.Drawing.Point(180, 3);
+            this.txtMedHis.Multiline = true;
+            this.txtMedHis.Name = "txtMedHis";
+            this.txtMedHis.ReadOnly = true;
+            this.txtMedHis.Size = new System.Drawing.Size(617, 45);
+            this.txtMedHis.TabIndex = 1;
+            this.txtMedHis.UseWaitCursor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(1, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(171, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Lịch sử bệnh án:";
+            this.label3.UseWaitCursor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.txtPatName);
+            this.panel14.Controls.Add(this.label7);
+            this.panel14.Location = new System.Drawing.Point(4, 59);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(799, 44);
+            this.panel14.TabIndex = 0;
+            this.panel14.UseWaitCursor = true;
+            // 
+            // txtPatName
+            // 
+            this.txtPatName.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.txtPatName.Location = new System.Drawing.Point(178, 3);
+            this.txtPatName.Name = "txtPatName";
+            this.txtPatName.ReadOnly = true;
+            this.txtPatName.Size = new System.Drawing.Size(618, 32);
+            this.txtPatName.TabIndex = 1;
+            this.txtPatName.UseWaitCursor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 13F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(3, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Tên:";
+            this.label7.UseWaitCursor = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Bắt đầu";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Kết thúc";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Phòng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Id Bệnh nhân";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
             // 
             // fDoctor
             // 
@@ -655,6 +680,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -667,8 +694,6 @@
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -698,10 +723,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtCre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel8;
@@ -726,5 +747,9 @@
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

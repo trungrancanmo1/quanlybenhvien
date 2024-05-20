@@ -135,5 +135,10 @@ namespace WindowsFormsApp2
             dtpRegDate.Value = date;
             txtPro.Text = pat.progress;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
