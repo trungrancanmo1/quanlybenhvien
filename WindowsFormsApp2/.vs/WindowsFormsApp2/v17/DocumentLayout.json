@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:windowsformsapp2\\fmedicaleqipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\windowsformsapp2\\faddmed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:windowsformsapp2\\faddmed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:WindowsFormsApp2\\fMedicalEqipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:WindowsFormsApp2\\fAddMed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\windowsformsapp2\\faddmed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:windowsformsapp2\\faddmed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\windowsformsapp2\\fmedicaleqipment.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:windowsformsapp2\\fmedicaleqipment.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|solutionrelative:WindowsFormsApp2\\fAddMed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4444E0BC-8EF2-477E-A0CB-8F009936A416}|WindowsFormsApp2\\WindowsFormsApp2.csproj|C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\windowsformsapp2\\fpatient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -124,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "fAddMed.cs",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fAddMed.cs",
@@ -136,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "fMedicalEqipment.Designer.cs",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fMedicalEqipment.Designer.cs",
@@ -154,14 +154,14 @@
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fMedicalEqipment.cs",
               "ToolTip": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs",
               "RelativeToolTip": "WindowsFormsApp2\\fMedicalEqipment.cs",
-              "ViewState": "AQIAAGIBAAAAAAAAAAAAAHEBAAAYAAAA",
+              "ViewState": "AQIAAPQBAAAAAAAAAAA+wAACAABtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T07:38:07.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "fLogin.cs",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fLogin.cs",
@@ -220,12 +220,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "fLogin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fLogin.cs",
-              "ToolTip": "C:\\Users\\LAM TUAN HUY\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs [Design]",
+              "ToolTip": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fLogin.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp2\\fLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T04:08:46.517Z"
             },
@@ -275,12 +275,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "fAddMed.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fAddMed.cs",
-              "ToolTip": "C:\\Users\\LAM TUAN HUY\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs [Design]",
+              "ToolTip": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fAddMed.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp2\\fAddMed.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T08:13:27.665Z"
             },
@@ -308,12 +308,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "fMedicalEqipment.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp2\\fMedicalEqipment.cs",
-              "ToolTip": "C:\\Users\\LAM TUAN HUY\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\quanlybenhvien-main (2)\\quanlybenhvien-main\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs [Design]",
+              "ToolTip": "C:\\Users\\LAM TUAN HUY\\OneDrive\\Documents\\quanlybenhvien\\WindowsFormsApp2\\WindowsFormsApp2\\fMedicalEqipment.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp2\\fMedicalEqipment.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T04:09:12.574Z"
             }

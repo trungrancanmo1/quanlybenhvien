@@ -507,9 +507,10 @@ namespace WindowsFormsApp2
                     string type = row.Cells["type"].Value.ToString();
                     string name = row.Cells["name"].Value.ToString();
                     string dateIn = row.Cells["dateIn"].Value.ToString();
+                    string dateOut = row.Cells["dateOut"].Value.ToString();
                     System.DateTime dateTime = System.DateTime.Parse(dateIn);
                     string formatDate = dateTime.ToString("MMddyyyyHHmm");
-                    if (type == "Medical") formatDate = dateTime.ToString("MMddyyyy");
+                    if (type == "Medical") formatDate = System.DateTime.Parse(dateOut).ToString("MMddyyyyHHmm");
                     DocumentReference docRef = Database.Instance.database.Collection(type + "Delete").Document(name).Collection(name).Document(formatDate);
                     await docRef.DeleteAsync();
                     Query list = Database.Instance.database.Collection(type + "Delete").Document(name).Collection(name);
@@ -528,7 +529,6 @@ namespace WindowsFormsApp2
 
         private async void sellMed_Click(object sender, EventArgs e)
         {
-            ////////////////////////
             if (dataGridView2.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một hàng để bán.");
@@ -548,7 +548,7 @@ namespace WindowsFormsApp2
                 dateOut = dateTimePicker2.Text,
                 expiry = textBox4.Text,
             };
-            formattedDate = dateTimePicker2.Value.ToString("MMddyyyy");
+            formattedDate = dateTimePicker2.Value.ToString("MMddyyyyHHmm");
             DocumentReference dataDelete = Database.Instance.database.Collection("MedicalDelete")
                                                         .Document(nameId)
                                                         .Collection(nameId)
